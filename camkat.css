@@ -333,6 +333,17 @@
 
     /* configs de adicion de productos */
 
+/* esta es para un titulo puesto antes del div cards container */
+
+    .main-container h1 {
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: var(--lg);
+        
+    }
+
     .cards-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, 240px);

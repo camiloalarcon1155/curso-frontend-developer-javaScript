@@ -10,6 +10,7 @@ const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); // lo traemos para meter el div que contiene el template de nuestro objeto productos
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
 const productDetailCloseIcono = document.querySelector('.product-detail-close') // lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
+const tituloTipRopa = document.querySelector('tipoDeRopa');
 
 
 
@@ -89,48 +90,171 @@ function closeDesplegableCompra() {
     menuDetalleCadaCompra.classList.add('inactive');
 }
 
-const productList = [];// este vendria siendo la abase de datos que estaria en el backend, pero vbamos a hacer uno similar aqui, para organizar el forntend
-productList.push({
+
+//esta funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el busque
+
+//🥼🥼🥼Arreglo de objetos de camisetas economicas:
+const camisetasHombreList = [];// este vendria siendo la abase de datos que estaria en el backend, pero vbamos a hacer uno similar aqui, para organizar el forntend
+camisetasHombreList.push({
     name: 'Camiseta rojo oscuro',
     price: 18000,
     image: "https://i.imgur.com/6wpmVPm.jpg"
 });//ya creamos un array de elemmentos y con este podemos crear todos los productos que sean
 
-productList.push({
+camisetasHombreList.push({
     name: 'Camiseta azul',
     price: 19000,
     image: "https://i.imgur.com/qYKTC6x.jpeg"
 });
 
-productList.push({
+camisetasHombreList.push({
     name: 'Camiseta blanca',
     price: 20000,
     image: "https://i.imgur.com/LXLgc0g.jpeg"
 });
 
-productList.push({
+camisetasHombreList.push({
     name: 'Camiseta rojo',
     price: 21000,
     image: "https://i.imgur.com/7xdMKA7.jpeg"
 });
 
-productList.push({
+camisetasHombreList.push({
     name: 'Camiseta color negro',
     price: 22000,
     image: "https://i.imgur.com/p2xCOiZ.jpg"
 });
 
-productList.push({
+camisetasHombreList.push({
     name: 'Camiseta color rosa',
     price: 25000,
     image: "https://i.imgur.com/NOKEmj4.jpeg"
 });
-// ahora debemos correr nuestro arreglo. esta es una form afacil de for:
+
+
+
+//👖👖👖Arreglo de objetos de jeans hombre:
+const jeansHombreList = [];
+jeansHombreList.push({
+    name: 'Camiseta rojo oscuro',
+    price: 18000,
+    image: "https://i.imgur.com/6wpmVPm.jpg"
+});
+
+jeansHombreList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/qYKTC6x.jpeg"
+});
+
+jeansHombreList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/LXLgc0g.jpeg"
+});
+
+jeansHombreList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/7xdMKA7.jpeg"
+});
+
+jeansHombreList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/p2xCOiZ.jpg"
+});
+
+jeansHombreList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
+
+
+
+
+//👖👖👖Arreglo de objetos de jeans mujer:
+const jeansMujerList = [];
+jeansMujerList.push({
+    name: 'Camiseta rojo oscuro',
+    price: 18000,
+    image: "https://i.imgur.com/6wpmVPm.jpg"
+});
+
+jeansMujerList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/qYKTC6x.jpeg"
+});
+
+jeansMujerList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/LXLgc0g.jpeg"
+});
+
+jeansMujerList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/7xdMKA7.jpeg"
+});
+
+jeansMujerList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/p2xCOiZ.jpg"
+});
+
+jeansMujerList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
+
+
+//👚👚👚👚Arreglo de objetos de blusas dama:
+const blusasDamaList = [];
+blusasDamaList.push({
+    name: 'Camiseta rojo oscuro',
+    price: 18000,
+    image: "https://i.imgur.com/6wpmVPm.jpg"
+});
+
+blusasDamaList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/qYKTC6x.jpeg"
+});
+
+blusasDamaList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/LXLgc0g.jpeg"
+});
+
+blusasDamaList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/7xdMKA7.jpeg"
+});
+
+blusasDamaList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/p2xCOiZ.jpg"
+});
+
+blusasDamaList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
 
  
 
-function renderObjetosHTML(arrElements){
-for (product of arrElements) {
+function renderObjetosHTML(arrElements) {
+    for (product of arrElements) {
 //console.log(product.image);
     //lo que haremos aqui es ir creando cada etiqueta o elemento de la plantilla que tenemos para cada producto en html:
 
@@ -207,6 +331,11 @@ for (product of arrElements) {
 
 //ahora si la llamamos:
 
-renderObjetosHTML(productList) 
+
+// switch (objetoEnviado) {
+
+// }
+
+renderObjetosHTML(camisetasHombreList) 
 
 // De esta forma tambien se podrian eviar los arreglos desde el backend y usarlos automaticamente con esta funcion. o que tambie se puede ejcutar cuando le demos click a un boton o lo que sea. como funcion es mucho mas util que dejar el for ahi tirado.
