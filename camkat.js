@@ -10,7 +10,15 @@ const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); // lo traemos para meter el div que contiene el template de nuestro objeto productos
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
 const productDetailCloseIcono = document.querySelector('.product-detail-close') // lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
-const tituloTipRopa = document.querySelector('tipoDeRopa');
+const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a llevar cada lista de productos
+const opcionRopaTodo = document.querySelector('.opcionTodo');
+const opcionRopaCamisetasH= document.querySelector('.opcionCamisetasH');
+const OpcionRopaJeansH = document.querySelector('.OpcionJeansH');
+const opcionRopaBlusasM = document.querySelector('.opcionBlusasM');
+const opcionRopaJeansM = document.querySelector('.opcionJeansM');
+const opcionRopaOtrasPrendas = document.querySelector('.opcionOtrasPrendas');
+
+
 
 
 
@@ -22,6 +30,11 @@ menuHamIcon.addEventListener('click', ToggleMobilMenu);
 menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
 
 productDetailCloseIcono.addEventListener('click', closeDesplegableCompra)
+
+//cuando le den click a cada categoria de ropa, vamos a llamar a la funcion que escoge el renderizado
+
+
+
 
 
 
@@ -89,9 +102,110 @@ function openDesplegableCompra() {
 function closeDesplegableCompra() {
     menuDetalleCadaCompra.classList.add('inactive');
 }
+    
 
 
-//esta funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el busque
+function renderTodoRopa() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Catálogo Completo';
+    renderObjetosHTML(catalogoCompletoList);
+}
+
+function renderCamisetasH() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
+    renderObjetosHTML(camisetasHombreList);
+}
+
+function renderJeansH() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Jeans Hombre';
+    renderObjetosHTML(jeansHombreList);
+}
+
+function renderJeansM() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Jeans Dama';
+    renderObjetosHTML(jeansMujerList);
+}
+
+function renderBlusasM() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Blusas Dama';
+    renderObjetosHTML(blusasDamaList);
+}
+
+function renderOtrasPrendas() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Otras Prendas';
+    renderObjetosHTML(otrasPrendasList);
+}
+
+//la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
+
+/* function elegirRenderizacionObjeto(array1) {
+    switch (array1) {
+        case array1 === 'camisetasHombreList':
+            tituloTipRopa.innerText = 'camisetasHombreList';
+            renderObjetosHTML(camisetasHombreList)
+            break;
+        case array1 === 'jeansHombreList':
+            tituloTipRopa.innerText = 'jeansHombreList';
+            renderObjetosHTML(jeansHombreList)
+            break;
+        case array1 === 'jeansMujerList':
+            tituloTipRopa.innerText = 'jeansMujerList';
+            renderObjetosHTML(jeansMujerListt)
+            break;
+        case array1 === 'blusasDamaList':
+            tituloTipRopa.innerText = 'blusasDamaList';
+            renderObjetosHTML(blusasDamaList)
+            break;
+    }
+
+};
+ */
+
+
+
+//👖👖👖Arreglo de objetos de toda la ropa:
+const catalogoCompletoList = [];
+catalogoCompletoList.push({
+    name: 'Camiseta rojo oscuro',
+    price: 18000,
+    image: "https://i.imgur.com/6wpmVPm.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/qYKTC6x.jpeg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/LXLgc0g.jpeg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/7xdMKA7.jpeg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/p2xCOiZ.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
+
 
 //🥼🥼🥼Arreglo de objetos de camisetas economicas:
 const camisetasHombreList = [];// este vendria siendo la abase de datos que estaria en el backend, pero vbamos a hacer uno similar aqui, para organizar el forntend
@@ -130,7 +244,6 @@ camisetasHombreList.push({
     price: 25000,
     image: "https://i.imgur.com/NOKEmj4.jpeg"
 });
-
 
 
 //👖👖👖Arreglo de objetos de jeans hombre:
@@ -251,7 +364,54 @@ blusasDamaList.push({
     image: "https://i.imgur.com/NOKEmj4.jpeg"
 });
 
- 
+
+//otras prendas
+const otrasPrendasList = [];
+blusasDamaList.push({
+    name: 'Camiseta rojo oscuro',
+    price: 18000,
+    image: "https://i.imgur.com/6wpmVPm.jpg"
+});
+
+otrasPrendasList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/qYKTC6x.jpeg"
+});
+
+otrasPrendasList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/LXLgc0g.jpeg"
+});
+
+otrasPrendasList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/7xdMKA7.jpeg"
+});
+
+otrasPrendasList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/p2xCOiZ.jpg"
+});
+
+otrasPrendasList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
+
+ //probar algo
+const listaFalsa = [];
+listaFalsa.push({
+    name: 'Falso',
+    price: '000000',
+    image: "https://img.freepik.com/vector-gratis/bote-basura-lleno-bolsas-basura-vasos-vino-botellas-plastico-cascaras-platano_1268-15181.jpg"
+});
+
+
 
 function renderObjetosHTML(arrElements) {
     for (product of arrElements) {
@@ -336,6 +496,32 @@ function renderObjetosHTML(arrElements) {
 
 // }
 
-renderObjetosHTML(camisetasHombreList) 
+//renderObjetosHTML(camisetasHombreList)
 
 // De esta forma tambien se podrian eviar los arreglos desde el backend y usarlos automaticamente con esta funcion. o que tambie se puede ejcutar cuando le demos click a un boton o lo que sea. como funcion es mucho mas util que dejar el for ahi tirado.
+
+//renderObjetosHTML(listaFalsa)
+opcionRopaTodo.addEventListener("click", renderTodoRopa);
+
+opcionRopaCamisetasH.addEventListener("click", renderCamisetasH);
+
+OpcionRopaJeansH.addEventListener("click", renderJeansH);
+
+opcionRopaJeansM.addEventListener("click", renderJeansM);
+
+opcionRopaBlusasM.addEventListener("click", renderBlusasM);
+
+opcionRopaOtrasPrendas.addEventListener("click", renderOtrasPrendas);
+
+
+
+// opcionRopaCamisetasH.addEventListener('click', renderObjetosHTML(camisetasHombreList));
+
+// OpcionRopaJeansH.addEventListener("click", renderObjetosHTML(jeansHombreList));
+
+// opcionRopaBlusasM.addEventListener("click", renderObjetosHTML(jeansMujerList));
+
+// opcionRopaJeansM.addEventListener("click", renderObjetosHTML(blusasDamaList));
+
+// opcionRopaOtrasPrendas.addEventListener("click", renderObjetosHTML(otrasPrendasList));
+
