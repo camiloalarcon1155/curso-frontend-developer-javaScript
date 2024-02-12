@@ -14,7 +14,7 @@ const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a ll
 const opcionRopaTodo = document.querySelector('.opcionTodo');
 const opcionRopaCamisetasH= document.querySelector('.opcionCamisetasH');
 const OpcionRopaJeansH = document.querySelector('.OpcionJeansH');
-const opcionRopaBlusasM = document.querySelector('.opcionBlusasM');
+const opcionRopachaquetasM = document.querySelector('.opcionchaquetasM');
 const opcionRopaJeansM = document.querySelector('.opcionJeansM');
 const opcionRopaOtrasPrendas = document.querySelector('.opcionOtrasPrendas');
 
@@ -108,7 +108,11 @@ function closeDesplegableCompra() {
 function renderTodoRopa() {
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
-    renderObjetosHTML(catalogoCompletoList);
+    renderObjetosHTML(camisetasHombreList);
+    renderObjetosHTML(jeansHombreList);
+    renderObjetosHTML(jeansMujerList);
+    renderObjetosHTML(chaquetasDamaList);
+    renderObjetosHTML(otrasPrendasList);
 }
 
 function renderCamisetasH() {
@@ -129,10 +133,10 @@ function renderJeansM() {
     renderObjetosHTML(jeansMujerList);
 }
 
-function renderBlusasM() {
+function renderchaquetasM() {
     cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Blusas Dama';
-    renderObjetosHTML(blusasDamaList);
+    tituloTipRopa.innerText = 'chaquetas Dama';
+    renderObjetosHTML(chaquetasDamaList);
 }
 
 function renderOtrasPrendas() {
@@ -157,8 +161,8 @@ function renderOtrasPrendas() {
             tituloTipRopa.innerText = 'jeansMujerList';
             renderObjetosHTML(jeansMujerListt)
             break;
-        case array1 === 'blusasDamaList':
-            tituloTipRopa.innerText = 'blusasDamaList';
+        case array1 === 'chaquetasDamaList':
+            tituloTipRopa.innerText = 'chaquetasDamaList';
             renderObjetosHTML(blusasDamaList)
             break;
     }
@@ -249,39 +253,39 @@ camisetasHombreList.push({
 //👖👖👖Arreglo de objetos de jeans hombre:
 const jeansHombreList = [];
 jeansHombreList.push({
-    name: 'Camiseta rojo oscuro',
+    name: 'jean DSqueared',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/vDXf8Xf.jpg"
 });
 
 jeansHombreList.push({
-    name: 'Camiseta azul',
+    name: 'jean DSqueared',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/o2XCN3K.jpg"
 });
 
 jeansHombreList.push({
-    name: 'Camiseta blanca',
+    name: 'jean DSqueared',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/OYXPR4i.jpg"
 });
 
 jeansHombreList.push({
-    name: 'Camiseta rojo',
+    name: 'jean DSqueared',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/Vso5GyJ.jpg"
 });
 
 jeansHombreList.push({
-    name: 'Camiseta color negro',
+    name: 'jean DSqueared',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/fcW97Gd.jpg"
 });
 
 jeansHombreList.push({
-    name: 'Camiseta color rosa',
+    name: 'jean DSqueared',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/p9FbDYj.jpg"
 });
 
 
@@ -290,117 +294,117 @@ jeansHombreList.push({
 //👖👖👖Arreglo de objetos de jeans mujer:
 const jeansMujerList = [];
 jeansMujerList.push({
-    name: 'Camiseta rojo oscuro',
+    name: 'Jean Economico Dama',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/XsWPVsy.jpg"
 });
 
 jeansMujerList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/0csXwNY.jpg"
 });
 
 jeansMujerList.push({
     name: 'Camiseta blanca',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/EsKMf8k.jpg"
 });
 
 jeansMujerList.push({
     name: 'Camiseta rojo',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/VyuxoLh.jpg"
 });
 
 jeansMujerList.push({
     name: 'Camiseta color negro',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/1oQSVsT.jpg"
 });
 
 jeansMujerList.push({
     name: 'Camiseta color rosa',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/EmY5huB.jpg"
 });
 
 
 //👚👚👚👚Arreglo de objetos de blusas dama:
-const blusasDamaList = [];
-blusasDamaList.push({
-    name: 'Camiseta rojo oscuro',
+const chaquetasDamaList = [];
+chaquetasDamaList.push({
+    name: 'Chaqueta1',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/3VTii84.jpg"
 });
 
-blusasDamaList.push({
-    name: 'Camiseta azul',
+chaquetasDamaList.push({
+    name: 'Chaqueta2',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/0V3Zk5v.jpg"
 });
 
-blusasDamaList.push({
-    name: 'Camiseta blanca',
+chaquetasDamaList.push({
+    name: 'Chaqueta3',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/wWPiLqy.jpg"
 });
 
-blusasDamaList.push({
-    name: 'Camiseta rojo',
+chaquetasDamaList.push({
+    name: 'Chaqueta4',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/mMEAfyy.jpg"
 });
 
-blusasDamaList.push({
-    name: 'Camiseta color negro',
+chaquetasDamaList.push({
+    name: 'Chaqueta5',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/cDpjfGJ.jpg"
 });
 
-blusasDamaList.push({
-    name: 'Camiseta color rosa',
+chaquetasDamaList.push({
+    name: 'Chaqueta6',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/1Zjfk6P.jpg"
 });
 
 
 //otras prendas
 const otrasPrendasList = [];
-blusasDamaList.push({
-    name: 'Camiseta rojo oscuro',
+otrasPrendasList.push({
+    name: 'Pijama',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/TYkYiGZ.jpg"
 });
 
 otrasPrendasList.push({
-    name: 'Camiseta azul',
+    name: 'Pijama red',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/ypsTb0K.jpg"
 });
 
 otrasPrendasList.push({
-    name: 'Camiseta blanca',
+    name: 'Jean negro',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/J6GGYWG.jpg"
 });
 
 otrasPrendasList.push({
-    name: 'Camiseta rojo',
+    name: 'jean moico abano',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/MGrFmzD.jpg"
 });
 
 otrasPrendasList.push({
-    name: 'Camiseta color negro',
+    name: 'Jean moico negro',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/mVsNUxA.jpg"
 });
 
 otrasPrendasList.push({
-    name: 'Camiseta color rosa',
+    name: 'polilicra',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/BrNHjvr.jpeg"
 });
 
  //probar algo
@@ -509,7 +513,7 @@ OpcionRopaJeansH.addEventListener("click", renderJeansH);
 
 opcionRopaJeansM.addEventListener("click", renderJeansM);
 
-opcionRopaBlusasM.addEventListener("click", renderBlusasM);
+opcionRopachaquetasM.addEventListener("click", renderchaquetasM);
 
 opcionRopaOtrasPrendas.addEventListener("click", renderOtrasPrendas);
 
@@ -519,9 +523,9 @@ opcionRopaOtrasPrendas.addEventListener("click", renderOtrasPrendas);
 
 // OpcionRopaJeansH.addEventListener("click", renderObjetosHTML(jeansHombreList));
 
-// opcionRopaBlusasM.addEventListener("click", renderObjetosHTML(jeansMujerList));
+// opcionRopachaquetasM.addEventListener("click", renderObjetosHTML(jeansMujerList));
 
-// opcionRopaJeansM.addEventListener("click", renderObjetosHTML(blusasDamaList));
+// opcionRopaJeansM.addEventListener("click", renderObjetosHTML(chaquetasDamaList));
 
 // opcionRopaOtrasPrendas.addEventListener("click", renderObjetosHTML(otrasPrendasList));
 
