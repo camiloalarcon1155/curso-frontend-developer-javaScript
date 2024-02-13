@@ -14,7 +14,6 @@ const menuDetalleCadaCompra = document.querySelector('#productDetail');
 //const productDetailCloseIcono = document.querySelector('.product-detail-close')
 
 
-
 // lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
 const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a llevar cada lista de productos
 
@@ -49,7 +48,7 @@ menuHamIcon.addEventListener('click', ToggleMobilMenu);
 
 menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
 
-productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
+//productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
 
 logoCamkat.addEventListener('click',mostrarMiInformacion);
 
@@ -100,6 +99,57 @@ function ToggleCarritoCompras() {
 }
 
 
+function mostrarCadaProducto(arrElements) {
+    //for (product of arrElements) {
+    product = arrElements;
+
+    const productDivClose = document.createElement('div');
+    productDivClose.classList.add('product-detail-close');
+    const productIconoClose = document.createElement('img');
+    productIconoClose.setAttribute('src','./icons/icon_close.png');
+    
+
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product[0].image);
+    
+    const productDivInfo = document.createElement('div');
+    productDivInfo.classList.add('product-info');
+
+    const pValor = document.createElement('p');
+    pValor.innerText = '$' + product[0].price;
+
+    const pNombreProduct = document.createElement('p');
+    pNombreProduct.innerText = product[0].name;
+        
+    const pInfoProduct = document.createElement('p');
+    pInfoProduct.innerText = product[0].name; //ir a crearle info al producto en el objeto********
+
+    const productButton = document.createElement('button');
+    productButton.classList.add('primary-button');
+    productButton.classList.add('add-to-cart-button');
+    productButton.innerText = 'Add to Cart';
+
+    const iconoCompraCarrito = document.createElement('img');
+    iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
+
+
+   productDivClose.appendChild(productIconoClose);
+
+    productButton.appendChild(iconoCompraCarrito);
+    
+    productDivInfo.appendChild(pValor);
+    productDivInfo.appendChild(pNombreProduct);
+    productDivInfo.appendChild(pInfoProduct);
+    productDivInfo.appendChild(productButton);
+
+    menuDetalleCadaCompra.appendChild(productDivClose);    
+    menuDetalleCadaCompra.appendChild(productImg);
+    menuDetalleCadaCompra.appendChild(productDivInfo);
+       // };
+    }
+
+
+
 function openDesplegableCompra() {
 
     // const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -115,7 +165,7 @@ function openDesplegableCompra() {
     //aqui no hubo necesidad de poner condicionales y todo eso, por que no se
 
     //necesitamos renderizar esta parte, en el menu de detalles de cada compra
-
+    mostrarCadaProducto(camisetasHombreList) 
     /* <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             alt="bike">
         <div class="product-info">
@@ -131,47 +181,7 @@ function openDesplegableCompra() {
 
 
     //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
-    function mostrarCadaProducto(arrElements) {
-    for (product of arrElements) {
-
-
-    const productIconoClose = document.createElement('div');
-    productIconoClose.classList.add('product-detail-close');
-    const productImgClose = document.createElement('img');
-    productImgClose.setAttribute('src','./icons/icon_close.png');
-      
-
-    const productImg = document.createElement('img');
-    productImg.setAttribute('src', product.image);
     
-    const productInfo = document.createElement('div');
-    productInfo.classList.add('product-info');
-
-    const pValor = document.createElement('p');
-    pValor.innerText = '$' + product.price;
-
-    const pNombreProduct = document.createElement('p');
-    pNombreProduct.innerText = product.name;
-        
-    const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
-
-    const productButton = document.createElement('button');
-    productButton.classList.add('primary-button add-to-cart-button')
-
-
-    productIconoClose.appendChild(productImgClose);
-    
-    productInfo.appendChild(pValor);
-    productInfo.appendChild(pNombreProduct);
-    productInfo.appendChild(pInfoProduct);
-    productInfo.appendChild(productButton);
-
-    menuDetalleCadaCompra.appendChild(productIconoClose);    
-    menuDetalleCadaCompra.appendChild(productImg);
-    menuDetalleCadaCompra.appendChild(productInfo);
-        };
-    }
     //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
     
     menuDetalleCadaCompra.classList.remove('inactive');// no add, por que queremos quiotarle la clase inactive que ya tiene y asi aparezca el menu detalles de esa compra. no le pusimos add o toggle, por que la idea es que se pueda cerrar la imagen desde el icono o imagen  "X" que tiene cada imagen.
@@ -582,7 +592,10 @@ function renderObjetosHTML(arrElements) {
     // product = {name, price, image} --> product.image
     productImg.setAttribute('src', product.image);
 
-    productImg.addEventListener('click', openDesplegableCompra);// que me habra una funcion para desplegar el aside que contiene el menu con el detalle de cada compra. Le pusimos open y no toggle, por que solo queremos que lo habra, no que lo aparezca y desaparezca.
+        productImg.addEventListener('click', openDesplegableCompra);// que me habra una funcion para desplegar el aside que contiene el menu con el detalle de cada compra. Le pusimos open y no toggle, por que solo queremos que lo habra, no que lo aparezca y desaparezca.
+        
+
+        
     
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
