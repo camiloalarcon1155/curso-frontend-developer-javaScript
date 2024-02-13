@@ -165,18 +165,25 @@ function renderOtrasPrendas() {
 
 
 function mostrarMiInformacion() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
     const divInfoEmpresa = document.createElement('div');
     divInfoEmpresa.classList.add('contInfoEsmpresa')
 
+    const h1Mision = document.createElement('h1');
+    h1Mision.innerText ='Misión';
     const pMision = document.createElement('p');
     pMision.classList.add('misionEmpresa');
     
+    const h1Vision = document.createElement('h1');
+    h1Vision.innerText= 'Visión';
     const pVision = document.createElement('p');
     pVision.classList.add('vsionEmpresa');
 
+    const h1Nosotros = document.createElement('h1');
+    h1Nosotros.innerText = 'Quienes somos';
     const pNosotros = document.createElement('p');
     pNosotros.classList.add('infoNosotros');
 
@@ -187,9 +194,11 @@ function mostrarMiInformacion() {
 
     pNosotros.innerText = 'En nuestra tienda de ropa, nos apasiona la moda y creemos en el poder transformador que tiene la ropa para elevar la confianza y la autoexpresión. Nuestra dedicada equipo está compuesto por expertos en moda y servicio al cliente, comprometidos a proporcionar una experiencia de compra excepcional a cada cliente que cruza nuestras puertas o visita nuestra tienda en línea. Nos enorgullece ofrecer una amplia selección de prendas de vestir de alta calidad, cuidadosamente seleccionadas para reflejar las últimas tendencias y satisfacer las necesidades de nuestros clientes. Como empresa, nos esforzamos por mantener altos estándares de ética y responsabilidad social, trabajando en estrecha colaboración con proveedores y comunidades para promover la sostenibilidad y el bienestar. Estamos comprometidos a inspirar confianza y empoderamiento a través de la moda, creando un espacio donde todos son bienvenidos y pueden encontrar su estilo único.'
 
-
+    divInfoEmpresa.appendChild(h1Mision);
     divInfoEmpresa.appendChild(pMision);
+    divInfoEmpresa.appendChild(h1Vision);
     divInfoEmpresa.appendChild(pVision);
+    divInfoEmpresa.appendChild(h1Nosotros);
     divInfoEmpresa.appendChild(pNosotros);
 
     cardsContainer.appendChild(divInfoEmpresa);
