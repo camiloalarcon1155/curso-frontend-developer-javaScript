@@ -67,9 +67,10 @@
         }
 
         .navbar-left ul li a:hover,
-        .navbar-right ul li a:hover {
+        .navbar-email:hover {
             border: 1px solid var(--hospital-green);
             color: var(--hospital-green);
+            cursor:pointer;
         }
 
         .navbar-email {
@@ -81,6 +82,7 @@
 
         .navbar-shopping-cart {
             position: relative;
+            cursor:pointer;
         }
 
         .navbar-shopping-cart div {
@@ -148,10 +150,14 @@
       padding: 24px;
       width: 100%;
     }
-    .mobile-menu a {
-      text-decoration: none;
-      color: var(--black);
-      font-weight: bold;
+
+    .mobile-menu a:hover {
+        border: 1px solid var(--hospital-green);
+        color: var(--hospital-green);
+        text-decoration: none;
+        color: var(--black);
+        font-weight: bold;
+        cursor:pointer;
       /* margin-bottom: 24px; */
     }
     .mobile-menu ul {

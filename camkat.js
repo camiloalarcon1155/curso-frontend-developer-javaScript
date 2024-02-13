@@ -11,12 +11,24 @@ const cardsContainer = document.querySelector('.cards-container'); // lo traemos
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
 const productDetailCloseIcono = document.querySelector('.product-detail-close') // lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
 const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a llevar cada lista de productos
-const opcionRopaTodo = document.querySelector('.opcionTodo');
-const opcionRopaCamisetasH= document.querySelector('.opcionCamisetasH');
-const OpcionRopaJeansH = document.querySelector('.OpcionJeansH');
-const opcionRopachaquetasM = document.querySelector('.opcionchaquetasM');
-const opcionRopaJeansM = document.querySelector('.opcionJeansM');
-const opcionRopaOtrasPrendas = document.querySelector('.opcionOtrasPrendas');
+
+const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
+const opcionRopaTodoMov = document.querySelector('.opcionTodoMobil');
+
+const opcionRopaCamisetasHDesk = document.querySelector('.opcionCamisetasHDesktop');
+const opcionRopaCamisetasHMov = document.querySelector('.opcionCamisetasHMobil');
+
+const OpcionRopaJeansHDesk = document.querySelector('.OpcionJeansHDesktop');
+const OpcionRopaJeansHMov = document.querySelector('.OpcionJeansHMobil');
+
+const opcionRopachaquetasMDesk = document.querySelector('.opcionchaquetasMDesktop');
+const opcionRopachaquetasMMov = document.querySelector('.opcionchaquetasMMobil');
+
+const opcionRopaJeansMDesk = document.querySelector('.opcionJeansMDesktop');
+const opcionRopaJeansMMov = document.querySelector('.opcionJeansMMobil');
+
+const opcionRopaOtrasPrendasDesk = document.querySelector('.opcionOtrasPrendasDesktop');
+const opcionRopaOtrasPrendasMov = document.querySelector('.opcionOtrasPrendasMobil');
 
 
 
@@ -106,6 +118,7 @@ function closeDesplegableCompra() {
 
 
 function renderTodoRopa() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(camisetasHombreList);
@@ -116,30 +129,35 @@ function renderTodoRopa() {
 }
 
 function renderCamisetasH() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
 }
 
 function renderJeansH() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
 }
 
 function renderJeansM() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
 }
 
 function renderchaquetasM() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
 }
 
 function renderOtrasPrendas() {
+    mobileMenuIHam.classList.toggle('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -505,19 +523,35 @@ function renderObjetosHTML(arrElements) {
 // De esta forma tambien se podrian eviar los arreglos desde el backend y usarlos automaticamente con esta funcion. o que tambie se puede ejcutar cuando le demos click a un boton o lo que sea. como funcion es mucho mas util que dejar el for ahi tirado.
 
 //renderObjetosHTML(listaFalsa)
-opcionRopaTodo.addEventListener("click", renderTodoRopa);
 
-opcionRopaCamisetasH.addEventListener("click", renderCamisetasH);
+//aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
 
-OpcionRopaJeansH.addEventListener("click", renderJeansH);
+opcionRopaTodoDesk.addEventListener("click", renderTodoRopa);
 
-opcionRopaJeansM.addEventListener("click", renderJeansM);
+opcionRopaCamisetasHDesk.addEventListener("click", renderCamisetasH);
 
-opcionRopachaquetasM.addEventListener("click", renderchaquetasM);
+OpcionRopaJeansHDesk.addEventListener("click", renderJeansH);
 
-opcionRopaOtrasPrendas.addEventListener("click", renderOtrasPrendas);
+opcionRopaJeansMDesk.addEventListener("click", renderJeansM);
+
+opcionRopachaquetasMDesk.addEventListener("click", renderchaquetasM);
+
+opcionRopaOtrasPrendasDesk.addEventListener("click", renderOtrasPrendas);
 
 
+//ahora vamos a hacer lo mismo para el menu movil:
+
+opcionRopaTodoMov.addEventListener("click", renderTodoRopa);
+
+opcionRopaCamisetasHMov.addEventListener("click", renderCamisetasH);
+
+OpcionRopaJeansHMov.addEventListener("click", renderJeansH);
+
+opcionRopaJeansMMov.addEventListener("click", renderJeansM);
+
+opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
+
+opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas);
 
 // opcionRopaCamisetasH.addEventListener('click', renderObjetosHTML(camisetasHombreList));
 
