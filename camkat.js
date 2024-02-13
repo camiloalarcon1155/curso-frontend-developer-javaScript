@@ -9,7 +9,13 @@ const menuCarritoIcon  = document.querySelector('.navbar-shopping-cart');
 const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); // lo traemos para meter el div que contiene el template de nuestro objeto productos
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
-const productDetailCloseIcono = document.querySelector('.product-detail-close') // lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
+
+
+//const productDetailCloseIcono = document.querySelector('.product-detail-close')
+
+
+
+// lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
 const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a llevar cada lista de productos
 
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
@@ -106,10 +112,72 @@ function openDesplegableCompra() {
 
     menuCarritoCompras.classList.add('inactive');
 
-    //aqui no hubo necesidad de poner condicionales y todo eso, por que no se 
+    //aqui no hubo necesidad de poner condicionales y todo eso, por que no se
 
+    //necesitamos renderizar esta parte, en el menu de detalles de cada compra
+
+    /* <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt="bike">
+        <div class="product-info">
+            <p>$35,00</p>
+            <p>Bike</p>
+            <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+            <button class="primary-button add-to-cart-button">
+                <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+                Add to cart
+            </button> */
+    
+    //aqui vamos:
+
+
+    //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
+    function mostrarCadaProducto(arrElements) {
+    for (product of arrElements) {
+
+
+    const productIconoClose = document.createElement('div');
+    productIconoClose.classList.add('product-detail-close');
+    const productImgClose = document.createElement('img');
+    productImgClose.setAttribute('src','./icons/icon_close.png');
+      
+
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
+    
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+
+    const pValor = document.createElement('p');
+    pValor.innerText = '$' + product.price;
+
+    const pNombreProduct = document.createElement('p');
+    pNombreProduct.innerText = product.name;
+        
+    const pInfoProduct = document.createElement('p');
+    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
+
+    const productButton = document.createElement('button');
+    productButton.classList.add('primary-button add-to-cart-button')
+
+
+    productIconoClose.appendChild(productImgClose);
+    
+    productInfo.appendChild(pValor);
+    productInfo.appendChild(pNombreProduct);
+    productInfo.appendChild(pInfoProduct);
+    productInfo.appendChild(productButton);
+
+    menuDetalleCadaCompra.appendChild(productIconoClose);    
+    menuDetalleCadaCompra.appendChild(productImg);
+    menuDetalleCadaCompra.appendChild(productInfo);
+        };
+    }
+    //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
+    
     menuDetalleCadaCompra.classList.remove('inactive');// no add, por que queremos quiotarle la clase inactive que ya tiene y asi aparezca el menu detalles de esa compra. no le pusimos add o toggle, por que la idea es que se pueda cerrar la imagen desde el icono o imagen  "X" que tiene cada imagen.
 }
+
+
 
 function closeDesplegableCompra() {
     menuDetalleCadaCompra.classList.add('inactive');
