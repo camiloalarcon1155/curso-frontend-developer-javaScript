@@ -340,6 +340,9 @@
     /* configs de adicion de productos */
 
 /* esta es para un titulo puesto antes del div cards container */
+    .main-container{
+        background-color: #F8F0E5;
+    }
 
     .main-container h1 {
         display : flex;
@@ -392,6 +395,23 @@
       color: var(--very-light-pink);
     }
    
+
+    /* configs de mision, vision y nosotros */
+
+    .contInfoEsmpresa{
+        width: 100%;
+        background-color:#DAC0A3;   
+        padding: 20 20;     
+    }
+
+    .pMision
+    .pVision
+    .pNosotros {
+        
+        
+    }
+
+
 
         @media (max-width: 640px) {
             .menu {

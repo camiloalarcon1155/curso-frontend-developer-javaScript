@@ -30,6 +30,8 @@ const opcionRopaJeansMMov = document.querySelector('.opcionJeansMMobil');
 const opcionRopaOtrasPrendasDesk = document.querySelector('.opcionOtrasPrendasDesktop');
 const opcionRopaOtrasPrendasMov = document.querySelector('.opcionOtrasPrendasMobil');
 
+const logoCamkat = document.querySelector('.logo')
+
 
 
 
@@ -41,11 +43,9 @@ menuHamIcon.addEventListener('click', ToggleMobilMenu);
 
 menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
 
-productDetailCloseIcono.addEventListener('click', closeDesplegableCompra)
+productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
 
-//cuando le den click a cada categoria de ropa, vamos a llamar a la funcion que escoge el renderizado
-
-
+logoCamkat.addEventListener('click',mostrarMiInformacion);
 
 
 
@@ -162,6 +162,39 @@ function renderOtrasPrendas() {
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
 }
+
+
+function mostrarMiInformacion() {
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
+
+    const divInfoEmpresa = document.createElement('div');
+    divInfoEmpresa.classList.add('contInfoEsmpresa')
+
+    const pMision = document.createElement('p');
+    pMision.classList.add('misionEmpresa');
+    
+    const pVision = document.createElement('p');
+    pVision.classList.add('vsionEmpresa');
+
+    const pNosotros = document.createElement('p');
+    pNosotros.classList.add('infoNosotros');
+
+
+    pMision.innerText = 'En nuestra tienda de ropa, nos dedicamos a ofrecer a nuestros clientes una experiencia de compra excepcional al proporcionar prendas de vestir de alta calidad que reflejan las últimas tendencias de la moda. Nos esforzamos por brindar un servicio al cliente excepcional, creando un ambiente acogedor y colaborativo donde cada cliente se sienta valorado y escuchado. Nuestra misión es inspirar confianza y empoderamiento a través de la moda, ayudando a nuestros clientes a expresar su estilo único y sentirse seguros en cada ocasión.'
+    
+    pVision.innerText = 'Nuestra visión es convertirnos en la principal opción para aquellos que buscan moda de calidad y un servicio excepcional. Buscamos expandir nuestra presencia tanto en línea como en tiendas físicas, llegando a nuevos mercados y comunidades para compartir nuestra pasión por la moda con un público cada vez mayor. Nos esforzamos por ser reconocidos como líderes en la industria de la moda por nuestra innovación, sostenibilidad y compromiso con la satisfacción del cliente.'
+
+    pNosotros.innerText = 'En nuestra tienda de ropa, nos apasiona la moda y creemos en el poder transformador que tiene la ropa para elevar la confianza y la autoexpresión. Nuestra dedicada equipo está compuesto por expertos en moda y servicio al cliente, comprometidos a proporcionar una experiencia de compra excepcional a cada cliente que cruza nuestras puertas o visita nuestra tienda en línea. Nos enorgullece ofrecer una amplia selección de prendas de vestir de alta calidad, cuidadosamente seleccionadas para reflejar las últimas tendencias y satisfacer las necesidades de nuestros clientes. Como empresa, nos esforzamos por mantener altos estándares de ética y responsabilidad social, trabajando en estrecha colaboración con proveedores y comunidades para promover la sostenibilidad y el bienestar. Estamos comprometidos a inspirar confianza y empoderamiento a través de la moda, creando un espacio donde todos son bienvenidos y pueden encontrar su estilo único.'
+
+
+    divInfoEmpresa.appendChild(pMision);
+    divInfoEmpresa.appendChild(pVision);
+    divInfoEmpresa.appendChild(pNosotros);
+
+    cardsContainer.appendChild(divInfoEmpresa);
+}
+
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
