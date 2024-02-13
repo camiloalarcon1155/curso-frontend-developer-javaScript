@@ -118,7 +118,8 @@ function closeDesplegableCompra() {
 
 
 function renderTodoRopa() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(camisetasHombreList);
@@ -129,35 +130,40 @@ function renderTodoRopa() {
 }
 
 function renderCamisetasH() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
 }
 
 function renderJeansH() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
 }
 
 function renderJeansM() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
 }
 
 function renderchaquetasM() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
 }
 
 function renderOtrasPrendas() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -165,7 +171,8 @@ function renderOtrasPrendas() {
 
 
 function mostrarMiInformacion() {
-    mobileMenuIHam.classList.toggle('inactive');
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
