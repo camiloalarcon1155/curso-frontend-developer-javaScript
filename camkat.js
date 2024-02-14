@@ -100,9 +100,22 @@ function ToggleCarritoCompras() {
 
 
 function mostrarCadaProducto(arrElements) {
-    //for (product of arrElements) {
-    product = arrElements;
 
+    let cosas = arrElements;
+
+    let product = [];
+    for (let i = 0; i < catalogoCompletoList.length; i++) {
+         
+        console.log(catalogoCompletoList[i].image)
+        console.log(cosas[i].image)
+
+        if (cosas[i].image == catalogoCompletoList[i].image) {
+            product = catalogoCompletoList[i]
+            console.log('nada');
+        }
+    }
+    
+       
     const productDivClose = document.createElement('div');
     productDivClose.classList.add('product-detail-close');
     const productIconoClose = document.createElement('img');
@@ -110,19 +123,19 @@ function mostrarCadaProducto(arrElements) {
     
 
     const productImg = document.createElement('img');
-    productImg.setAttribute('src', product[0].image);
+    productImg.setAttribute('src', product.image);
     
     const productDivInfo = document.createElement('div');
     productDivInfo.classList.add('product-info');
 
     const pValor = document.createElement('p');
-    pValor.innerText = '$' + product[0].price;
+    pValor.innerText = '$' + product.price;
 
     const pNombreProduct = document.createElement('p');
-    pNombreProduct.innerText = product[0].name;
+    pNombreProduct.innerText = product.name;
         
     const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = product[0].name; //ir a crearle info al producto en el objeto********
+    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
 
     const productButton = document.createElement('button');
     productButton.classList.add('primary-button');
@@ -146,45 +159,24 @@ function mostrarCadaProducto(arrElements) {
     menuDetalleCadaCompra.appendChild(productImg);
     menuDetalleCadaCompra.appendChild(productDivInfo);
        // };
+    
+
+
+
+    //for (product of arrElements) {
+    //product = arrElements;
+
     }
 
 
 
 function openDesplegableCompra() {
 
-    // const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    // if (!ismMenuCarritoComprasClosed) {
-    //     menuCarritoCompras.classList.add('inactive');
-    // }
-    // menuCarritoCompras.classList.toggle('inactive');
-
-    //👇👇👇👇👇El uso de classList.contains('inactive') seguido de classList.add('inactive') dentro de una condición if se refiere a verificar primero si el elemento ya tiene la clase inactive antes de añadirla. Esto se utiliza para asegurarse de que la clase inactive solo se añada si el elemento no está ya oculto. En el caso específico de la función openDesplegableCompra(), se utiliza classList.add('inactive') directamente porque el objetivo es cerrar el elemento de todos modos, independientemente de su estado actual.
-
     menuCarritoCompras.classList.add('inactive');
 
-    //aqui no hubo necesidad de poner condicionales y todo eso, por que no se
-
-    //necesitamos renderizar esta parte, en el menu de detalles de cada compra
     mostrarCadaProducto(camisetasHombreList) 
-    /* <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            alt="bike">
-        <div class="product-info">
-            <p>$35,00</p>
-            <p>Bike</p>
-            <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-            <button class="primary-button add-to-cart-button">
-                <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
-                Add to cart
-            </button> */
-    
-    //aqui vamos:
-
-
-    //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
-    
-    //🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀🍀
-    
-    menuDetalleCadaCompra.classList.remove('inactive');// no add, por que queremos quiotarle la clase inactive que ya tiene y asi aparezca el menu detalles de esa compra. no le pusimos add o toggle, por que la idea es que se pueda cerrar la imagen desde el icono o imagen  "X" que tiene cada imagen.
+ 
+    menuDetalleCadaCompra.classList.remove('inactive'); 
 }
 
 
