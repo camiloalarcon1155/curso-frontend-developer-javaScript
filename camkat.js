@@ -100,20 +100,47 @@ function ToggleCarritoCompras() {
 
 
 function mostrarCadaProducto(arrElements) {
+    //
+    // for (let i = 0; i < cosas.length; i++) {
+    //     const cosaImage = cosas[i].image;
+    //     //let found = false;
+
+    //     for (let j = 0; j < catalogoCompletoList.length; j++) {
+    //         if (cosaImage === catalogoCompletoList[j].image) {
+    //             product = catalogoCompletoList[j];
+    //             console.log('La imagen de cosas se encontró en catalogoCompletoList');
+    //       //      found = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if (!found) {
+    //         console.log('La imagen de cosas no se encontró en catalogoCompletoList');
+    //     }
+    // }
 
     let cosas = arrElements;
 
     let product = [];
-    for (let i = 0; i < catalogoCompletoList.length; i++) {
+    for (let i = 0; i < cosas.length; i++) {
+        let arregloImage = cosas[i].image;
          
-        console.log(catalogoCompletoList[i].image)
-        console.log(cosas[i].image)
+        for (let j = 0; j < catalogoCompletoList.length; j++) {
 
-        if (cosas[i].image == catalogoCompletoList[i].image) {
-            product = catalogoCompletoList[i]
-            console.log('nada');
+            console.log('i:' + (j + 1));
+            console.log(arregloImage);
+            console.log(catalogoCompletoList[j].image);
+            
+            
+            if (arregloImage === catalogoCompletoList[j].image) {
+                console.log('encontrada');
+
+                product = catalogoCompletoList[j]
+                console.log(product)
+            }
         }
     }
+ 
     
        
     const productDivClose = document.createElement('div');
@@ -123,6 +150,7 @@ function mostrarCadaProducto(arrElements) {
     
 
     const productImg = document.createElement('img');
+
     productImg.setAttribute('src', product.image);
     
     const productDivInfo = document.createElement('div');
@@ -158,23 +186,17 @@ function mostrarCadaProducto(arrElements) {
     menuDetalleCadaCompra.appendChild(productDivClose);    
     menuDetalleCadaCompra.appendChild(productImg);
     menuDetalleCadaCompra.appendChild(productDivInfo);
-       // };
-    
-
-
-
-    //for (product of arrElements) {
-    //product = arrElements;
 
     }
 
 
 
-function openDesplegableCompra() {
+ function openDesplegableCompra() {
+    menuDetalleCadaCompra.clear;
 
     menuCarritoCompras.classList.add('inactive');
 
-    mostrarCadaProducto(camisetasHombreList) 
+   //mostrarCadaProducto(camisetasHombreList) 
  
     menuDetalleCadaCompra.classList.remove('inactive'); 
 }
@@ -192,11 +214,7 @@ function renderTodoRopa() {
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
-    renderObjetosHTML(camisetasHombreList);
-    renderObjetosHTML(jeansHombreList);
-    renderObjetosHTML(jeansMujerList);
-    renderObjetosHTML(chaquetasDamaList);
-    renderObjetosHTML(otrasPrendasList);
+    renderObjetosHTML(catalogoCompletoList);
 }
 
 function renderCamisetasH() {
@@ -345,6 +363,150 @@ catalogoCompletoList.push({
     name: 'Camiseta color rosa',
     price: 25000,
     image: "https://i.imgur.com/NOKEmj4.jpeg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 18000,
+    image: "https://i.imgur.com/vDXf8Xf.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 19000,
+    image: "https://i.imgur.com/o2XCN3K.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 20000,
+    image: "https://i.imgur.com/OYXPR4i.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 21000,
+    image: "https://i.imgur.com/Vso5GyJ.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 22000,
+    image: "https://i.imgur.com/fcW97Gd.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean DSqueared',
+    price: 25000,
+    image: "https://i.imgur.com/p9FbDYj.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Jean Economico Dama',
+    price: 18000,
+    image: "https://i.imgur.com/XsWPVsy.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta azul',
+    price: 19000,
+    image: "https://i.imgur.com/0csXwNY.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta blanca',
+    price: 20000,
+    image: "https://i.imgur.com/EsKMf8k.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta rojo',
+    price: 21000,
+    image: "https://i.imgur.com/VyuxoLh.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta color negro',
+    price: 22000,
+    image: "https://i.imgur.com/1oQSVsT.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Camiseta color rosa',
+    price: 25000,
+    image: "https://i.imgur.com/EmY5huB.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta1',
+    price: 18000,
+    image: "https://i.imgur.com/3VTii84.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta2',
+    price: 19000,
+    image: "https://i.imgur.com/0V3Zk5v.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta3',
+    price: 20000,
+    image: "https://i.imgur.com/wWPiLqy.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta4',
+    price: 21000,
+    image: "https://i.imgur.com/mMEAfyy.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta5',
+    price: 22000,
+    image: "https://i.imgur.com/cDpjfGJ.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Chaqueta6',
+    price: 25000,
+    image: "https://i.imgur.com/1Zjfk6P.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Pijama',
+    price: 18000,
+    image: "https://i.imgur.com/TYkYiGZ.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Pijama red',
+    price: 19000,
+    image: "https://i.imgur.com/ypsTb0K.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Jean negro',
+    price: 20000,
+    image: "https://i.imgur.com/J6GGYWG.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'jean moico abano',
+    price: 21000,
+    image: "https://i.imgur.com/MGrFmzD.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'Jean moico negro',
+    price: 22000,
+    image: "https://i.imgur.com/mVsNUxA.jpg"
+});
+
+catalogoCompletoList.push({
+    name: 'polilicra',
+    price: 25000,
+    image: "https://i.imgur.com/BrNHjvr.jpeg"
 });
 
 
@@ -584,7 +746,7 @@ function renderObjetosHTML(arrElements) {
     // product = {name, price, image} --> product.image
     productImg.setAttribute('src', product.image);
 
-        productImg.addEventListener('click', openDesplegableCompra);// que me habra una funcion para desplegar el aside que contiene el menu con el detalle de cada compra. Le pusimos open y no toggle, por que solo queremos que lo habra, no que lo aparezca y desaparezca.
+        productImg.addEventListener('click', abrirDesplegableCompra);// que me habra una funcion para desplegar el aside que contiene el menu con el detalle de cada compra. Le pusimos open y no toggle, por que solo queremos que lo habra, no que lo aparezca y desaparezca.
         
 
         
@@ -630,6 +792,55 @@ function renderObjetosHTML(arrElements) {
     cardsContainer.appendChild(productCard);
     }; // este for esta bien yy completo, pèro no es buena practica que este ahi tirado. lo mejor meterlo en una funcion y llamarlo, enviandole c0mo parametro  un array y de ese array se hace el for (product of array)
     
+
+
+    function abrirDesplegableCompra() {
+    const productDivClose = document.createElement('div');
+    productDivClose.classList.add('product-detail-close');
+    const productIconoClose = document.createElement('img');
+    productIconoClose.setAttribute('src','./icons/icon_close.png');
+    
+
+    const productImgAside = document.createElement('img');
+
+    productImgAside.setAttribute('src', product.image);
+    
+    const productDivInfo = document.createElement('div');
+    productDivInfo.classList.add('product-info');
+
+    const pValorAside = document.createElement('p');
+    pValorAside.innerText = '$' + product.price;
+
+    const pNombreProductAside = document.createElement('p');
+    pNombreProductAside.innerText = product.name;
+        
+    const pInfoProduct = document.createElement('p');
+    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
+
+    const productButton = document.createElement('button');
+    productButton.classList.add('primary-button');
+    productButton.classList.add('add-to-cart-button');
+    productButton.innerText = 'Add to Cart';
+
+    const iconoCompraCarrito = document.createElement('img');
+    iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
+
+
+   productDivClose.appendChild(productIconoClose);
+
+    productButton.appendChild(iconoCompraCarrito);
+    
+    productDivInfo.appendChild(pValorAside);
+    productDivInfo.appendChild(pNombreProductAside);
+    productDivInfo.appendChild(pInfoProduct);
+    productDivInfo.appendChild(productButton);
+
+    menuDetalleCadaCompra.appendChild(productDivClose);    
+    menuDetalleCadaCompra.appendChild(productImgAside);
+    menuDetalleCadaCompra.appendChild(productDivInfo);
+    }
+
+    openDesplegableCompra()
 
     }
 
