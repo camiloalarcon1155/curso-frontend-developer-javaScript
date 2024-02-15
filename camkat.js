@@ -861,19 +861,21 @@ function renderObjetosHTML(arrElements) {
 
 
     function DesplegableCompra(objAsignado) {
-    //menuDetalleCadaCompra.innerHTML = '';
+    menuDetalleCadaCompra.innerHTML = '';
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
     if (!ismMenuCarritoComprasClosed) {
     menuCarritoCompras.classList.add('inactive');
-    } //mobileMenuIHam.classList.toggle('inactive');
+    } 
 
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
     mobileMenuIHam.classList.add('inactive');
-        }  //menuCarritoCompras.classList.toggle('inactive');
+        }  
         
-    menuDetalleCadaCompra.classList.toggle('inactive');
-        
+    const isDesktopMenuEmaiClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmaiClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+        } 
     
     const productDivClose = document.createElement('div');
     productDivClose.classList.add('product-detail-close');
