@@ -25,16 +25,6 @@ function toggleDesktopMenu() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // function iniciarMenuGeneral() {
 //     sectionMenuOrdenes.style.display = 'none';
     

@@ -718,45 +718,28 @@ listaFalsa.push({
 
 function renderObjetosHTML(arrElements) {
     for (product of arrElements) {
-//console.log(product.image);
-    //lo que haremos aqui es ir creando cada etiqueta o elemento de la plantilla que tenemos para cada producto en html:
 
-/* 
-    <div class="product-card">
-                <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="">
-                <div class="product-info">
-                    <div>
-                        <p>$120,00</p>
-                        <p>Bike</p>
-                    </div>
-                    <figure>
-                        <img src="./icons/bt_add_to_cart.svg" alt="">
-                    </figure>
-                </div>
-            </div> 
-*/
-    
-    //y a medida que los creamos, les iremos agregando su clase ... :
 
-    const productCard = document.createElement('div'); // creamos un elemnto tipo Div, para poder despues introducir cada elememento creado con nuestro template sobre pdoductos.
+    const productCard = document.createElement('div'); 
     productCard.classList.add('product-card');
 
     const productImg = document.createElement('img');
-    // product = {name, price, image} --> product.image
+  
     productImg.setAttribute('src', product.image);
-
-        productImg.addEventListener('click', abrirDesplegableCompra);// que me habra una funcion para desplegar el aside que contiene el menu con el detalle de cada compra. Le pusimos open y no toggle, por que solo queremos que lo habra, no que lo aparezca y desaparezca.
         
-
-        
+   /*  productImg.addEventListener('click', () => DesplegableCompra(product)); */
     
+    productImg.addEventListener('click', ((obj) => {
+    return function() {
+        DesplegableCompra(obj);
+    };
+    })(product));
+        
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
 
     const productInfoDiv = document.createElement('div');
     
-
     const pValor = document.createElement('p');
     pValor.innerText = '$' + product.price;
 
@@ -769,32 +752,30 @@ function renderObjetosHTML(arrElements) {
     
     productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg');
 
-    //y por ultimo debemos meter cada elemento hijo dentro de su padre con appendChild...:
+  
     
     productInfoIcono.appendChild(productImgCart);
 
-    //productInfoDiv.appendChild(pValor, pNombreProduct)
     productInfoDiv.appendChild(pValor);
     productInfoDiv.appendChild(pNombreProduct);
 
-     //productInfo.appendChild(productInfoDiv, productInfoIcono)
     productInfo.appendChild(productInfoDiv);
     productInfo.appendChild(productInfoIcono);
     
-   // productImg.appendChild();
-
-     //productCard.appendChild(productImg, productInfo)
     productCard.appendChild(productImg);
     productCard.appendChild(productInfo);
 
-    //Ahora ya tenemos todas las etiquetas hijo dentro de su etiqueta padre. lo que haremos ahora es meter la etiqueta mas grande que trajimos desde nuestro html, en la etiqueta "<div class="cards-container">" que esta ya en html, para eso la traemos desde html con un queryselector y lo introducimos con un appendchild
     
     cardsContainer.appendChild(productCard);
-    }; // este for esta bien yy completo, pèro no es buena practica que este ahi tirado. lo mejor meterlo en una funcion y llamarlo, enviandole c0mo parametro  un array y de ese array se hace el for (product of array)
+    }; 
+
+
+
+    function DesplegableCompra(objAsignado) {
     
+    
+    console.log(objAsignado)
 
-
-    function abrirDesplegableCompra() {
     const productDivClose = document.createElement('div');
     productDivClose.classList.add('product-detail-close');
     const productIconoClose = document.createElement('img');
@@ -803,19 +784,19 @@ function renderObjetosHTML(arrElements) {
 
     const productImgAside = document.createElement('img');
 
-    productImgAside.setAttribute('src', product.image);
+    productImgAside.setAttribute('src', objAsignado.image);
     
     const productDivInfo = document.createElement('div');
     productDivInfo.classList.add('product-info');
 
     const pValorAside = document.createElement('p');
-    pValorAside.innerText = '$' + product.price;
+    pValorAside.innerText = '$' + objAsignado.price;
 
     const pNombreProductAside = document.createElement('p');
-    pNombreProductAside.innerText = product.name;
+    pNombreProductAside.innerText = objAsignado.name;
         
     const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
+    pInfoProduct.innerText = objAsignado.name; //ir a crearle info al producto en el objeto********
 
     const productButton = document.createElement('button');
     productButton.classList.add('primary-button');
