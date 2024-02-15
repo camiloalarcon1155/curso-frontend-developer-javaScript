@@ -731,9 +731,11 @@ function renderObjetosHTML(arrElements) {
     
     productImg.addEventListener('click', ((obj) => {
     return function() {
-        DesplegableCompra(obj);
+        DesplegableCompra(obj); //permite obtener la variable inmediatamente cuando se le da click
     };
     })(product));
+
+    // productImg.addEventListener('click', ((obj) => {return function() {DesplegableCompra(obj);};})(product));
         
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');

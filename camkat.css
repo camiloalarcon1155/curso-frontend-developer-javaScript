@@ -294,7 +294,7 @@
     }
     #productDetail > img:nth-child(2) {
       width: 100%;
-      height: 300px;/* estaba en 360, parecia  muy alto */
+      height: 360px;/* estaba en 360, parecia  muy alto */
       object-fit: cover;
       border-radius: 0 0 20px 20px;
     }
