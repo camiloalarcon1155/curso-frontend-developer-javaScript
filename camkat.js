@@ -74,6 +74,11 @@ function ToggleMobilMenu() {
     }
 
     //closeDesplegableCompra()
+
+    const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
+    if (!isMenuDetalleCadaCompraClosed) {
+    menuDetalleCadaCompra.classList.add('inactive');
+    } 
     
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
     
@@ -89,6 +94,11 @@ function ToggleCarritoCompras() {
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
     }
+
+     const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
+    if (!isMenuDetalleCadaCompraClosed) {
+    menuDetalleCadaCompra.classList.add('inactive');
+    } 
 
     //const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
 
@@ -194,12 +204,12 @@ function mostrarCadaProducto(arrElements) {
 
  function openDesplegableCompra() {
     //menuDetalleCadaCompra.clear;
-
-    menuCarritoCompras.classList.add('inactive');
+    menuDetalleCadaCompra.classList.remove('inactive'); 
+    //menuCarritoCompras.classList.add('inactive');
 
    //mostrarCadaProducto(camisetasHombreList) 
  
-    menuDetalleCadaCompra.classList.remove('inactive'); 
+    
 }
 
 
@@ -215,6 +225,7 @@ function renderTodoRopa() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -224,6 +235,7 @@ function renderCamisetasH() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -233,6 +245,7 @@ function renderJeansH() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -242,6 +255,7 @@ function renderJeansM() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -251,6 +265,7 @@ function renderchaquetasM() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -260,6 +275,7 @@ function renderOtrasPrendas() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -270,6 +286,7 @@ function mostrarMiInformacion() {
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
@@ -844,20 +861,20 @@ function renderObjetosHTML(arrElements) {
 
 
     function DesplegableCompra(objAsignado) {
+    //menuDetalleCadaCompra.innerHTML = '';
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
+    if (!ismMenuCarritoComprasClosed) {
+    menuCarritoCompras.classList.add('inactive');
+    } //mobileMenuIHam.classList.toggle('inactive');
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+    mobileMenuIHam.classList.add('inactive');
+        }  //menuCarritoCompras.classList.toggle('inactive');
+        
+    menuDetalleCadaCompra.classList.toggle('inactive');
+        
     
-    // const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    // if (!isMenuDetalleCadaCompraClosed) {
-    //     menuDetalleCadaCompra.classList.add('inactive');
-    // }
-    // menuDetalleCadaCompra.classList.add('inactive');
-        //mobileMenuIHam.classList.add('inactive');
-        //menuCarritoCompras.classList.add('inactive');
-        
-    console.log(objAsignado)
-        menuDetalleCadaCompra.innerHTML = '';
-        
-
-
     const productDivClose = document.createElement('div');
     productDivClose.classList.add('product-detail-close');
     const productIconoClose = document.createElement('img');
@@ -908,6 +925,7 @@ function renderObjetosHTML(arrElements) {
     menuDetalleCadaCompra.appendChild(productDivInfo);
     }
 
+    
     openDesplegableCompra()
 
     }
