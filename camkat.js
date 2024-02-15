@@ -56,7 +56,7 @@ logoCamkat.addEventListener('click',mostrarMiInformacion);
 
 
 function toggleDesktopMenuEmail() {
-
+    menuDetalleCadaCompra.innerHTML = '';
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -73,7 +73,7 @@ function ToggleMobilMenu() {
         menuCarritoCompras.classList.add('inactive');
     }
 
-    closeDesplegableCompra()
+    //closeDesplegableCompra()
     
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
     
@@ -81,6 +81,7 @@ function ToggleMobilMenu() {
 
 
 function ToggleCarritoCompras() {
+    //menuDetalleCadaCompra.innerHTML = '';
     //menuCarritoCompras.classList.toggle('inactive');
     //para que cuando est en modo movil con el menu del movil desplegado y le demos en el menu de tus ordenes y no se superpongan, entonces tenemos que preguntar si estan activos o inactivos, para que aparezca uno o el otro
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
@@ -89,11 +90,12 @@ function ToggleCarritoCompras() {
         mobileMenuIHam.classList.add('inactive');
     }
 
-    const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
+    //const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
 
-    if (!ismenuDetalleCadaCompraClosed) {
-        menuDetalleCadaCompra.classList.add('inactive');
-    }
+    // if (!ismenuDetalleCadaCompraClosed) {
+    //     menuDetalleCadaCompra.classList.add('inactive');
+    // }
+    
     menuCarritoCompras.classList.toggle('inactive');
 
 }
@@ -118,7 +120,6 @@ function mostrarCadaProducto(arrElements) {
     //         console.log('La imagen de cosas no se encontró en catalogoCompletoList');
     //     }
     // }
-
     let cosas = arrElements;
 
     let product = [];
@@ -192,7 +193,7 @@ function mostrarCadaProducto(arrElements) {
 
 
  function openDesplegableCompra() {
-    menuDetalleCadaCompra.clear;
+    //menuDetalleCadaCompra.clear;
 
     menuCarritoCompras.classList.add('inactive');
 
@@ -204,12 +205,14 @@ function mostrarCadaProducto(arrElements) {
 
 
 function closeDesplegableCompra() {
-    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    //menuDetalleCadaCompra.classList.toggle('inactive');
 }
     
 
 
 function renderTodoRopa() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -218,6 +221,7 @@ function renderTodoRopa() {
 }
 
 function renderCamisetasH() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -226,6 +230,7 @@ function renderCamisetasH() {
 }
 
 function renderJeansH() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -234,6 +239,7 @@ function renderJeansH() {
 }
 
 function renderJeansM() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -242,6 +248,7 @@ function renderJeansM() {
 }
 
 function renderchaquetasM() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -250,6 +257,7 @@ function renderchaquetasM() {
 }
 
 function renderOtrasPrendas() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -259,6 +267,7 @@ function renderOtrasPrendas() {
 
 
 function mostrarMiInformacion() {
+    menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     cardsContainer.innerText = '';
@@ -332,181 +341,211 @@ const catalogoCompletoList = [];
 catalogoCompletoList.push({
     name: 'Camiseta rojo oscuro',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/6wpmVPm.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/qYKTC6x.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta blanca',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/LXLgc0g.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta rojo',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/7xdMKA7.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta color negro',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/p2xCOiZ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta color rosa',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/NOKEmj4.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 18000,
-    image: "https://i.imgur.com/vDXf8Xf.jpg"
+    image: "https://i.imgur.com/vDXf8Xf.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 19000,
-    image: "https://i.imgur.com/o2XCN3K.jpg"
+    image: "https://i.imgur.com/o2XCN3K.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 20000,
-    image: "https://i.imgur.com/OYXPR4i.jpg"
+    image: "https://i.imgur.com/OYXPR4i.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 21000,
-    image: "https://i.imgur.com/Vso5GyJ.jpg"
+    image: "https://i.imgur.com/Vso5GyJ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 22000,
-    image: "https://i.imgur.com/fcW97Gd.jpg"
+    image: "https://i.imgur.com/fcW97Gd.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean DSqueared',
     price: 25000,
-    image: "https://i.imgur.com/p9FbDYj.jpg"
+    image: "https://i.imgur.com/p9FbDYj.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Jean Economico Dama',
     price: 18000,
-    image: "https://i.imgur.com/XsWPVsy.jpg"
+    image: "https://i.imgur.com/XsWPVsy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/0csXwNY.jpg"
+    image: "https://i.imgur.com/0csXwNY.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta blanca',
     price: 20000,
-    image: "https://i.imgur.com/EsKMf8k.jpg"
+    image: "https://i.imgur.com/EsKMf8k.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta rojo',
     price: 21000,
-    image: "https://i.imgur.com/VyuxoLh.jpg"
+    image: "https://i.imgur.com/VyuxoLh.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta color negro',
     price: 22000,
-    image: "https://i.imgur.com/1oQSVsT.jpg"
+    image: "https://i.imgur.com/1oQSVsT.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Camiseta color rosa',
     price: 25000,
-    image: "https://i.imgur.com/EmY5huB.jpg"
+    image: "https://i.imgur.com/EmY5huB.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta1',
     price: 18000,
-    image: "https://i.imgur.com/3VTii84.jpg"
+    image: "https://i.imgur.com/3VTii84.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta2',
     price: 19000,
-    image: "https://i.imgur.com/0V3Zk5v.jpg"
+    image: "https://i.imgur.com/0V3Zk5v.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta3',
     price: 20000,
-    image: "https://i.imgur.com/wWPiLqy.jpg"
+    image: "https://i.imgur.com/wWPiLqy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta4',
     price: 21000,
-    image: "https://i.imgur.com/mMEAfyy.jpg"
+    image: "https://i.imgur.com/mMEAfyy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta5',
     price: 22000,
-    image: "https://i.imgur.com/cDpjfGJ.jpg"
+    image: "https://i.imgur.com/cDpjfGJ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Chaqueta6',
     price: 25000,
-    image: "https://i.imgur.com/1Zjfk6P.jpg"
+    image: "https://i.imgur.com/1Zjfk6P.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Pijama',
     price: 18000,
-    image: "https://i.imgur.com/TYkYiGZ.jpg"
+    image: "https://i.imgur.com/TYkYiGZ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Pijama red',
     price: 19000,
-    image: "https://i.imgur.com/ypsTb0K.jpg"
+    image: "https://i.imgur.com/ypsTb0K.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Jean negro',
     price: 20000,
-    image: "https://i.imgur.com/J6GGYWG.jpg"
+    image: "https://i.imgur.com/J6GGYWG.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'jean moico abano',
     price: 21000,
-    image: "https://i.imgur.com/MGrFmzD.jpg"
+    image: "https://i.imgur.com/MGrFmzD.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'Jean moico negro',
     price: 22000,
-    image: "https://i.imgur.com/mVsNUxA.jpg"
+    image: "https://i.imgur.com/mVsNUxA.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 catalogoCompletoList.push({
     name: 'polilicra',
     price: 25000,
-    image: "https://i.imgur.com/BrNHjvr.jpeg"
+    image: "https://i.imgur.com/BrNHjvr.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -515,37 +554,43 @@ const camisetasHombreList = [];// este vendria siendo la abase de datos que esta
 camisetasHombreList.push({
     name: 'Camiseta rojo oscuro',
     price: 18000,
-    image: "https://i.imgur.com/6wpmVPm.jpg"
+    image: "https://i.imgur.com/6wpmVPm.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });//ya creamos un array de elemmentos y con este podemos crear todos los productos que sean
 
 camisetasHombreList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg"
+    image: "https://i.imgur.com/qYKTC6x.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 camisetasHombreList.push({
     name: 'Camiseta blanca',
     price: 20000,
-    image: "https://i.imgur.com/LXLgc0g.jpeg"
+    image: "https://i.imgur.com/LXLgc0g.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 camisetasHombreList.push({
     name: 'Camiseta rojo',
     price: 21000,
-    image: "https://i.imgur.com/7xdMKA7.jpeg"
+    image: "https://i.imgur.com/7xdMKA7.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 camisetasHombreList.push({
     name: 'Camiseta color negro',
     price: 22000,
-    image: "https://i.imgur.com/p2xCOiZ.jpg"
+    image: "https://i.imgur.com/p2xCOiZ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 camisetasHombreList.push({
     name: 'Camiseta color rosa',
     price: 25000,
-    image: "https://i.imgur.com/NOKEmj4.jpeg"
+    image: "https://i.imgur.com/NOKEmj4.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -554,37 +599,43 @@ const jeansHombreList = [];
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 18000,
-    image: "https://i.imgur.com/vDXf8Xf.jpg"
+    image: "https://i.imgur.com/vDXf8Xf.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 19000,
-    image: "https://i.imgur.com/o2XCN3K.jpg"
+    image: "https://i.imgur.com/o2XCN3K.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 20000,
-    image: "https://i.imgur.com/OYXPR4i.jpg"
+    image: "https://i.imgur.com/OYXPR4i.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 21000,
-    image: "https://i.imgur.com/Vso5GyJ.jpg"
+    image: "https://i.imgur.com/Vso5GyJ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 22000,
-    image: "https://i.imgur.com/fcW97Gd.jpg"
+    image: "https://i.imgur.com/fcW97Gd.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansHombreList.push({
     name: 'jean DSqueared',
     price: 25000,
-    image: "https://i.imgur.com/p9FbDYj.jpg"
+    image: "https://i.imgur.com/p9FbDYj.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -595,37 +646,43 @@ const jeansMujerList = [];
 jeansMujerList.push({
     name: 'Jean Economico Dama',
     price: 18000,
-    image: "https://i.imgur.com/XsWPVsy.jpg"
+    image: "https://i.imgur.com/XsWPVsy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansMujerList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/0csXwNY.jpg"
+    image: "https://i.imgur.com/0csXwNY.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansMujerList.push({
     name: 'Camiseta blanca',
     price: 20000,
-    image: "https://i.imgur.com/EsKMf8k.jpg"
+    image: "https://i.imgur.com/EsKMf8k.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansMujerList.push({
     name: 'Camiseta rojo',
     price: 21000,
-    image: "https://i.imgur.com/VyuxoLh.jpg"
+    image: "https://i.imgur.com/VyuxoLh.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansMujerList.push({
     name: 'Camiseta color negro',
     price: 22000,
-    image: "https://i.imgur.com/1oQSVsT.jpg"
+    image: "https://i.imgur.com/1oQSVsT.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 jeansMujerList.push({
     name: 'Camiseta color rosa',
     price: 25000,
-    image: "https://i.imgur.com/EmY5huB.jpg"
+    image: "https://i.imgur.com/EmY5huB.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -634,37 +691,43 @@ const chaquetasDamaList = [];
 chaquetasDamaList.push({
     name: 'Chaqueta1',
     price: 18000,
-    image: "https://i.imgur.com/3VTii84.jpg"
+    image: "https://i.imgur.com/3VTii84.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 chaquetasDamaList.push({
     name: 'Chaqueta2',
     price: 19000,
-    image: "https://i.imgur.com/0V3Zk5v.jpg"
+    image: "https://i.imgur.com/0V3Zk5v.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 chaquetasDamaList.push({
     name: 'Chaqueta3',
     price: 20000,
-    image: "https://i.imgur.com/wWPiLqy.jpg"
+    image: "https://i.imgur.com/wWPiLqy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 chaquetasDamaList.push({
     name: 'Chaqueta4',
     price: 21000,
-    image: "https://i.imgur.com/mMEAfyy.jpg"
+    image: "https://i.imgur.com/mMEAfyy.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 chaquetasDamaList.push({
     name: 'Chaqueta5',
     price: 22000,
-    image: "https://i.imgur.com/cDpjfGJ.jpg"
+    image: "https://i.imgur.com/cDpjfGJ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 chaquetasDamaList.push({
     name: 'Chaqueta6',
     price: 25000,
-    image: "https://i.imgur.com/1Zjfk6P.jpg"
+    image: "https://i.imgur.com/1Zjfk6P.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -673,37 +736,43 @@ const otrasPrendasList = [];
 otrasPrendasList.push({
     name: 'Pijama',
     price: 18000,
-    image: "https://i.imgur.com/TYkYiGZ.jpg"
+    image: "https://i.imgur.com/TYkYiGZ.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 otrasPrendasList.push({
     name: 'Pijama red',
     price: 19000,
-    image: "https://i.imgur.com/ypsTb0K.jpg"
+    image: "https://i.imgur.com/ypsTb0K.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 otrasPrendasList.push({
     name: 'Jean negro',
     price: 20000,
-    image: "https://i.imgur.com/J6GGYWG.jpg"
+    image: "https://i.imgur.com/J6GGYWG.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 otrasPrendasList.push({
     name: 'jean moico abano',
     price: 21000,
-    image: "https://i.imgur.com/MGrFmzD.jpg"
+    image: "https://i.imgur.com/MGrFmzD.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 otrasPrendasList.push({
     name: 'Jean moico negro',
     price: 22000,
-    image: "https://i.imgur.com/mVsNUxA.jpg"
+    image: "https://i.imgur.com/mVsNUxA.jpg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 otrasPrendasList.push({
     name: 'polilicra',
     price: 25000,
-    image: "https://i.imgur.com/BrNHjvr.jpeg"
+    image: "https://i.imgur.com/BrNHjvr.jpeg",
+    info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
  //probar algo
@@ -711,7 +780,8 @@ const listaFalsa = [];
 listaFalsa.push({
     name: 'Falso',
     price: '000000',
-    image: "https://img.freepik.com/vector-gratis/bote-basura-lleno-bolsas-basura-vasos-vino-botellas-plastico-cascaras-platano_1268-15181.jpg"
+    image: "https://img.freepik.com/vector-gratis/bote-basura-lleno-bolsas-basura-vasos-vino-botellas-plastico-cascaras-platano_1268-15181.jpg",
+    info: 'Esta prenda ¡NO! se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
 
@@ -775,14 +845,29 @@ function renderObjetosHTML(arrElements) {
 
     function DesplegableCompra(objAsignado) {
     
-    
+    // const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    // if (!isMenuDetalleCadaCompraClosed) {
+    //     menuDetalleCadaCompra.classList.add('inactive');
+    // }
+    // menuDetalleCadaCompra.classList.add('inactive');
+        //mobileMenuIHam.classList.add('inactive');
+        //menuCarritoCompras.classList.add('inactive');
+        
     console.log(objAsignado)
+        menuDetalleCadaCompra.innerHTML = '';
+        
+
 
     const productDivClose = document.createElement('div');
     productDivClose.classList.add('product-detail-close');
     const productIconoClose = document.createElement('img');
-    productIconoClose.setAttribute('src','./icons/icon_close.png');
-    
+    productIconoClose.setAttribute('src', './icons/icon_close.png');
+        
+    productIconoClose.addEventListener('click',closeDesplegableCompra)
+//     productIconoClose.addEventListener('click',function() {
+//     //const contenedor = document.getElementById('miContenedor');
+//     menuDetalleCadaCompra.innerHTML = '';
+// });
 
     const productImgAside = document.createElement('img');
 
@@ -798,7 +883,7 @@ function renderObjetosHTML(arrElements) {
     pNombreProductAside.innerText = objAsignado.name;
         
     const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = objAsignado.name; //ir a crearle info al producto en el objeto********
+    pInfoProduct.innerText = objAsignado.info; //ir a crearle info al producto en el objeto********
 
     const productButton = document.createElement('button');
     productButton.classList.add('primary-button');
