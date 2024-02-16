@@ -95,10 +95,10 @@ function ToggleCarritoCompras() {
         mobileMenuIHam.classList.add('inactive');
     }
 
-    //  const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
-    // if (!isMenuDetalleCadaCompraClosed) {
-    // menuDetalleCadaCompra.classList.add('inactive');
-    // } 
+     const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
 
     //const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
 
