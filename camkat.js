@@ -1,7 +1,9 @@
 /* Esto es un proyecto forkeado de platzi,m llamado curso de frontend developmen, fue forkeado como curso de java scrpt practico ya ahora lo estoy personalizando para mi tienda CamKatStore, haremos cambios de variables, aumento de variables y funciones y sus imagenes seran de ropa. Este proyecto sigue siendo meramente tecnico */
 
 
-const menuEmail = document.querySelector('.navbar-email');
+const menuEmailDesktop = document.querySelector('.navbar-email');
+const menuEmailMov = document.querySelector('.emailMobil');
+
 const DesktopMenuEmail = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenuIHam = document.querySelector('.mobile-menu');
@@ -41,8 +43,8 @@ const logoCamkat = document.querySelector('.logo')
 
 
 
-
-menuEmail.addEventListener('click', toggleDesktopMenuEmail);
+menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
+menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
 menuHamIcon.addEventListener('click', ToggleMobilMenu);
 
@@ -61,27 +63,34 @@ function toggleDesktopMenuEmail() {
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
     }
-   
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
+
+
 }
 
 
 function ToggleMobilMenu() {
-    menuDetalleCadaCompra.innerHTML = '';
-    //en una variable almacenamos 
-    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    if (!ismMenuCarritoComprasClosed) {
+        menuDetalleCadaCompra.innerHTML = '';
+        //en una variable almacenamos 
+        const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+        if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
-    }
+        }
+
+        const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+        if (!isDesktopMenuEmailClosed) {
+        DesktopMenuEmail.classList.add('inactive');
+        } 
 
 
-    // const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
-    // if (!isMenuDetalleCadaCompraClosed) {
-    // menuDetalleCadaCompra.classList.add('inactive');
-    // } 
-    
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
-    
+
 }
 
 
@@ -110,7 +119,7 @@ function ToggleCarritoCompras() {
 
 }
 
-
+//ESTA FUNCION NO SE HA USADO AUN
 function mostrarCadaProducto(arrElements) {
     //
     // for (let i = 0; i < cosas.length; i++) {
