@@ -67,18 +67,18 @@ function toggleDesktopMenuEmail() {
 
 
 function ToggleMobilMenu() {
+    menuDetalleCadaCompra.innerHTML = '';
     //en una variable almacenamos 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
     }
 
-    //closeDesplegableCompra()
 
-    const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
-    if (!isMenuDetalleCadaCompraClosed) {
-    menuDetalleCadaCompra.classList.add('inactive');
-    } 
+    // const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
+    // if (!isMenuDetalleCadaCompraClosed) {
+    // menuDetalleCadaCompra.classList.add('inactive');
+    // } 
     
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
     
@@ -86,7 +86,7 @@ function ToggleMobilMenu() {
 
 
 function ToggleCarritoCompras() {
-    //menuDetalleCadaCompra.innerHTML = '';
+    menuDetalleCadaCompra.innerHTML = '';
     //menuCarritoCompras.classList.toggle('inactive');
     //para que cuando est en modo movil con el menu del movil desplegado y le demos en el menu de tus ordenes y no se superpongan, entonces tenemos que preguntar si estan activos o inactivos, para que aparezca uno o el otro
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
@@ -95,10 +95,10 @@ function ToggleCarritoCompras() {
         mobileMenuIHam.classList.add('inactive');
     }
 
-     const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
-    if (!isMenuDetalleCadaCompraClosed) {
-    menuDetalleCadaCompra.classList.add('inactive');
-    } 
+    //  const isMenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
+    // if (!isMenuDetalleCadaCompraClosed) {
+    // menuDetalleCadaCompra.classList.add('inactive');
+    // } 
 
     //const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
 
