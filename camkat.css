@@ -191,19 +191,15 @@
       right: 0;
     } lo cambiamos por aside*/ 
 
-    aside {
-    background-color: var(--white);
-      width: 360px;
-      /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
-      box-sizing: border-box;
-      position: absolute;
-      right: 0;
+    /* aside  */#shoppingCartContainer{
+        background-color: var(--white);
+        width: 360px;
+        /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        padding: 0 50px;
     } 
-
-    /* shoppingCartContainer */
-    #shoppingCartContainer {
-        padding: 0 50px
-    }
 
 /* configs de mis ordenes pedidadas: */
 
@@ -277,8 +273,22 @@
 
     /* configs de detalles de cada orden */
 
-    
-    #productDetail .product-detail-close {
+
+
+    #productDetail {
+        background-color: var(--white);
+        /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
+        box-sizing: border-box;
+        right: 0;
+        position: fixed;
+        top: 0;
+        width: 50%;
+        height: 80%;
+        background-color: white;
+        z-index: 9999; 
+        /* display: none; */
+    }
+     .product-detail-close {
       background: var(--white);
       width: 14px;
       height: 14px;
@@ -289,7 +299,7 @@
       padding: 12px;
       border-radius: 50%;
     }
-    #productDetail .product-detail-close:hover {
+    .product-detail-close:hover {
       cursor: pointer;
     }
     #productDetail > img:nth-child(2) {
@@ -404,12 +414,12 @@
         padding: 20 20;     
     }
 
-    .pMision
+  /*   .pMision
     .pVision
     .pNosotros {
         
         
-    }
+    } */
 
 
 
@@ -440,7 +450,6 @@
                 padding: 20px 20px 0 20px;
             }
 
-
             /* media query para un estilo de mis ordenes pedidas: */
             .aside {
                 width: 100%;
@@ -457,9 +466,12 @@
             .product-card img {
                 width: 140px;
                 height: 140px;
-        }
-       
+            }
       
+            /* configs para desplegable de detalles de producto  */
+
+            
+
         }
 
         @media(min-width:641px) {

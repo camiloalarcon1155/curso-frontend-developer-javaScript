@@ -58,6 +58,7 @@ logoCamkat.addEventListener('click',mostrarMiInformacion);
 
 
 function toggleDesktopMenuEmail() {
+    closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -76,6 +77,7 @@ function toggleDesktopMenuEmail() {
 
 
 function ToggleMobilMenu() {
+    closeDesplegableCompra()
         menuDetalleCadaCompra.innerHTML = '';
         //en una variable almacenamos 
         const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -95,6 +97,7 @@ function ToggleMobilMenu() {
 
 
 function ToggleCarritoCompras() {
+    closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
     //menuCarritoCompras.classList.toggle('inactive');
     //para que cuando est en modo movil con el menu del movil desplegado y le demos en el menu de tus ordenes y no se superpongan, entonces tenemos que preguntar si estan activos o inactivos, para que aparezca uno o el otro
@@ -224,13 +227,14 @@ function mostrarCadaProducto(arrElements) {
 
 
 function closeDesplegableCompra() {
-    menuDetalleCadaCompra.innerHTML = '';
-    //menuDetalleCadaCompra.classList.toggle('inactive');
+    //menuDetalleCadaCompra.innerHTML = '';
+    menuDetalleCadaCompra.classList.add('inactive');
 }
     
 
 
 function renderTodoRopa() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -241,6 +245,7 @@ function renderTodoRopa() {
 }
 
 function renderCamisetasH() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -251,6 +256,7 @@ function renderCamisetasH() {
 }
 
 function renderJeansH() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -261,6 +267,7 @@ function renderJeansH() {
 }
 
 function renderJeansM() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -271,6 +278,7 @@ function renderJeansM() {
 }
 
 function renderchaquetasM() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -281,6 +289,7 @@ function renderchaquetasM() {
 }
 
 function renderOtrasPrendas() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -292,6 +301,7 @@ function renderOtrasPrendas() {
 
 
 function mostrarMiInformacion() {
+    menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
@@ -870,74 +880,79 @@ function renderObjetosHTML(arrElements) {
 
 
     function DesplegableCompra(objAsignado) {
-    menuDetalleCadaCompra.innerHTML = '';
-    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
-    if (!ismMenuCarritoComprasClosed) {
-    menuCarritoCompras.classList.add('inactive');
-    } 
 
-    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
-    if (!ismobileMenuIHamClosed) {
-    mobileMenuIHam.classList.add('inactive');
-        }  
+            menuDetalleCadaCompra.innerHTML = '';
+            const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
+            if (!ismMenuCarritoComprasClosed) {
+            menuCarritoCompras.classList.add('inactive');
+            } 
+
+            const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+            if (!ismobileMenuIHamClosed) {
+            mobileMenuIHam.classList.add('inactive');
+            }  
+
+            const isDesktopMenuEmaiClosed = DesktopMenuEmail.classList.contains('inactive');
+            if (!isDesktopMenuEmaiClosed) {
+            DesktopMenuEmail.classList.add('inactive');
+            } 
+
+            const productDivClose = document.createElement('div');
+            productDivClose.classList.add('product-detail-close');
+            const productIconoClose = document.createElement('img');
+            productIconoClose.setAttribute('src', './icons/icon_close.png');
+
+            //productIconoClose.addEventListener('click', closeDesplegableCompra)
+            productDivClose.addEventListener('click', closeDesplegableCompra)
+
+            //     productIconoClose.addEventListener('click',function() {
+            //     //const contenedor = document.getElementById('miContenedor');
+            //     menuDetalleCadaCompra.innerHTML = '';
+            // });
+
+            const productImgAside = document.createElement('img');
+
+            productImgAside.setAttribute('src', objAsignado.image);
+
+            const productDivInfo = document.createElement('div');
+            productDivInfo.classList.add('product-info');
+
+            const pValorAside = document.createElement('p');
+            pValorAside.innerText = '$' + objAsignado.price;
+
+            const pNombreProductAside = document.createElement('p');
+            pNombreProductAside.innerText = objAsignado.name;
+
+            const pInfoProduct = document.createElement('p');
+            pInfoProduct.innerText = objAsignado.info; //ir a crearle info al producto en el objeto********
+
+            const productButton = document.createElement('button');
+            productButton.classList.add('primary-button');
+            productButton.classList.add('add-to-cart-button');
+            productButton.innerText = 'Add to Cart';
+
+            const iconoCompraCarrito = document.createElement('img');
+            iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
+
+
+            productDivClose.appendChild(productIconoClose);
+
+            productButton.appendChild(iconoCompraCarrito);
+
+            productDivInfo.appendChild(pValorAside);
+            productDivInfo.appendChild(pNombreProductAside);
+            productDivInfo.appendChild(pInfoProduct);
+            productDivInfo.appendChild(productButton);
+
+            menuDetalleCadaCompra.appendChild(productDivClose);    
+            menuDetalleCadaCompra.appendChild(productImgAside);
+            menuDetalleCadaCompra.appendChild(productDivInfo);
         
-    const isDesktopMenuEmaiClosed = DesktopMenuEmail.classList.contains('inactive');
-    if (!isDesktopMenuEmaiClosed) {
-    DesktopMenuEmail.classList.add('inactive');
-        } 
-    
-    const productDivClose = document.createElement('div');
-    productDivClose.classList.add('product-detail-close');
-    const productIconoClose = document.createElement('img');
-    productIconoClose.setAttribute('src', './icons/icon_close.png');
-        
-    productIconoClose.addEventListener('click',closeDesplegableCompra)
-//     productIconoClose.addEventListener('click',function() {
-//     //const contenedor = document.getElementById('miContenedor');
-//     menuDetalleCadaCompra.innerHTML = '';
-// });
-
-    const productImgAside = document.createElement('img');
-
-    productImgAside.setAttribute('src', objAsignado.image);
-    
-    const productDivInfo = document.createElement('div');
-    productDivInfo.classList.add('product-info');
-
-    const pValorAside = document.createElement('p');
-    pValorAside.innerText = '$' + objAsignado.price;
-
-    const pNombreProductAside = document.createElement('p');
-    pNombreProductAside.innerText = objAsignado.name;
-        
-    const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = objAsignado.info; //ir a crearle info al producto en el objeto********
-
-    const productButton = document.createElement('button');
-    productButton.classList.add('primary-button');
-    productButton.classList.add('add-to-cart-button');
-    productButton.innerText = 'Add to Cart';
-
-    const iconoCompraCarrito = document.createElement('img');
-    iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
-
-
-   productDivClose.appendChild(productIconoClose);
-
-    productButton.appendChild(iconoCompraCarrito);
-    
-    productDivInfo.appendChild(pValorAside);
-    productDivInfo.appendChild(pNombreProductAside);
-    productDivInfo.appendChild(pInfoProduct);
-    productDivInfo.appendChild(productButton);
-
-    menuDetalleCadaCompra.appendChild(productDivClose);    
-    menuDetalleCadaCompra.appendChild(productImgAside);
-    menuDetalleCadaCompra.appendChild(productDivInfo);
+    openDesplegableCompra()
     }
 
     
-    openDesplegableCompra()
+    
 
     }
 
