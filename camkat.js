@@ -399,7 +399,7 @@ catalogoCompletoList.push({
 catalogoCompletoList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg",
+    image: "https://i.imgur.com/1iRpCCJ.jpg",
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
@@ -612,7 +612,7 @@ camisetasHombreList.push({
 camisetasHombreList.push({
     name: 'Camiseta azul',
     price: 19000,
-    image: "https://i.imgur.com/qYKTC6x.jpeg",
+    image: "https://i.imgur.com/1iRpCCJ.jpg",
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
