@@ -24,6 +24,18 @@
             display: none;
         }/* es util para usarla en java script */
 
+    /*     .inactiveGrid {
+            display:none;
+        } */
+
+        .activeFlex {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        margin-top: 10px; 
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -147,8 +159,8 @@
         position: absolute;
         top: 60px;
         left: 0px; 
-      padding: 24px;
-      width: 100%;
+        padding: 5%;
+        width: 90%;
     }
 
     .mobile-menu a:hover {
@@ -354,6 +366,7 @@
 /* esta es para un titulo puesto antes del div cards container */
     .main-container{
         background-color: #F8F0E5;
+        width: 100%;
     }
 
     .main-container h1 {
@@ -362,7 +375,6 @@
         align-items: center;
         text-align: center;
         font-size: var(--lg);
-        
     }
 
     .cards-container {
@@ -407,21 +419,33 @@
       color: var(--very-light-pink);
     }
    
+    .divImagenLogocamkat{
+        width: 100%;
+        padding: 3% 0 10% 0;
+    }
 
+    .imagenLogocamkat {
+      width: 100%;
+      height: 460px;/* estaba en 360, parecia  muy alto */
+      object-fit: contain;
+      background-color: #DAC0A3;
+
+    }
     /* configs de mision, vision y nosotros */
 
-    .contInfoEsmpresa{
+    /* .contInfoEsmpresa{
         width: 100%;
         background-color:#DAC0A3;   
         padding: 20 20;     
-    }
-
-  /*   .pMision
-    .pVision
-    .pNosotros {
-        
-        
     } */
+
+   .contInfoEmpresa1,
+    .contInfoEmpresa2,
+     .contInfoEmpresa3  {
+        width: 90%;
+        background-color:#DAC0A3;  
+        padding: 5%;
+    }
 
 
 
