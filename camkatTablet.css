@@ -112,6 +112,7 @@ html{
         }
 
         .navbar-email {
+            display: block;
             color: var(--very-light-pink);
             cursor:pointer;
             font-size: var(--sm);
@@ -146,6 +147,7 @@ html{
         background: var(--white);
         top: 60px;
         right: 60px;
+        left: auto;
       height: auto;
       border: 1px solid var(--very-light-pink);
       border-radius: 6px;
@@ -179,15 +181,16 @@ html{
     }
 
     /* settings del modo mobile*/
-
+/* 
     .mobile-menu {
+        display: none;
         background-color: var(--white);
         position: absolute;
         top: 60px;
         left: 0px; 
         padding: 5%;
         width: 90%;
-    }
+    } */
 
     .mobile-menu a:hover {
         border: 1px solid var(--hospital-green);
@@ -601,45 +604,45 @@ html{
 
 
         @media (max-width: 640px) {
-            .menu {
+          /*   .menu {
                 display: block;
             }
-
-            .navbar-left ul {
+ */
+          /*   .navbar-left ul {
                 display: none;
-            }
+            } */
 
-            .navbar-email {
+          /*   .navbar-email {
                 display: none;
-            }
+            } */
 
-            .desktop-menu {
-               /* //display: none; */
+        /*     .desktop-menu {
+              
                 position: absolute;
                 background: var(--white);
                 top: 60px;
-                /* right: 60px; */
+               
                 left: 60px;
                 right: auto;
                 height: auto;
                 border: 1px solid var(--very-light-pink);
                 border-radius: 6px;
                 padding: 20px 20px 0 20px;
-            }
+            } */
 
             /* media query para un estilo de mis ordenes pedidas: */
-            .aside {
+           /*  .aside {
                 width: 100%;
-            }
+            } */
 
             /* mediaquery de mis productos */
 
-            .cards-container {
+            /* .cards-container {
                 grid-template-columns: repeat(auto-fill, 140px);
-            }
-            .product-card {
+            } */
+           /*  .product-card {
                 width: 140px;
-            }
+            } */
             .product-card img {
                 width: 140px;
                 height: 140px;
