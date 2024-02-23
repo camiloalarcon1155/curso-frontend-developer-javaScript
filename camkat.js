@@ -41,7 +41,9 @@ const logoCamkat = document.querySelector('.logo');
 
 const logoInicioCamKat = document.querySelector('.divImagenLogocamkat');
 
-
+const inicioFooter = document.querySelector('.footerInicio');
+const AcercaDeFooter = document.querySelector('.footerAcercaDe'); 
+const contactoFooter = document.querySelector('.footerContacto');
 
 
 
@@ -55,8 +57,9 @@ menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
 //productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
 
 logoCamkat.addEventListener('click',mostrarMiInformacion);
-
-
+inicioFooter.addEventListener('click', recargarMiPagina);
+AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
+//contactoFoote.addEventListener('click', () => mostrarContacto)
 
 
 function toggleDesktopMenuEmail() {
@@ -307,7 +310,6 @@ function renderOtrasPrendas() {
     renderObjetosHTML(otrasPrendasList);
 }
 
-
 function mostrarMiInformacion() {
     cardsContainer.setAttribute('class', 'activeFlex');
     // cardsContainer.classList.add('activeFlex');
@@ -359,6 +361,9 @@ function mostrarMiInformacion() {
     cardsContainer.appendChild(divInfoEmpresa3);
 }
 
+function recargarMiPagina(){
+    window.location.reload();
+}
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
