@@ -1,5 +1,6 @@
 /* Esto es un proyecto forkeado de platzi,m llamado curso de frontend developmen, fue forkeado como curso de java scrpt practico ya ahora lo estoy personalizando para mi tienda CamKatStore, haremos cambios de variables, aumento de variables y funciones y sus imagenes seran de ropa. Este proyecto sigue siendo meramente tecnico */
 
+@media screen and (min-width: 640px) and (max-width: 839px) {
 
 *{
     box-sizing: border-box;
@@ -69,6 +70,8 @@ html{
 
         .logo {
             width: 100px;
+            object-fit: contain;
+
         }
 
         .navbar-left ul,
@@ -621,61 +624,12 @@ html{
 }
 
 
+}
 
-        @media (max-width: 640px) {
-          /*   .menu {
-                display: block;
-            }
- */
-          /*   .navbar-left ul {
-                display: none;
-            } */
-
-          /*   .navbar-email {
-                display: none;
-            } */
-
-        /*     .desktop-menu {
-              
-                position: absolute;
-                background: var(--white);
-                top: 60px;
-               
-                left: 60px;
-                right: auto;
-                height: auto;
-                border: 1px solid var(--very-light-pink);
-                border-radius: 6px;
-                padding: 20px 20px 0 20px;
-            } */
-
-            /* media query para un estilo de mis ordenes pedidas: */
-           /*  .aside {
-                width: 100%;
-            } */
-
-            /* mediaquery de mis productos */
-
-            /* .cards-container {
-                grid-template-columns: repeat(auto-fill, 140px);
-            } */
-           /*  .product-card {
-                width: 140px;
-            } */
-            .product-card img {
-                width: 140px;
-                height: 140px;
-            }          
-              /* configs para footer: */
-
-            
-
-        }
-
-        @media(min-width:641px) {
+       /*  @media(min-width:641px) {
 
             .mobile-menu {
                 display: none;
             }
-        }
+        } */
 
