@@ -365,17 +365,22 @@ function recargarMiPagina(){
     window.location.reload();
 }
 
-window.addEventListener('resize', function () {
+function ajustarCorreoSegunTamanioPantalla() {
     var screenWidth = window.innerWidth;
 
     if (screenWidth <= 840) {
-        logoEmailUsuario.innerHTML = '';
-        logoEmailUsuario.innerHTML = 'Mi cuenta'
+        /* logoEmailUsuario.innerHTML = ''; */
+        logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
     } else {
         logoEmailUsuario.innerText = 'camkatstore.gmail.com'
     }
 
-});
+}
+
+window.addEventListener('resize', ajustarCorreoSegunTamanioPantalla);
+window.addEventListener('load', ajustarCorreoSegunTamanioPantalla);
+
+ajustarCorreoSegunTamanioPantalla();
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
