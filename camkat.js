@@ -45,7 +45,7 @@ const inicioFooter = document.querySelector('.footerInicio');
 const AcercaDeFooter = document.querySelector('.footerAcercaDe'); 
 const contactoFooter = document.querySelector('.footerContacto');
 
-
+const logoEmailUsuario = document.getElementById('logoDelCorreo')
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
@@ -364,6 +364,18 @@ function mostrarMiInformacion() {
 function recargarMiPagina(){
     window.location.reload();
 }
+
+window.addEventListener('resize', function () {
+    var screenWidth = window.innerWidth;
+
+    if (screenWidth <= 840) {
+        logoEmailUsuario.innerHTML = '';
+        logoEmailUsuario.innerHTML = 'Mi cuenta'
+    } else {
+        logoEmailUsuario.innerText = 'camkatstore.gmail.com'
+    }
+
+});
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
