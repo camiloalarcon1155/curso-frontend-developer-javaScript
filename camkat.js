@@ -368,7 +368,7 @@ function recargarMiPagina(){
 function ajustarCorreoSegunTamanioPantalla() {
     var screenWidth = window.innerWidth;
 
-    if (screenWidth <= 840) {
+    if (screenWidth <= 854) {
         /* logoEmailUsuario.innerHTML = ''; */
         logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
     } else {
