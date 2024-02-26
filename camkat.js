@@ -311,6 +311,7 @@ function renderOtrasPrendas() {
 }
 
 function mostrarMiInformacion() {
+    window.scrollTo(0, 0);
     cardsContainer.setAttribute('class', 'activeFlex');
     // cardsContainer.classList.add('activeFlex');
     menuDetalleCadaCompra.classList.add('inactive');
@@ -363,6 +364,7 @@ function mostrarMiInformacion() {
 
 function recargarMiPagina(){
     window.location.reload();
+    window.scrollTo(0, 0);
 }
 
 function ajustarCorreoSegunTamanioPantalla() {
