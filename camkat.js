@@ -47,11 +47,15 @@ const contactoFooter = document.querySelector('.footerContacto');
 
 const logoEmailUsuario = document.getElementById('logoDelCorreo')
 
+const ordenesMenuMobil = document.querySelector('.ordersMenuMobil');
+
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
+
 menuHamIcon.addEventListener('click', ToggleMobilMenu);
 
+ordenesMenuMobil.addEventListener('click', ToggleCarritoCompras);
 menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
 
 //productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
