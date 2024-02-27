@@ -64,12 +64,15 @@ html{
 
         .menu {
             display: block;
+            object-fit: contain;
+            cursor:pointer;
         }
 
         .logo {
             width: 100px;
             height: 100%;
             object-fit:contain;
+            cursor:pointer;
         }
 
         .navbar-left ul,

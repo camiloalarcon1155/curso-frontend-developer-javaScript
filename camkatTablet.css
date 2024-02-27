@@ -71,6 +71,7 @@ html{
         .logo {
             width: 100px;
             object-fit: contain;
+            cursor: pointer;
 
         }
 
@@ -93,7 +94,7 @@ html{
         .navbar-right {
             display: flex;
            /*  display: relative; */
-            width: 30%;
+            /* width: 30%; */
             justify-content: end;
         }
 
