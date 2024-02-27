@@ -45,18 +45,19 @@ const inicioFooter = document.querySelector('.footerInicio');
 const AcercaDeFooter = document.querySelector('.footerAcercaDe'); 
 const contactoFooter = document.querySelector('.footerContacto');
 
-const logoEmailUsuario = document.getElementById('logoDelCorreo')
+const logoEmailUsuario = document.getElementById('logoDelCorreo');
 
-const ordenesMenuMobil = document.querySelector('.ordersMenuMobil');
+const todasOrdenesMenuMobil = document.querySelector('.todasOrdersMenuMobil');
+
+const asideTodasLasCompras = document.querySelector('#asideTotalCompras');
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
 
-menuHamIcon.addEventListener('click', ToggleMobilMenu);
+menuHamIcon.addEventListener('click', toggleMobilMenu);
 
-ordenesMenuMobil.addEventListener('click', ToggleCarritoCompras);
-menuCarritoIcon.addEventListener('click', ToggleCarritoCompras);
+menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
 
 //productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
 
@@ -65,6 +66,8 @@ inicioFooter.addEventListener('click', recargarMiPagina);
 AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 //contactoFoote.addEventListener('click', () => mostrarContacto)
 
+
+todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 
 function toggleDesktopMenuEmail() {
     closeDesplegableCompra()
@@ -79,13 +82,18 @@ function toggleDesktopMenuEmail() {
         mobileMenuIHam.classList.add('inactive');
     }
 
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 
 }
 
 
-function ToggleMobilMenu() {
+function toggleMobilMenu() {
     closeDesplegableCompra()
         menuDetalleCadaCompra.innerHTML = '';
         //en una variable almacenamos 
@@ -99,19 +107,22 @@ function ToggleMobilMenu() {
         DesktopMenuEmail.classList.add('inactive');
         } 
 
+        const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
 
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
 
 
-function ToggleCarritoCompras() {
+function toggleCarritoCompras() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
-    //menuCarritoCompras.classList.toggle('inactive');
-    //para que cuando est en modo movil con el menu del movil desplegado y le demos en el menu de tus ordenes y no se superpongan, entonces tenemos que preguntar si estan activos o inactivos, para que aparezca uno o el otro
+
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
-   // const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
+
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
     }
@@ -121,11 +132,10 @@ function ToggleCarritoCompras() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
-    //const ismenuDetalleCadaCompraClosed = menuDetalleCadaCompra.classList.contains('inactive');
-
-    // if (!ismenuDetalleCadaCompraClosed) {
-    //     menuDetalleCadaCompra.classList.add('inactive');
-    // }
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
     
     menuCarritoCompras.classList.toggle('inactive');
 
@@ -249,6 +259,7 @@ function renderTodoRopa() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -261,6 +272,7 @@ function renderCamisetasH() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -273,6 +285,7 @@ function renderJeansH() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -285,6 +298,7 @@ function renderJeansM() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -297,6 +311,7 @@ function renderchaquetasM() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -309,6 +324,7 @@ function renderOtrasPrendas() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -323,6 +339,7 @@ function mostrarMiInformacion() {
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
@@ -387,6 +404,30 @@ window.addEventListener('resize', ajustarCorreoSegunTamanioPantalla);
 window.addEventListener('load', ajustarCorreoSegunTamanioPantalla);
 
 ajustarCorreoSegunTamanioPantalla();
+
+
+
+function toggleTotalOrdenens() {
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    asideTodasLasCompras.classList.toggle('inactive')
+}
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
@@ -941,6 +982,11 @@ function renderObjetosHTML(arrElements) {
             DesktopMenuEmail.classList.add('inactive');
             } 
 
+            const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+            if (!isAsideTotalOrdenensClosed) {
+            asideTodasLasCompras.classList.add('inactive');
+            }
+        
             const productDivClose = document.createElement('div');
             productDivClose.classList.add('product-detail-close');
             const productIconoClose = document.createElement('img');
