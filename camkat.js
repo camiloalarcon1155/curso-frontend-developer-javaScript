@@ -339,7 +339,7 @@ function mostrarMiInformacion() {
      const divInfoEmpresa3 = document.createElement('div');
     divInfoEmpresa3.classList.add('contInfoEmpresa3')
     const h1Nosotros = document.createElement('h1');
-    h1Nosotros.innerText = 'Quienes somos';
+    h1Nosotros.innerText = '¿Quienes somos?';
     const pNosotros = document.createElement('p');
     pNosotros.classList.add('infoNosotros');
 
