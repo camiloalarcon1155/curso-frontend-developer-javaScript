@@ -1,6 +1,6 @@
 /* Esto es un proyecto forkeado de platzi,m llamado curso de frontend developmen, fue forkeado como curso de java scrpt practico ya ahora lo estoy personalizando para mi tienda CamKatStore, haremos cambios de variables, aumento de variables y funciones y sus imagenes seran de ropa. Este proyecto sigue siendo meramente tecnico */
 
-@media screen and (min-width: 854px) /* and (max-width: 1360px) */ {
+@media screen and (min-width: 888px) /* and (max-width: 1360px) */ {
 *{
     box-sizing: border-box;
     padding: 0;
@@ -138,15 +138,20 @@ html{
             font-size: var(--sm);
             font-weight: bold;
             position: absolute;
-            top: -6px;
-            /* right: -3px; */
-            right: 0.5%;
+            top: 1px;
+            /* right: 1px; */
+            right: 12.5%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-
+         .navbar-shopping-cart img{
+            width: 57px;
+            height: 40px;
+            object-fit: contain;
+        
+        }
         /* settings del menu de compras */
 
     .desktop-menu {
