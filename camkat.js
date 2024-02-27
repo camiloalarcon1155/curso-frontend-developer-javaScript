@@ -51,6 +51,8 @@ const todasOrdenesMenuMobil = document.querySelector('.todasOrdersMenuMobil');
 
 const asideTodasLasCompras = document.querySelector('#asideTotalCompras');
 
+const emailOpcionTotalCompras= document.querySelector('.titleTotalCompras')
+
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
@@ -68,6 +70,8 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 
 
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
+emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
+
 
 function toggleDesktopMenuEmail() {
     closeDesplegableCompra()
