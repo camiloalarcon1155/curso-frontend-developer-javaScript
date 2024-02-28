@@ -202,7 +202,7 @@ html{
     .mobile-menu {
         background-color: var(--white);
         position: absolute;
-        top: 96px;   
+        top: 82px;  
         left: 0px; 
         padding: 5%;
         width: 90%;
@@ -628,11 +628,12 @@ html{
 #asideTotalCompras {
     background-color: var(--white);
         height: 100%;
-        width: 300px;
+        width: 90%;
         /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
         box-sizing: border-box;
         position: absolute;
         right: 0;
+        top: 48px;
         padding: 0 3.4%;
 }
 
@@ -687,3 +688,101 @@ html{
       text-align: end;
       font-weight: bold;
     }
+
+
+    /* configs de aside de ingresar con cuenta  */
+
+    .divIngresoCuenta{
+        position: absolute;
+        right: 0;
+        top: 44px;
+        width: 100%;
+        height:100%
+        
+    }
+    .loginIngreso {
+      padding: 0 10%;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: var(--white);
+    }
+    .form-containerIngreso {
+      position: relative;
+      top: -34px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 100%;
+    }
+    .logoIngreso {
+      width: 150px;
+      margin-bottom: 10px;
+      justify-self: center;
+      /* display: none; */
+    }
+    .formIngreso {
+      display: flex;
+      flex-direction: column;
+    }
+    .formIngreso a {
+      color: var(--hospital-green);
+      font-size: var(--sm);
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 52px;
+    }
+    .labelEmailIngreso {
+      font-size: var(--sm);
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .labelPasswordIngreso {
+      font-size: var(--sm);
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .inputIngreso {
+      background-color: var(--text-input-field);
+      border: none;
+      border-radius: 8px;
+      height: 30px;
+      font-size: var(--md);
+      padding: 6px;
+      margin-bottom: 12px;
+    }
+    .input-emailIngreso {
+      margin-bottom: 22px;
+    }
+    .primary-buttonIngreso {
+      background-color: var(--hospital-green);
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+    .secondary-buttonIngreso {
+      background-color: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--hospital-green);
+      color: var(--hospital-green);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+    .login-buttonIngreso {
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+
+   /*  @media (max-width: 640px) {
+      .logoIngreso {
+        display: block;
+      }
+    } */

@@ -51,7 +51,14 @@ const todasOrdenesMenuMobil = document.querySelector('.todasOrdersMenuMobil');
 
 const asideTodasLasCompras = document.querySelector('#asideTotalCompras');
 
-const emailOpcionTotalCompras= document.querySelector('.titleTotalCompras')
+const emailOpcionTotalCompras = document.querySelector('.titleTotalCompras');
+
+const miCuentaMenuMov = document.querySelector('.miCuentaMenuMobil');
+
+const divIngresoMobil = document.querySelector('.divIngresoCuenta');
+
+const miCuentaMenuDesktop = document.querySelector('.desktop-menu-cuenta');
+
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
@@ -71,6 +78,8 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
+miCuentaMenuMov.addEventListener('click', togglemiCuentaMenuMob);
+miCuentaMenuDesktop.addEventListener('click', togglemiCuentaMenuMob);
 
 
 function toggleDesktopMenuEmail() {
@@ -89,6 +98,11 @@ function toggleDesktopMenuEmail() {
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
+    }
+
+     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
     }
 
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -116,6 +130,11 @@ function toggleMobilMenu() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
+     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
+    }
+
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -139,6 +158,11 @@ function toggleCarritoCompras() {
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
+    }
+
+     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
     }
     
     menuCarritoCompras.classList.toggle('inactive');
@@ -264,6 +288,7 @@ function renderTodoRopa() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -277,6 +302,7 @@ function renderCamisetasH() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -290,6 +316,7 @@ function renderJeansH() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -303,6 +330,7 @@ function renderJeansM() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -316,6 +344,7 @@ function renderchaquetasM() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -329,6 +358,7 @@ function renderOtrasPrendas() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -344,6 +374,7 @@ function mostrarMiInformacion() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
@@ -430,7 +461,42 @@ function toggleTotalOrdenens() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
+    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
+}
+
+
+function togglemiCuentaMenuMob() {
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    
+
+    divIngresoMobil.classList.toggle('inactive');
 }
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
