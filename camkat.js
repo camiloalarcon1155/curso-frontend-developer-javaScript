@@ -1100,11 +1100,12 @@ function renderObjetosHTML(arrElements) {
 
     }
 
-
+let precios = [];
 const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
     catalogoComprasAdicionadas.push(objetoProducto);
+    
 
     compraAdicionada = objetoProducto;
 
@@ -1132,8 +1133,19 @@ function guardarProductosAdicionados(objetoProducto) {
         menuCarritoCompras.appendChild(divContenedorTotalCompraAcionada); */
         
     
-
     
+     //config para crear una fecha:
+        let fecha = new Date();
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth() + 1;
+        let anio = fecha.getFullYear();
+
+        let formatoFecha = `${dia}/${mes}/${anio}`;
+
+        let spanFechaCompraAdicionada = document.querySelector('#spanFechaCompraAdicionada');
+         spanFechaCompraAdicionada.innerText = formatoFecha;
+
+
     //contenedores compras adicionadas
         const divContenedorCompras = document.createElement('div');
         divContenedorCompras.classList.add('my-order-content');
@@ -1175,10 +1187,33 @@ function guardarProductosAdicionados(objetoProducto) {
 
     /* }); */
 
+
+
+     //configs para sumar precios
+    let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
+    totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
+
+    //configs para sumar el precio Total:
     
+    for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
+        precios.push(catalogoComprasAdicionadas[i].price);
+    }
+    console.log(precios);
+    let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+
+    
+    precios.forEach(function (precio) {
+        
+        sumaTotal += price;
+        spanTotalPrecioAdicionados.innerText = 'Total : ' + sumaTotal;
+});
+    
+
+
 }
 
 
+   
 
 
 
