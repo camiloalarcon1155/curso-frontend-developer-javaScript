@@ -246,7 +246,7 @@ html{
 
     /* aside  */#shoppingCartContainer{
         background-color: var(--white);
-        height: 100%;
+        height: auto;
         width: 360px;
         /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
         box-sizing: border-box;

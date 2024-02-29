@@ -64,7 +64,11 @@ const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
 const divCrearCuenta = document.querySelector('.divCrearCuenta');
 
 const opcionSignOutMenuMob = document.querySelector('.sign-outMenuMobil');
+
 const opcionSignOutMenuDesktop = document.querySelector('.sign-outMenuDesktop');
+
+const contenComprasAdicionadas = document.querySelector('.divOnlyCompras');
+
 
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
@@ -192,97 +196,6 @@ function toggleCarritoCompras() {
     menuCarritoCompras.classList.toggle('inactive');
 
 }
-
-//ESTA FUNCION NO SE HA USADO AUN
-function mostrarCadaProducto(arrElements) {
-    //
-    // for (let i = 0; i < cosas.length; i++) {
-    //     const cosaImage = cosas[i].image;
-    //     //let found = false;
-
-    //     for (let j = 0; j < catalogoCompletoList.length; j++) {
-    //         if (cosaImage === catalogoCompletoList[j].image) {
-    //             product = catalogoCompletoList[j];
-    //             console.log('La imagen de cosas se encontró en catalogoCompletoList');
-    //       //      found = true;
-    //             break;
-    //         }
-    //     }
-
-    //     if (!found) {
-    //         console.log('La imagen de cosas no se encontró en catalogoCompletoList');
-    //     }
-    // }
-    let cosas = arrElements;
-
-    let product = [];
-    for (let i = 0; i < cosas.length; i++) {
-        let arregloImage = cosas[i].image;
-         
-        for (let j = 0; j < catalogoCompletoList.length; j++) {
-
-            console.log('i:' + (j + 1));
-            console.log(arregloImage);
-            console.log(catalogoCompletoList[j].image);
-            
-            
-            if (arregloImage === catalogoCompletoList[j].image) {
-                console.log('encontrada');
-
-                product = catalogoCompletoList[j]
-                console.log(product)
-            }
-        }
-    }
- 
-    
-       
-    const productDivClose = document.createElement('div');
-    productDivClose.classList.add('product-detail-close');
-    const productIconoClose = document.createElement('img');
-    productIconoClose.setAttribute('src','./icons/icon_close.png');
-    
-
-    const productImg = document.createElement('img');
-
-    productImg.setAttribute('src', product.image);
-    
-    const productDivInfo = document.createElement('div');
-    productDivInfo.classList.add('product-info');
-
-    const pValor = document.createElement('p');
-    pValor.innerText = '$' + product.price;
-
-    const pNombreProduct = document.createElement('p');
-    pNombreProduct.innerText = product.name;
-        
-    const pInfoProduct = document.createElement('p');
-    pInfoProduct.innerText = product.name; //ir a crearle info al producto en el objeto********
-
-    const productButton = document.createElement('button');
-    productButton.classList.add('primary-button');
-    productButton.classList.add('add-to-cart-button');
-    productButton.innerText = 'Add to Cart';
-
-    const iconoCompraCarrito = document.createElement('img');
-    iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
-
-
-   productDivClose.appendChild(productIconoClose);
-
-    productButton.appendChild(iconoCompraCarrito);
-    
-    productDivInfo.appendChild(pValor);
-    productDivInfo.appendChild(pNombreProduct);
-    productDivInfo.appendChild(pInfoProduct);
-    productDivInfo.appendChild(productButton);
-
-    menuDetalleCadaCompra.appendChild(productDivClose);    
-    menuDetalleCadaCompra.appendChild(productImg);
-    menuDetalleCadaCompra.appendChild(productDivInfo);
-
-    }
-
 
 
  function openDesplegableCompra() {
@@ -1128,7 +1041,7 @@ function renderObjetosHTML(arrElements) {
             if (!isAsideTotalOrdenensClosed) {
             asideTodasLasCompras.classList.add('inactive');
             }
-        
+
             const productDivClose = document.createElement('div');
             productDivClose.classList.add('product-detail-close');
             const productIconoClose = document.createElement('img');
@@ -1162,6 +1075,8 @@ function renderObjetosHTML(arrElements) {
             productButton.classList.add('primary-button');
             productButton.classList.add('add-to-cart-button');
             productButton.innerText = 'Add to Cart';
+        
+            productButton.addEventListener('click', () => guardarProductosAdicionados(objAsignado)); 
 
             const iconoCompraCarrito = document.createElement('img');
             iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
@@ -1183,23 +1098,89 @@ function renderObjetosHTML(arrElements) {
     openDesplegableCompra()
     }
 
-    
-    
-
     }
 
-//ahora si la llamamos:
+
+const catalogoComprasAdicionadas = [];
+function guardarProductosAdicionados(objetoProducto) {
+    
+    catalogoComprasAdicionadas.push(objetoProducto);
+
+    compraAdicionada = objetoProducto;
+
+   /*  catalogoComprasAdicionadas.forEach(function(compraAdicionada) { */
+
+    //contenedores total articulos y precio
+        /* const divContenedorTotalCompraAcionada = document.createElement('div');
+        divContenedorTotalCompraAcionada.classList.add('divTotales');
+    
+        const pContenedorCompraAdicionada = document.createElement('p');
+    
+        const spanContenedorCompraAdicionadaFecha = document.createElement('span');
+         spanContenedorCompraAdicionadaFecha.innerText = '03.25.21';
+    
+        const spanTotalArticulos = document.createElement('span');
+        spanTotalArticulos.innerText = '6 articles';
+
+        const pTotalPrecio = document.createElement('p');
+        pTotalPrecio.innerText = '$560.000';
+    
+        pContenedorCompraAdicionada.appendChild(spanContenedorCompraAdicionadaFecha);
+        pContenedorCompraAdicionada.appendChild(spanTotalArticulos);
+        divContenedorTotalCompraAcionada.appendChild(pContenedorCompraAdicionada);
+        divContenedorTotalCompraAcionada.appendChild(pTotalPrecio);
+        menuCarritoCompras.appendChild(divContenedorTotalCompraAcionada); */
+        
+    
+
+    
+    //contenedores compras adicionadas
+        const divContenedorCompras = document.createElement('div');
+        divContenedorCompras.classList.add('my-order-content');
+
+        const divCompraAdicionada = document.createElement('div');
+        divCompraAdicionada.classList.add('shopping-cart');
+
+        const figureCompraAdicionada = document.createElement('figure');
+        figureCompraAdicionada.classList.add('shopping-cart-figure');
+
+        const imgCompraAdicionada = document.createElement('img');
+
+    
+
+        /* imgCompraAdicionada.classList.add('figure-img'); */
+        imgCompraAdicionada.setAttribute('src', compraAdicionada.image);
+        
+
+        const pCompraAdicionadaNombre = document.createElement('p');
+        pCompraAdicionadaNombre.innerText = compraAdicionada.name;
+
+        const pCompraAdicionadaPrecio = document.createElement('p');
+        pCompraAdicionadaPrecio.innerText = compraAdicionada.price;
+
+        const imgCompraAdicionadaClose = document.createElement('img');
+        imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
+       
 
 
-// switch (objetoEnviado) {
+        figureCompraAdicionada.appendChild(imgCompraAdicionada);
+        divCompraAdicionada.appendChild(figureCompraAdicionada);
+        divCompraAdicionada.appendChild(pCompraAdicionadaNombre);
+        divCompraAdicionada.appendChild(pCompraAdicionadaPrecio);
+        divCompraAdicionada.appendChild(imgCompraAdicionadaClose);
+        divContenedorCompras.appendChild(divCompraAdicionada);
+        contenComprasAdicionadas.appendChild(divContenedorCompras);
+        /* menuCarritoCompras.appendChild(contenComprasAdicionadas); */
 
-// }
 
-//renderObjetosHTML(camisetasHombreList)
+    /* }); */
 
-// De esta forma tambien se podrian eviar los arreglos desde el backend y usarlos automaticamente con esta funcion. o que tambie se puede ejcutar cuando le demos click a un boton o lo que sea. como funcion es mucho mas util que dejar el for ahi tirado.
+    
+}
 
-//renderObjetosHTML(listaFalsa)
+
+
+
 
 //aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
 
