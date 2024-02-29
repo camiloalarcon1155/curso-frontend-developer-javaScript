@@ -341,7 +341,7 @@ html{
         right: 0;
         position: fixed;
         top: 0;
-        width: 50%;
+        width: 100%;
         height: 100%;
         background-color: white;
         z-index: 9999; 
@@ -369,7 +369,7 @@ html{
     }
     #productDetail > img:nth-child(2) {
       width: 100%;
-      height: 360px;/* estaba en 360, parecia  muy alto */
+      height: 310px;/* estaba en 360, parecia  muy alto */
       object-fit: contain;
       background-color: #000000;
       /* object-position: bottom; */
