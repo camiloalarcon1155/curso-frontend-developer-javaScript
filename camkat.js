@@ -63,6 +63,8 @@ const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
 
 const divCrearCuenta = document.querySelector('.divCrearCuenta');
 
+const opcionSignOutMenuMob = document.querySelector('.sign-outMenuMobil');
+
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
@@ -85,6 +87,7 @@ emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', miCuentaMenuIngresar);
 miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
 buttonCrearCuenta.addEventListener('click', miCuentaMenuCrear);
+opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
 
 function toggleDesktopMenuEmail() {
     closeDesplegableCompra()
