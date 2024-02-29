@@ -59,6 +59,10 @@ const divIngresoMobil = document.querySelector('.divIngresoCuenta');
 
 const miCuentaMenuDesktop = document.querySelector('.desktop-menu-cuenta');
 
+const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
+
+const divCrearCuenta = document.querySelector('.divCrearCuenta');
+
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
@@ -78,9 +82,9 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
-miCuentaMenuMov.addEventListener('click', togglemiCuentaMenuMob);
-miCuentaMenuDesktop.addEventListener('click', togglemiCuentaMenuMob);
-
+miCuentaMenuMov.addEventListener('click', miCuentaMenuIngresar);
+miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
+buttonCrearCuenta.addEventListener('click', miCuentaMenuCrear);
 
 function toggleDesktopMenuEmail() {
     closeDesplegableCompra()
@@ -103,6 +107,11 @@ function toggleDesktopMenuEmail() {
      const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
         divIngresoMobil.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
     }
 
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -135,6 +144,11 @@ function toggleMobilMenu() {
         divIngresoMobil.classList.add('inactive');
     }
 
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -163,6 +177,11 @@ function toggleCarritoCompras() {
      const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
         divIngresoMobil.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
     }
     
     menuCarritoCompras.classList.toggle('inactive');
@@ -466,11 +485,17 @@ function toggleTotalOrdenens() {
         divIngresoMobil.classList.add('inactive');
     }
 
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
 }
 
 
-function togglemiCuentaMenuMob() {
+
+function miCuentaMenuIngresar() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
@@ -494,9 +519,51 @@ function togglemiCuentaMenuMob() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-    
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
 
     divIngresoMobil.classList.toggle('inactive');
+}
+
+function miCuentaMenuCrear() {
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
+    }
+    
+
+
+
+
+    
+
+
+    divCrearCuenta.classList.toggle('inactive');
 }
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
