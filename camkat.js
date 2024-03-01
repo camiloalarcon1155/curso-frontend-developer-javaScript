@@ -69,6 +69,8 @@ const opcionSignOutMenuDesktop = document.querySelector('.sign-outMenuDesktop');
 
 const contenComprasAdicionadas = document.querySelector('.divOnlyCompras');
 
+const divNumComprasCart = document.querySelector('.numComprasCart');
+
 
 
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
@@ -1192,10 +1194,10 @@ function guardarProductosAdicionados(objetoProducto) {
      //configs para sumar precios
     let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
     totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
-
+    divNumComprasCart.innerText = catalogoComprasAdicionadas.length; 
     //configs para sumar el precio Total:
     
-    for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
+    /* for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
         precios.push(catalogoComprasAdicionadas[i].price);
     }
     console.log(precios);
@@ -1203,11 +1205,11 @@ function guardarProductosAdicionados(objetoProducto) {
 
     
     precios.forEach(function (precio) {
-        
-        sumaTotal += price;
+        const sumaTotal = 0;
+        sumaTotal += precio;
         spanTotalPrecioAdicionados.innerText = 'Total : ' + sumaTotal;
 });
-    
+     */
 
 
 }
