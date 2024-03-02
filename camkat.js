@@ -1103,11 +1103,11 @@ function renderObjetosHTML(arrElements) {
     }
 
 let precios = [];
+let preciosCerrarCompra = [];
 const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
     catalogoComprasAdicionadas.push(objetoProducto);
-    console.log(catalogoComprasAdicionadas);
 
     compraAdicionada = objetoProducto;
 
@@ -1200,7 +1200,7 @@ function guardarProductosAdicionados(objetoProducto) {
             }
         }
          console.log(catalogoComprasAdicionadas);
-        TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
+        TotalArticulosyTotalPrecioCerrar(catalogoComprasAdicionadas)
         
         } 
  
@@ -1208,6 +1208,32 @@ function guardarProductosAdicionados(objetoProducto) {
     
     
     
+    function TotalArticulosyTotalPrecioCerrar(comprascerradas) {
+        //configs para total articulops adicionados en desplegable
+        let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
+        totalArticulosAdicionadosSpan.innerText = comprascerradas.length + ' Articulos';
+
+        //configs para total articulops adicionados en desplegable
+        divNumComprasCart.innerText = comprascerradas.length; 
+
+        //configs para sumar el precio Total:
+        let sumaTotalPreciosCerrar = 0;
+        /* precios.push(compraAdicionada.price); */
+        for (let index = 0; index < comprascerradas.length; index++) {
+            
+            preciosCerrarCompra.push(comprascerradas[index].price)
+            
+        }
+        
+        for (let i = 0; i < preciosCerrarCompra.length; i++) {
+        sumaTotalPreciosCerrar += preciosCerrarCompra[i];
+        }
+        console.log(preciosCerrarCompra);
+        let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+        spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPreciosCerrar;
+    }
+    
+
     function TotalArticulosyTotalPrecio(comprasHechas) {
         //configs para total articulops adicionados en desplegable
         let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
@@ -1217,21 +1243,25 @@ function guardarProductosAdicionados(objetoProducto) {
         divNumComprasCart.innerText = comprasHechas.length; 
 
         //configs para sumar el precio Total:
-        // let sumaTotalPrecios = 0;
-        // precios.push(compraAdicionada.price); 
-        // for (let i = 0; i < precios.length; i++) {
-        // sumaTotalPrecios += precios[i];
+        let sumaTotalPrecios = 0;
+        precios.push(compraAdicionada.price);
+        // for (let index = 0; index < comprasHechas.length; index++) {
+            
+        //     precios.push(comprasHechas[index].price)
+            
         // }
-        // console.log(precios);
-        // let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
-        // spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
+        
+        for (let i = 0; i < precios.length; i++) {
+        sumaTotalPrecios += precios[i];
+        }
+        let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+        spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
     }
     
     TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
-    
+
 
 }
-
 
 
    
