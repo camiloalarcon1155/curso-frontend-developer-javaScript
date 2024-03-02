@@ -1191,26 +1191,28 @@ function guardarProductosAdicionados(objetoProducto) {
     
     //configs para cerrar divs de compra:
     function cerrarCompra(compracerrada) {
-            
+        divContenedorCompras.classList.add('inactive');
         for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
             if (compracerrada.name === catalogoComprasAdicionadas[i].name) {
                 catalogoComprasAdicionadas.splice(i, 1);
             }
         }
          console.log(catalogoComprasAdicionadas);
-        TotalArticulosyTotalPrecio()
+        TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
         
         } 
-
+ 
     
     
     
     
-    function TotalArticulosyTotalPrecio() {
-        //configs para sumar precios
+    function TotalArticulosyTotalPrecio(comprasHechas) {
+        //configs para total articulops adicionados en desplegable
         let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
-        totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
-        divNumComprasCart.innerText = catalogoComprasAdicionadas.length; 
+        totalArticulosAdicionadosSpan.innerText = comprasHechas.length + ' Articulos';
+
+        //configs para total articulops adicionados en desplegable
+        divNumComprasCart.innerText = comprasHechas.length; 
 
         //configs para sumar el precio Total:
         let sumaTotalPrecios = 0;
@@ -1223,7 +1225,7 @@ function guardarProductosAdicionados(objetoProducto) {
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
     }
     
-    TotalArticulosyTotalPrecio()
+    TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
     
 
 }
