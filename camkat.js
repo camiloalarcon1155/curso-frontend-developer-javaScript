@@ -1102,8 +1102,7 @@ function renderObjetosHTML(arrElements) {
 
     }
 
-let precios = [];
-let preciosCerrarCompra = [];
+let preciosCompraAdicionada = [];
 const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
@@ -1191,13 +1190,15 @@ function guardarProductosAdicionados(objetoProducto) {
     
     //configs para cerrar divs de compra:
     function cerrarCompra(compracerrada) {
-        console.log(catalogoComprasAdicionadas);
-
+        
+        
         divContenedorCompras.classList.add('inactive');
         for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
             if (compracerrada.name === catalogoComprasAdicionadas[i].name) {
                 catalogoComprasAdicionadas.splice(i, 1);
+                break;
             }
+            /* break; */
         }
          console.log(catalogoComprasAdicionadas);
         TotalArticulosyTotalPrecioCerrar(catalogoComprasAdicionadas)
@@ -1208,27 +1209,24 @@ function guardarProductosAdicionados(objetoProducto) {
     
     
     
-    function TotalArticulosyTotalPrecioCerrar(comprascerradas) {
+    function TotalArticulosyTotalPrecioCerrar(comprasDespuesDeCierre) {
         //configs para total articulops adicionados en desplegable
         let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
-        totalArticulosAdicionadosSpan.innerText = comprascerradas.length + ' Articulos';
+        totalArticulosAdicionadosSpan.innerText = comprasDespuesDeCierre.length + ' Articulos';
 
         //configs para total articulops adicionados en desplegable
-        divNumComprasCart.innerText = comprascerradas.length; 
+        divNumComprasCart.innerText = comprasDespuesDeCierre.length; 
 
         //configs para sumar el precio Total:
         let sumaTotalPreciosCerrar = 0;
         /* precios.push(compraAdicionada.price); */
-        for (let index = 0; index < comprascerradas.length; index++) {
-            
-            preciosCerrarCompra.push(comprascerradas[index].price)
-            
+
+        console.log(comprasDespuesDeCierre);
+
+        for (let i = 0; i < comprasDespuesDeCierre.length; i++) {
+        sumaTotalPreciosCerrar += comprasDespuesDeCierre[i].price;
         }
-        
-        for (let i = 0; i < preciosCerrarCompra.length; i++) {
-        sumaTotalPreciosCerrar += preciosCerrarCompra[i];
-        }
-        console.log(preciosCerrarCompra);
+
         let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPreciosCerrar;
     }
@@ -1244,15 +1242,13 @@ function guardarProductosAdicionados(objetoProducto) {
 
         //configs para sumar el precio Total:
         let sumaTotalPrecios = 0;
-        precios.push(compraAdicionada.price);
-        // for (let index = 0; index < comprasHechas.length; index++) {
-            
-        //     precios.push(comprasHechas[index].price)
-            
-        // }
+        /* preciosCompraAdicionada.push(compraAdicionada.price); */
+        preciosCompraAdicionada.push(compraAdicionada);
         
-        for (let i = 0; i < precios.length; i++) {
-        sumaTotalPrecios += precios[i];
+        console.log(preciosCompraAdicionada)
+
+        for (let i = 0; i < preciosCompraAdicionada.length; i++) {
+        sumaTotalPrecios += preciosCompraAdicionada[i].price;
         }
         let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
