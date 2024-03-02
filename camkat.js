@@ -1170,13 +1170,11 @@ function guardarProductosAdicionados(objetoProducto) {
 
         const imgCompraAdicionadaClose = document.createElement('img');
         imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
-        //imgCompraAdicionadaClose.addEventListener('click', cerrarCompra);
-        
-    // function cerrarCompra() {
-    //     divContenedorCompras.classList.add('inactive');
-    // }    
-    
-
+        imgCompraAdicionadaClose.addEventListener('click', ((obj) => {
+        return function() {
+            cerrarCompra(obj); //permite obtener la variable inmediatamente cuando se le da click
+        };
+        })(objetoProducto));
 
         figureCompraAdicionada.appendChild(imgCompraAdicionada);
         divCompraAdicionada.appendChild(figureCompraAdicionada);
@@ -1186,31 +1184,47 @@ function guardarProductosAdicionados(objetoProducto) {
         divContenedorCompras.appendChild(divCompraAdicionada);
         contenComprasAdicionadas.appendChild(divContenedorCompras);
 
-
+    
+    
+    
+    
+    
+    //configs para cerrar divs de compra:
+    function cerrarCompra(compracerrada) {
+            
+        for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
+            if (compracerrada.name === catalogoComprasAdicionadas[i].name) {
+                catalogoComprasAdicionadas.splice(i, 1);
+            }
+        }
+         console.log(catalogoComprasAdicionadas);
+        TotalArticulosyTotalPrecio()
+        
+        } 
 
     
-     //configs para sumar precios
-    let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
-    totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
-    divNumComprasCart.innerText = catalogoComprasAdicionadas.length; 
+    
+    
+    
+    function TotalArticulosyTotalPrecio() {
+        //configs para sumar precios
+        let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
+        totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
+        divNumComprasCart.innerText = catalogoComprasAdicionadas.length; 
 
-
-    let sumaTotalPrecios = 0;
-    //configs para sumar el precio Total:
-    precios.push(compraAdicionada.price); 
-    for (let i = 0; i < precios.length; i++) {
+        //configs para sumar el precio Total:
+        let sumaTotalPrecios = 0;
+        precios.push(compraAdicionada.price); 
+        for (let i = 0; i < precios.length; i++) {
         sumaTotalPrecios += precios[i];
-        
+        }
+        console.log(precios);
+        let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+        spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
     }
     
+    TotalArticulosyTotalPrecio()
     
-
-
-    console.log(precios);
-    let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
- 
-    spanTotalPrecioAdicionados.innerText = 'Total: '+sumaTotalPrecios;
-
 
 }
 
