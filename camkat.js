@@ -1107,7 +1107,7 @@ const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
     catalogoComprasAdicionadas.push(objetoProducto);
-    
+    console.log(catalogoComprasAdicionadas);
 
     compraAdicionada = objetoProducto;
 
@@ -1160,12 +1160,8 @@ function guardarProductosAdicionados(objetoProducto) {
 
         const imgCompraAdicionada = document.createElement('img');
 
-    
-
-        /* imgCompraAdicionada.classList.add('figure-img'); */
         imgCompraAdicionada.setAttribute('src', compraAdicionada.image);
         
-
         const pCompraAdicionadaNombre = document.createElement('p');
         pCompraAdicionadaNombre.innerText = compraAdicionada.name;
 
@@ -1174,7 +1170,12 @@ function guardarProductosAdicionados(objetoProducto) {
 
         const imgCompraAdicionadaClose = document.createElement('img');
         imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
-       
+        //imgCompraAdicionadaClose.addEventListener('click', cerrarCompra);
+        
+    // function cerrarCompra() {
+    //     divContenedorCompras.classList.add('inactive');
+    // }    
+    
 
 
         figureCompraAdicionada.appendChild(imgCompraAdicionada);
@@ -1184,35 +1185,35 @@ function guardarProductosAdicionados(objetoProducto) {
         divCompraAdicionada.appendChild(imgCompraAdicionadaClose);
         divContenedorCompras.appendChild(divCompraAdicionada);
         contenComprasAdicionadas.appendChild(divContenedorCompras);
-        /* menuCarritoCompras.appendChild(contenComprasAdicionadas); */
-
-
-    /* }); */
 
 
 
+    
      //configs para sumar precios
     let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
     totalArticulosAdicionadosSpan.innerText = catalogoComprasAdicionadas.length + ' Articulos';
     divNumComprasCart.innerText = catalogoComprasAdicionadas.length; 
+
+
+    let sumaTotalPrecios = 0;
     //configs para sumar el precio Total:
-    
-    /* for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
-        precios.push(catalogoComprasAdicionadas[i].price);
+    precios.push(compraAdicionada.price); 
+    for (let i = 0; i < precios.length; i++) {
+        sumaTotalPrecios += precios[i];
+        
     }
+    
+    
+
+
     console.log(precios);
     let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
-
-    
-    precios.forEach(function (precio) {
-        const sumaTotal = 0;
-        sumaTotal += precio;
-        spanTotalPrecioAdicionados.innerText = 'Total : ' + sumaTotal;
-});
-     */
+ 
+    spanTotalPrecioAdicionados.innerText = 'Total: '+sumaTotalPrecios;
 
 
 }
+
 
 
    
