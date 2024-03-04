@@ -1201,7 +1201,7 @@ function guardarProductosAdicionados(objetoProducto) {
             /* break; */
         }
          console.log(catalogoComprasAdicionadas);
-        TotalArticulosyTotalPrecioCerrar(catalogoComprasAdicionadas)
+        TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
         
         } 
  
@@ -1209,27 +1209,27 @@ function guardarProductosAdicionados(objetoProducto) {
     
     
     
-    function TotalArticulosyTotalPrecioCerrar(comprasDespuesDeCierre) {
-        //configs para total articulops adicionados en desplegable
-        let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
-        totalArticulosAdicionadosSpan.innerText = comprasDespuesDeCierre.length + ' Articulos';
+    // function TotalArticulosyTotalPrecioCerrar(comprasDespuesDeCierre) {
+    //     //configs para total articulops adicionados en desplegable
+    //     let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
+    //     totalArticulosAdicionadosSpan.innerText = comprasDespuesDeCierre.length + ' Articulos';
 
-        //configs para total articulops adicionados en desplegable
-        divNumComprasCart.innerText = comprasDespuesDeCierre.length; 
+    //     //configs para total articulops adicionados en desplegable
+    //     divNumComprasCart.innerText = comprasDespuesDeCierre.length; 
 
-        //configs para sumar el precio Total:
-        let sumaTotalPreciosCerrar = 0;
-        /* precios.push(compraAdicionada.price); */
+    //     //configs para sumar el precio Total:
+    //     let sumaTotalPreciosCerrar = 0;
+    //     /* precios.push(compraAdicionada.price); */
 
-        console.log(comprasDespuesDeCierre);
+    //     console.log(comprasDespuesDeCierre);
 
-        for (let i = 0; i < comprasDespuesDeCierre.length; i++) {
-        sumaTotalPreciosCerrar += comprasDespuesDeCierre[i].price;
-        }
+    //     for (let i = 0; i < comprasDespuesDeCierre.length; i++) {
+    //     sumaTotalPreciosCerrar += comprasDespuesDeCierre[i].price;
+    //     }
 
-        let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
-        spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPreciosCerrar;
-    }
+    //     let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+    //     spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPreciosCerrar;
+    // }
     
 
     function TotalArticulosyTotalPrecio(comprasHechas) {
@@ -1242,13 +1242,10 @@ function guardarProductosAdicionados(objetoProducto) {
 
         //configs para sumar el precio Total:
         let sumaTotalPrecios = 0;
-        /* preciosCompraAdicionada.push(compraAdicionada.price); */
-        preciosCompraAdicionada.push(compraAdicionada);
-        
-        console.log(preciosCompraAdicionada)
+      
 
-        for (let i = 0; i < preciosCompraAdicionada.length; i++) {
-        sumaTotalPrecios += preciosCompraAdicionada[i].price;
+        for (let i = 0; i < comprasHechas.length; i++) {
+        sumaTotalPrecios += comprasHechas[i].price;
         }
         let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
