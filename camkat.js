@@ -314,6 +314,8 @@ function mostrarMiInformacion() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
+
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
