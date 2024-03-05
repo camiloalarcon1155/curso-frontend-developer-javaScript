@@ -10,7 +10,7 @@
 html{
      width: 100%;
     height: 100%; 
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
 }
 
 
@@ -161,13 +161,14 @@ html{
         .desktop-menu {
             position: absolute;
             background: var(--white);
-            top: 46px;
+            top: 100.6%;
             left: auto;
             right: 0;
             height: auto;
             border: 1px solid #000000;
             border-radius: 6px;
             padding: 20px 20px 0 20px;
+            font-size: 1.6rem;
 }
 
 
@@ -204,11 +205,12 @@ html{
     .mobile-menu {
         background-color: var(--white);
         position: absolute;
-        top: 56px;  
+        top: 100.6%;
         left: 0px; 
         padding: 5%;
         width: 90%;
         border: 1px solid black;
+        font-size: 1.6rem;
     }
 
     .mobile-menu a:hover {
@@ -222,7 +224,7 @@ html{
     }
     .mobile-menu ul {
       padding: 0;
-      margin: 24px 0 0;
+      margin: 1px 0 0;
       list-style: none;
     }
     .mobile-menu ul:nth-child(1) {
@@ -259,9 +261,11 @@ html{
     position: absolute;
     right: 0;
     padding: 0 3.4%;
-    top: 46px;
+    top: 7.6%;
     border: 1px solid black;
     border-radius: 6px;
+    font-size: 1.6rem;
+
 }
 /* configs de mis ordenes pedidadas: */
 
@@ -427,6 +431,7 @@ html{
        /*  height: auto; */
         min-height: 62.4%;
         padding: 73px 0 5% 0px;
+        font-size: 1.6rem;
     }
 
     .main-container h1 {
@@ -637,10 +642,11 @@ html{
         box-sizing: border-box;
         position: absolute;
         right: 0;
-        top: 46px;
+        top: 7.6%;
         border: 1px solid black;
         border-radius: 6px;
         padding: 0 3.4%;
+        font-size: 1.6rem;
 }
 
 #my-orderTotalOrdenes {
@@ -698,15 +704,15 @@ html{
 
     /* configs de aside de ingresar con cuenta  */
 
-    .divIngresoCuenta{
-        position: absolute;
-        right: 0;
-        top: 46px;
-        width: 100%;
-        height:100%
-        
-        
-    }
+    .divIngresoCuenta {
+       position: absolute;
+    right: 5%;
+    left: 5%;
+    top: 100.6%;
+    width: 90%;
+    height: 100%;
+    font-size: 1.6rem;
+}
     .loginIngreso {
       padding: 0 10%;
       width: 100%;
@@ -736,18 +742,18 @@ html{
     }
     .formIngreso a {
       color: var(--hospital-green);
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       text-align: center;
       text-decoration: none;
       margin-bottom: 52px;
     }
     .labelEmailIngreso {
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
     }
     .labelPasswordIngreso {
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
     }
@@ -800,11 +806,13 @@ html{
     /* CONFIGS para crear cuenta */
 
     .divCrearCuenta{
-        position: absolute;
-        right: 0;
-        top: 46px;
-        width: 100%;
-        height:100%
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    top: 100.6%;
+    width: 90%;
+    height: 100%;
+    font-size: 1.6rem;
     }
    
     
@@ -860,7 +868,7 @@ html{
       margin-bottom: 52px;
     }
     .labelCrearName {
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
     }
@@ -877,12 +885,12 @@ html{
       margin-bottom: 22px;
     }
     .labelEmailCrear {
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
     }
     .labelPasswordCrear {
-      font-size: var(--sm);
+      /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
     }

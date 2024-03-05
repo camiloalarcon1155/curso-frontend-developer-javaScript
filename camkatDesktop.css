@@ -10,7 +10,7 @@
 html{
      width: 100%;
     height: 100%; 
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
 }
 
 
@@ -62,6 +62,7 @@ html{
             height: 7.6%;
             position: fixed;
             background-color: #DAC0A3;
+            font-size: 1.6rem;
         }
 
         .menu {
@@ -124,7 +125,7 @@ html{
         .navbar-email {
             color: rgb(222, 87, 38);
             cursor:pointer;
-            font-size: var(--sm);
+            font-size: 1.6rem;
             margin-right: 12px;
         }
 
@@ -138,7 +139,7 @@ html{
             height: 16px;
             background-color: var(--hospital-green);
             border-radius: 50%;
-            font-size: var(--sm);
+            font-size: 1.6rem;
             font-weight: bold;
             position: absolute;
             top: 1px;
@@ -160,12 +161,14 @@ html{
     .desktop-menu {
         position: absolute;
         background: var(--white);
-        top: 46px;
+        top: 100.6%;
         right: 60px;
       height: auto;
       border: 1px solid #000000;
       border-radius: 6px;
       padding: 20px 20px 0 20px;
+      font-size: 1.6rem;
+
     }
     .desktop-menu ul {
       list-style: none;
@@ -198,12 +201,8 @@ html{
     /* settings del modo mobile*/
 
     .mobile-menu {
-        background-color: var(--white);
-        position: absolute;
-        top: 60px;
-        left: 0px; 
-        padding: 5%;
-        width: 90%;
+        display: none;
+      
     }
 
     .mobile-menu a:hover {
@@ -255,9 +254,11 @@ html{
         position: absolute;
         right: 0;
         padding: 0 50px;
-        top: 46px;
+        top: 7.6%;
         border: 1px solid black;
          border-radius: 6px;
+        font-size: 1.6rem;
+
     } 
 
 /* configs de mis ordenes pedidadas: */
@@ -424,6 +425,7 @@ html{
        /*  height: auto; */
         min-height: 62.4%;
         padding: 73px 0 5% 0px;
+        font-size: 1.6rem;
     }
 
     .main-container h1 {
@@ -634,12 +636,11 @@ html{
         box-sizing: border-box;
         position: absolute;
         right: 0;
-        top: 46px;
+        top: 7.6%;
         padding: 0 3.4%;
         border: 1px solid black;
         border-radius: 6px;
 }
-
 #my-orderTotalOrdenes {
       width: 100%;
       height: 100vh;
@@ -647,13 +648,13 @@ html{
       place-items: center;
       position: relative;
       top: 5px;
+      font-size: 1.6rem;
     }
     #titleTotalOrdenes {
       font-size: var(--lg);
       margin-bottom: 26px;
       margin-left: 33%;
       background-color: #DAC0A3;
-      
     }
     #my-order-containerTotalOrdenes {
       display: grid;
@@ -697,9 +698,11 @@ html{
     .divIngresoCuenta{
     position: absolute;
     right: 30%;
-    top: 46px;
+    top: 100.6%;
     width: 40%;
     height: 100%;
+    font-size: 1.6rem;
+
 }
     .loginIngreso {
       padding: 0 10%;
@@ -730,18 +733,18 @@ html{
     }
     .formIngreso a {
       color: var(--hospital-green);
-      font-size: var(--sm);
+         font-size: 1.6rem;
       text-align: center;
       text-decoration: none;
       margin-bottom: 52px;
     }
     .labelEmailIngreso {
-      font-size: var(--sm);
+         font-size: 1.6rem;
       font-weight: bold;
       margin-bottom: 4px;
     }
     .labelPasswordIngreso {
-      font-size: var(--sm);
+         font-size: 1.6rem;
       font-weight: bold;
       margin-bottom: 4px;
     }
@@ -750,7 +753,7 @@ html{
       border: none;
       border-radius: 8px;
       height: 30px;
-      font-size: var(--md);
+         font-size: 1.6rem;
       padding: 6px;
       margin-bottom: 12px;
     }
@@ -764,7 +767,7 @@ html{
       color: var(--white);
       width: 100%;
       cursor: pointer;
-      font-size: var(--md);
+         font-size: 1.6rem;
       font-weight: bold;
       height: 50px;
     }
@@ -775,7 +778,7 @@ html{
       color: var(--hospital-green);
       width: 100%;
       cursor: pointer;
-      font-size: var(--md);
+         font-size: 1.6rem;
       font-weight: bold;
       height: 50px;
     }
@@ -797,9 +800,11 @@ html{
         position: absolute;
         right: 30%;
         left: 30%;
-        top: 46px;
+        top: 100.6%;
         width: 40%;
         height: 100%;
+         font-size: 1.6rem;
+
         
     }
    
@@ -813,8 +818,8 @@ html{
       color: var(--white);
       width: 100%;
       cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
+         font-size: 1.6rem;
+       font-weight: bold;
       height: 50px;
     }
     .login-buttonCrear {
@@ -850,14 +855,14 @@ html{
     }
     .formCrear a {
       color: var(--hospital-green);
-      font-size: var(--sm);
+         font-size: 1.6rem;
       text-align: center;
       text-decoration: none;
       margin-bottom: 52px;
     }
     .labelCrearName {
-      font-size: var(--sm);
-      font-weight: bold;
+         font-size: 1.6rem;
+       font-weight: bold;
       margin-bottom: 4px;
     }
      .inputCrearName {
@@ -865,21 +870,21 @@ html{
       border: none;
       border-radius: 8px;
       height: 30px;
-      font-size: var(--md);
-      padding: 6px;
+         font-size: 1.6rem;
+       padding: 6px;
       margin-bottom: 12px;
     }
     .input-nameCrear {
       margin-bottom: 22px;
     }
     .labelEmailCrear {
-      font-size: var(--sm);
-      font-weight: bold;
+         font-size: 1.6rem;
+       font-weight: bold;
       margin-bottom: 4px;
     }
     .labelPasswordCrear {
-      font-size: var(--sm);
-      font-weight: bold;
+         font-size: 1.6rem;
+       font-weight: bold;
       margin-bottom: 4px;
     }
     .inputCrearEmail {
@@ -887,8 +892,8 @@ html{
       border: none;
       border-radius: 8px;
       height: 30px;
-      font-size: var(--md);
-      padding: 6px;
+         font-size: 1.6rem;
+       padding: 6px;
       margin-bottom: 12px;
     }
     .input-emailCrear {
@@ -899,8 +904,8 @@ html{
         border: none;
         border-radius: 8px;
         height: 30px;
-        font-size: var(--md);
-        padding: 6px;
+         font-size: 1.6rem;
+         padding: 6px;
         margin-bottom: 12px;
         }
     .input-passwordCrear {
@@ -914,8 +919,8 @@ html{
       color: var(--white);
       width: 100%;
       cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
+         font-size: 1.6rem;
+       font-weight: bold;
       height: 50px;
     }
    
