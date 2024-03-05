@@ -60,6 +60,9 @@ html{
             border-bottom: 1px solid var(--very-light-pink);
             width: 100%;
             height: 7.6%;
+            position: fixed; /* Fija el contenedor en la ventana del navegador  */
+            background-color: #DAC0A3;
+
         }
 
         .menu {
@@ -156,18 +159,16 @@ html{
         /* settings del menu de compras */
 
         .desktop-menu {
-               
-                position: absolute;
-                background: var(--white);
-                top: 60px;
-                
-                left: 60px;
-                right: auto;
-                height: auto;
-                border: 1px solid var(--very-light-pink);
-                border-radius: 6px;
-                padding: 20px 20px 0 20px;
-            }
+            position: absolute;
+            background: var(--white);
+            top: 46px;
+            left: auto;
+            right: 0;
+            height: auto;
+            border: 1px solid #000000;
+            border-radius: 6px;
+            padding: 20px 20px 0 20px;
+}
 
 
     .desktop-menu ul {
@@ -203,10 +204,11 @@ html{
     .mobile-menu {
         background-color: var(--white);
         position: absolute;
-        top: 82px;  
+        top: 56px;  
         left: 0px; 
         padding: 5%;
         width: 90%;
+        border: 1px solid black;
     }
 
     .mobile-menu a:hover {
@@ -249,16 +251,18 @@ html{
       right: 0;
     } lo cambiamos por aside*/ 
 
-    /* aside  */#shoppingCartContainer{
-        background-color: var(--white);
-        height: auto;
-        width: 100%;
-        /* padding: 0 60px;  lo sacamos de aqui para que no se aplique a todos los asides, y se lo ponemos solamente a nuestro shoppingCartContainer  ue es el menu de carrito y que si lo necesita*/
-        box-sizing: border-box;
-        position: absolute;
-        right: 0;
-        padding: 0 3.4%;
-    } 
+   #shoppingCartContainer {
+    background-color: var(--white);
+    height: auto;
+    width: 90%;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    padding: 0 3.4%;
+    top: 46px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
 /* configs de mis ordenes pedidadas: */
 
     .title-container {
@@ -422,7 +426,7 @@ html{
         width: 100%;
        /*  height: auto; */
         min-height: 62.4%;
-        padding: 0 0 5% 0;
+        padding: 73px 0 5% 0px;
     }
 
     .main-container h1 {
@@ -633,7 +637,9 @@ html{
         box-sizing: border-box;
         position: absolute;
         right: 0;
-        top: 48px;
+        top: 46px;
+        border: 1px solid black;
+        border-radius: 6px;
         padding: 0 3.4%;
 }
 
@@ -695,9 +701,10 @@ html{
     .divIngresoCuenta{
         position: absolute;
         right: 0;
-        top: 44px;
+        top: 46px;
         width: 100%;
         height:100%
+        
         
     }
     .loginIngreso {
@@ -707,6 +714,8 @@ html{
       display: grid;
       place-items: center;
       background-color: var(--white);
+      border: 1px solid black;
+      border-radius: 6px;
     }
     .form-containerIngreso {
       position: relative;
@@ -793,7 +802,7 @@ html{
     .divCrearCuenta{
         position: absolute;
         right: 0;
-        top: 44px;
+        top: 46px;
         width: 100%;
         height:100%
     }
@@ -823,6 +832,8 @@ html{
       display: grid;
       place-items: center;
       background-color: var(--white);
+      border: 1px solid black;
+      border-radius: 6px;
     }
     .form-containerCrear {
       position: relative;

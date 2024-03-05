@@ -60,6 +60,8 @@ html{
             border-bottom: 1px solid var(--very-light-pink);
             width: 100%;
             height: 7.6%;
+            position: fixed;
+            background-color: #DAC0A3;
         }
 
         .menu {
@@ -106,7 +108,7 @@ html{
         .navbar-left ul li a,
         .navbar-right ul li a {
             text-decoration: none;
-            color: var(--very-light-pink);
+            color: rgb(128, 74, 54);
             border: 1px solid var(--white);
             padding: 8px;
             border-radius: 8px;
@@ -120,7 +122,7 @@ html{
         }
 
         .navbar-email {
-            color: var(--very-light-pink);
+            color: rgb(222, 87, 38);
             cursor:pointer;
             font-size: var(--sm);
             margin-right: 12px;
@@ -158,10 +160,10 @@ html{
     .desktop-menu {
         position: absolute;
         background: var(--white);
-        top: 60px;
+        top: 46px;
         right: 60px;
       height: auto;
-      border: 1px solid var(--very-light-pink);
+      border: 1px solid #000000;
       border-radius: 6px;
       padding: 20px 20px 0 20px;
     }
@@ -253,6 +255,9 @@ html{
         position: absolute;
         right: 0;
         padding: 0 50px;
+        top: 46px;
+        border: 1px solid black;
+         border-radius: 6px;
     } 
 
 /* configs de mis ordenes pedidadas: */
@@ -418,7 +423,7 @@ html{
         width: 100%;
        /*  height: auto; */
         min-height: 62.4%;
-        padding: 0 0 5% 0;
+        padding: 73px 0 5% 0px;
     }
 
     .main-container h1 {
@@ -629,8 +634,10 @@ html{
         box-sizing: border-box;
         position: absolute;
         right: 0;
-        top: 82px;
+        top: 46px;
         padding: 0 3.4%;
+        border: 1px solid black;
+        border-radius: 6px;
 }
 
 #my-orderTotalOrdenes {
@@ -688,13 +695,12 @@ html{
  /* configs de aside de ingresar con cuenta  */
 
     .divIngresoCuenta{
-        position: absolute;
-        right: 0;
-        top: 44px;
-        width: 100%;
-        height:100%
-        
-    }
+    position: absolute;
+    right: 30%;
+    top: 46px;
+    width: 40%;
+    height: 100%;
+}
     .loginIngreso {
       padding: 0 10%;
       width: 100%;
@@ -702,6 +708,8 @@ html{
       display: grid;
       place-items: center;
       background-color: var(--white);
+      border: 1px solid #000000;
+      border-radius: 6px;
     }
     .form-containerIngreso {
       position: relative;
@@ -787,10 +795,12 @@ html{
 
     .divCrearCuenta{
         position: absolute;
-        right: 0;
-        top: 44px;
-        width: 100%;
-        height:100%
+        right: 30%;
+        left: 30%;
+        top: 46px;
+        width: 40%;
+        height: 100%;
+        
     }
    
     
@@ -818,6 +828,8 @@ html{
       display: grid;
       place-items: center;
       background-color: var(--white);
+      border: 1px solid #000000;
+      border-radius: 6px;
     }
     .form-containerCrear {
       position: relative;

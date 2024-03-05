@@ -98,6 +98,7 @@ opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
 opcionSignOutMenuDesktop.addEventListener('click', recargarMiPagina);
 
 function toggleDesktopMenuEmail() {
+    window.scrollTo(0, 0);
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -166,6 +167,7 @@ function toggleMobilMenu() {
 
 
 function toggleCarritoCompras() {
+    window.scrollTo(0, 0);
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
@@ -384,6 +386,7 @@ ajustarCorreoSegunTamanioPantalla();
 
 
 function toggleTotalOrdenens() {
+    window.scrollTo(0, 0);
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
