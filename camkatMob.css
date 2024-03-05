@@ -795,13 +795,11 @@ html{
       margin-top: 14px;
       margin-bottom: 30px;
     }
-
    /*  @media (max-width: 640px) {
       .logoIngreso {
         display: block;
       }
     } */
-
 
     /* CONFIGS para crear cuenta */
 
@@ -814,10 +812,6 @@ html{
     height: 100%;
     font-size: 1.6rem;
     }
-   
-    
-   
-    
     .primary-buttonCrear {
       background-color: var(--hospital-green);
       border-radius: 8px;
@@ -918,7 +912,6 @@ html{
     .input-passwordCrear {
       margin-bottom: 22px;
     }  
-
     .primary-buttonCrear {
       background-color: var(--hospital-green);
       border-radius: 8px;
@@ -930,8 +923,95 @@ html{
       font-weight: bold;
       height: 50px;
     }
-   
     .login-buttonCrear {
       margin-top: 14px;
       margin-bottom: 30px;
     }
+
+
+    /* configs para email creado */
+
+    .divEmailCreado{
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    top: 100.6%;
+    width: 90%;
+    height: 100%;
+    font-size: 1.6rem;
+    }
+    .loginEmailCreado {
+      padding: 0 10%;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: var(--white);
+      border: 1px solid black;
+      border-radius: 6px;
+    }
+    .form-containerEmailCreado {
+      position: relative;
+      top: -34px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 100%;
+    }
+    .logoEmailCreado {
+      width: 150px;
+      margin-bottom: 10px;
+      justify-self: center;
+      /* display: none; */
+    }
+      .titleEmailCreado {
+      font-size: var(--lg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .subtitleEmailCreado {
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .email-imageEmailCreado {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background-color: var(--text-input-field);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .email-imageEmailCreado img {
+      width: 80px;
+    }
+    .primary-buttonEmailCreado {
+      background-color: var(--hospital-green);
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+    .login-buttonEmailCreado {
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+     .resendEmailCreado {
+      font-size: var(--sm);
+    }
+    .resendEmailCreado span {
+      color: var(--very-light-pink);
+    }
+    .resendEmailCreado a {
+      color: var(--hospital-green);
+      text-decoration: none;
+    }
+   
