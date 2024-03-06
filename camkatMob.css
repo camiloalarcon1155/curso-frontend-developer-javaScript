@@ -271,6 +271,9 @@ html{
 
     .title-container {
       display: flex;
+      padding-bottom: 15%;
+      justify-content: center;
+      padding-top: 5%;
     }
     .title-container img {
       transform: rotate(180deg);
@@ -279,13 +282,15 @@ html{
     .title {
       font-size: var(--lg);
       font-weight: bold;
+      background-color: #DAC0A3;
     }
     .order {
       display: grid;
       grid-template-columns: auto 1fr;
+      background-color: #DAC0A3;
       gap: 16px;
       align-items: center;
-      background-color: var(--text-input-field);
+      
       margin-bottom: 24px;
       border-radius: 8px;
       padding: 0 24px;
@@ -439,7 +444,7 @@ html{
         background-color: #F8F0E5;
         width: 100%;
        /*  height: auto; */
-        min-height: 62.4%;
+        min-height: 70%;
         padding: 73px 0 5% 0px;
         font-size: 1.6rem;
     }
