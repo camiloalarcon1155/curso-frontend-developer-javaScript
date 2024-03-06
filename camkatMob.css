@@ -233,13 +233,13 @@ html{
     .mobile-menu ul li {
       margin-bottom: 24px;
     }
-    .email {
+    .emailMobil {
       font-size: var(--sm);
-      font-weight: 300 !important;
+      font-weight: 300;
     }
-    .sign-out {
+    .sign-outMenuMobil {
       font-size: var(--sm);
-      color: var(--hospital-green) !important;
+      color: var(--hospital-green);
     }
 
 /* configs generales para aside: */
