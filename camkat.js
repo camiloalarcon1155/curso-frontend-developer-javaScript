@@ -75,6 +75,8 @@ const divNumComprasCart = document.querySelector('.numComprasCart');
 const buttonConfirmarCrearCuenta = document.querySelector('.primary-buttonCrear');
 const divConfirmarCrearCuenta = document.querySelector('.divEmailCreado');
 
+const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado');
+
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
@@ -105,6 +107,7 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     // Llama a la función que deseas ejecutar
     miCuentaCreadaConfirmacion();
 });
+buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
 
 function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
@@ -133,6 +136,11 @@ function toggleDesktopMenuEmail() {
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
     if (!isDivCrearCuentaClosed) {
         divCrearCuenta.classList.add('inactive');
+    }
+
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
     }
 
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -170,6 +178,11 @@ function toggleMobilMenu() {
         divCrearCuenta.classList.add('inactive');
     }
 
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -205,6 +218,11 @@ function toggleCarritoCompras() {
     if (!isDivCrearCuentaClosed) {
         divCrearCuenta.classList.add('inactive');
     }
+
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
     
     menuCarritoCompras.classList.toggle('inactive');
 
@@ -239,6 +257,7 @@ function renderTodoRopa() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -253,6 +272,7 @@ function renderCamisetasH() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -267,6 +287,7 @@ function renderJeansH() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -281,6 +302,7 @@ function renderJeansM() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -295,6 +317,7 @@ function renderchaquetasM() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -309,6 +332,7 @@ function renderOtrasPrendas() {
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -326,6 +350,7 @@ function mostrarMiInformacion() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divCrearCuenta.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
 
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
@@ -424,6 +449,11 @@ function toggleTotalOrdenens() {
         divCrearCuenta.classList.add('inactive');
     }
 
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
 }
 
@@ -458,6 +488,11 @@ function miCuentaMenuIngresar() {
         divCrearCuenta.classList.add('inactive');
     }
 
+    const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
     divIngresoMobil.classList.toggle('inactive');
 }
 
@@ -490,8 +525,10 @@ function miCuentaMenuCrear() {
         divIngresoMobil.classList.add('inactive');
     }
     
-
-
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
 
 
     
@@ -528,6 +565,16 @@ function miCuentaCreadaConfirmacion() {
     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
         divIngresoMobil.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
     }
 
     divConfirmarCrearCuenta.classList.toggle('inactive');
@@ -1215,6 +1262,7 @@ function guardarProductosAdicionados(objetoProducto) {
         pCompraAdicionadaPrecio.innerText = compraAdicionada.price;
 
         const imgCompraAdicionadaClose = document.createElement('img');
+        imgCompraAdicionadaClose.classList.add('logoDeCerrarCompraListada');
         imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
         imgCompraAdicionadaClose.addEventListener('click', ((obj) => {
         return function() {
