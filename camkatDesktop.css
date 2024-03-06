@@ -659,9 +659,12 @@ html{
       font-size: 1.6rem;
     }
     #titleTotalOrdenes {
+      justify-content: center;
+      display: flex;
       font-size: var(--lg);
       margin-bottom: 26px;
-      margin-left: 33%;
+      /* margin-left: 33%;
+      margin-right: 65px; */
       background-color: #DAC0A3;
     }
     #my-order-containerTotalOrdenes {

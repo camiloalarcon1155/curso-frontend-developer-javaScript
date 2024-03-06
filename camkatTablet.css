@@ -685,10 +685,14 @@ html{
       top: 5px;
     }
     #titleTotalOrdenes {
+        justify-content: center;
+    display: flex;
       font-size: var(--lg);
       margin-bottom: 26px;
-      margin-left: 33%;
+      
       background-color: #DAC0A3;
+          /* margin-right: 74px;
+          margin-left: 33%; */
       
     }
     #my-order-containerTotalOrdenes {

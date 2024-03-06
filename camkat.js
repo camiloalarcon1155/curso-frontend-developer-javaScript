@@ -77,6 +77,16 @@ const divConfirmarCrearCuenta = document.querySelector('.divEmailCreado');
 
 const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado');
 
+const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
+
+const passwordEmailRegistrado = document.querySelector('.input-passwordIngreso').value;
+
+const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
+
+
+
+
+
 menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
@@ -85,18 +95,21 @@ menuHamIcon.addEventListener('click', toggleMobilMenu);
 
 menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
 
-//productDetailCloseIcono.addEventListener('click', closeDesplegableCompra);
 
 logoCamkat.addEventListener('click',mostrarMiInformacion);
 inicioFooter.addEventListener('click', recargarMiPagina);
 AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
-//contactoFoote.addEventListener('click', () => mostrarContacto)
+
 
 
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', miCuentaMenuIngresar);
 miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
+buttonRegistrarEmail.addEventListener('click', function(event) {
+    event.preventDefault();
+    guardarInfoYMostrarPagina();
+});
 buttonCrearCuenta.addEventListener('click', miCuentaMenuCrear);
 opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
 opcionSignOutMenuDesktop.addEventListener('click', recargarMiPagina);
@@ -578,6 +591,20 @@ function miCuentaCreadaConfirmacion() {
     }
 
     divConfirmarCrearCuenta.classList.toggle('inactive');
+}
+
+function guardarInfoYMostrarPagina() {
+    console.log('pelamela')
+
+    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
+    }
+
+    menuEmailMov.innerHTML = direccionEmailRegistrado;
+    console.log(direccionEmailRegistrado);
+    menuEmailDesktop.innerText = 'direccionEmailRegistrado';
+
 }
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
