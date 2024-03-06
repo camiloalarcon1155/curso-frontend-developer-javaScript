@@ -77,9 +77,7 @@ const divConfirmarCrearCuenta = document.querySelector('.divEmailCreado');
 
 const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado');
 
-const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
 
-const passwordEmailRegistrado = document.querySelector('.input-passwordIngreso').value;
 
 const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
 
@@ -414,13 +412,14 @@ function recargarMiPagina(){
 }
 
 function ajustarCorreoSegunTamanioPantalla() {
+    const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
     var screenWidth = window.innerWidth;
 
     if (screenWidth <= 888) {
         /* logoEmailUsuario.innerHTML = ''; */
         logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
     } else {
-        logoEmailUsuario.innerText = 'camkatstore.gmail.com'
+        logoEmailUsuario.innerText = direccionEmailRegistrado;
     }
 
 }
@@ -594,16 +593,20 @@ function miCuentaCreadaConfirmacion() {
 }
 
 function guardarInfoYMostrarPagina() {
-    console.log('pelamela')
+    console.log('pelamela');
+
+    const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
+
+    const passwordEmailRegistrado = document.querySelector('.input-passwordIngreso').value;
 
     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
         divIngresoMobil.classList.add('inactive');
     }
 
-    menuEmailMov.innerHTML = direccionEmailRegistrado;
+    menuEmailMov.innerText = direccionEmailRegistrado;
     console.log(direccionEmailRegistrado);
-    menuEmailDesktop.innerText = 'direccionEmailRegistrado';
+    /* menuEmailDesktop.innerText = direccionEmailRegistrado; */
 
 }
 
