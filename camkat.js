@@ -85,7 +85,8 @@ const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
 
 
 
-menuEmailMov.addEventListener('click', toggleDesktopMenuEmail)
+/* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
+menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
 
@@ -106,7 +107,7 @@ miCuentaMenuMov.addEventListener('click', miCuentaMenuIngresar);
 miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
 buttonRegistrarEmail.addEventListener('click', function(event) {
     event.preventDefault();
-    guardarInfoYMostrarPagina();
+    guardarInfoLoginIngresoYMostrarPagina();
 });
 buttonCrearCuenta.addEventListener('click', miCuentaMenuCrear);
 opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
@@ -417,7 +418,7 @@ function recargarMiPagina(){
 }
 
 function ajustarCorreoSegunTamanioPantalla() {
-    const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
+    const direccionEmailIngresado = document.querySelector('.input-emailIngreso').value;
     var screenWidth = window.innerWidth;
 
     if (screenWidth <= 888) {
@@ -426,7 +427,7 @@ function ajustarCorreoSegunTamanioPantalla() {
         logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
     } else {
 
-        /* logoEmailUsuario.innerText = direccionEmailRegistrado; */
+        /* logoEmailUsuario.innerText = direccionEmailIngresado; */
         logoEmailUsuario.innerText = 'Mi cuenta';
 
     }
@@ -557,7 +558,7 @@ function miCuentaMenuCrear() {
 
     divCrearCuenta.classList.toggle('inactive');
 }
-
+let arregloUsuariosRegistrados = [];
 function miCuentaCreadaConfirmacion() {
 
      closeDesplegableCompra()
@@ -598,32 +599,103 @@ function miCuentaCreadaConfirmacion() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
+
+    const direccionEmailRegistrado = document.querySelector('.inputCrearEmail').value;
+
+    const passwordEmailRegistrado = document.querySelector('.inputCrearPassword').value;
+
+
+    
+    //necesitamos que nameEmailRegistrado, direccionEmailReguistrado y passwordEmailRegistrado se gaurden en una arreglo como objetos
+    
+    function UsuarioRegistrado(name, correo, passworld){
+        this.name = name;
+        this.correo = correo;
+        this.passworld = passworld;
+    }
+    const cliente = new UsuarioRegistrado(nameEmailRegistrado,direccionEmailRegistrado, passwordEmailRegistrado);
+    arregloUsuariosRegistrados.push(cliente); // por ahora vamos a guardar en este areglo para que sea comparado con la cuenta ingresada en la funcion miCuentaMenuIngresar
+
+    console.log(arregloUsuariosRegistrados)
+
+    if (cliente) {
+        console.log('usuario registrado');
+    }
+    //ahora guardamnos el arreglo de objetos en localStorage para que incluso cuando el usuario recargue la pagina, estos datos queden guardados en el navegador
+
+// Convertir el objeto a una cadena JSON
+/* const usuarioJSON = JSON.stringify(arregloUsuariosRegistrados); */
+
+// Guardar en localStorage bajo una clave específica
+/* localStorage.setItem('arregloUsuariosRegistrados', usuarioJSON); */
+
+
+//por ultimo, ponemos los espacios en 0 de nuevo 
+
+        document.querySelector('.inputCrearName').value = "";
+
+        document.querySelector('.inputCrearEmail').value = "";
+
+        document.querySelector('.inputCrearPassword').value = "";
+
+
     divConfirmarCrearCuenta.classList.toggle('inactive');
 }
 
-function guardarInfoYMostrarPagina() {
-    console.log('pelamela');
 
-    const direccionEmailRegistrado = document.querySelector('.input-emailIngreso').value;
 
-    const passwordEmailRegistrado = document.querySelector('.input-passwordIngreso').value;
+
+let arregloUsuariosIngresados = [];
+function guardarInfoLoginIngresoYMostrarPagina() {
+
+    const direccionEmailIngresado = document.querySelector('.input-emailIngreso').value;
+
+    const passwordEmailIngresado = document.querySelector('.input-passwordIngreso').value;
+
+
+    
+    //necesitamos que direccionEmailIngresado y passwordEmailIngresado se gaurden en una arreglo como objetos(no se si lo necesite para despues)
+    
+    function UsuarioIngresado(correo, passworld) {
+        /* this.nombre = nombre; */
+        this.correo = correo;
+        this.passworld = passworld;
+    }
+    const usuario = new UsuarioIngresado(direccionEmailIngresado, passwordEmailIngresado);
+    arregloUsuariosIngresados.push(usuario);
+    console.log(arregloUsuariosIngresados);
+
+    //ahora necesitamos un loop para que nos compare este correo y contraseña con la informacion ya guardada en "la base de datos cuando se crea un usuario"
+    
+    let coincidenciaEncontrada = false;
+        for (let i = 0; i < arregloUsuariosRegistrados.length; i++) {
+            if (passwordEmailIngresado === arregloUsuariosRegistrados[i].passworld && direccionEmailIngresado === arregloUsuariosRegistrados[i].correo) {
+                        coincidenciaEncontrada = true;
+                        break;
+            }
+        }
+            if (coincidenciaEncontrada) {
+                console.log('usuario Ingresado');
+            } else{
+            console.log('Llene los campos correctamente');
+            } 
 
     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
         divIngresoMobil.classList.add('inactive');
     }
 
-    menuEmailMov.innerText = direccionEmailRegistrado;
-    correoDesktopMenuCK.innerText = direccionEmailRegistrado;
-    console.log(direccionEmailRegistrado);
-    //menuEmailDesktop.innerText = direccionEmailRegistrado;
+    menuEmailMov.innerText = direccionEmailIngresado;
+    correoDesktopMenuCK.innerText = direccionEmailIngresado;
+    
 
 
-    //  if (direccionEmailRegistrado) {
-    //      menuEmailDesktop.innerText = direccionEmailRegistrado;
-    // } else {
-    //     menuEmailDesktop.innerText = 'camkatstore@gmail.comx';
-    //     }
+    //dejamos espacios de iniciar sesion vacios de nuevo:ç
+
+   document.querySelector('.input-emailIngreso').value = "";
+
+  document.querySelector('.input-passwordIngreso').value = "";
 }
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
