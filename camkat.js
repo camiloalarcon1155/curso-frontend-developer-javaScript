@@ -81,7 +81,7 @@ const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado'
 
 const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
 
-
+const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
 
 
 
@@ -119,6 +119,11 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     miCuentaCreadaConfirmacion();
 });
 buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
+
+correoDesktopMenuCK.addEventListener('click', miCuentaMenuIngresar);
+
+
+
 
 function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
@@ -416,10 +421,14 @@ function ajustarCorreoSegunTamanioPantalla() {
     var screenWidth = window.innerWidth;
 
     if (screenWidth <= 888) {
+        /* menuEmailDesktop.innerText = ""; */
         /* logoEmailUsuario.innerHTML = ''; */
         logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
     } else {
-        logoEmailUsuario.innerText = direccionEmailRegistrado;
+
+        /* logoEmailUsuario.innerText = direccionEmailRegistrado; */
+        logoEmailUsuario.innerText = 'Mi cuenta';
+
     }
 
 }
@@ -605,9 +614,16 @@ function guardarInfoYMostrarPagina() {
     }
 
     menuEmailMov.innerText = direccionEmailRegistrado;
+    correoDesktopMenuCK.innerText = direccionEmailRegistrado;
     console.log(direccionEmailRegistrado);
-    /* menuEmailDesktop.innerText = direccionEmailRegistrado; */
+    //menuEmailDesktop.innerText = direccionEmailRegistrado;
 
+
+    //  if (direccionEmailRegistrado) {
+    //      menuEmailDesktop.innerText = direccionEmailRegistrado;
+    // } else {
+    //     menuEmailDesktop.innerText = 'camkatstore@gmail.comx';
+    //     }
 }
 
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
