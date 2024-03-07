@@ -160,6 +160,7 @@ html{
 
     .desktop-menu {
         position: absolute;
+        width: 300px;
         background: var(--white);
         top: 100.6%;
         right: 60px;
