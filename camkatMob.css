@@ -218,6 +218,7 @@ html{
         width: 90%;
         border: 1px solid black;
         font-size: 1.6rem;
+        cursor:pointer;
     }
 
     .mobile-menu a:hover {
@@ -226,7 +227,7 @@ html{
         text-decoration: none;
         color: var(--black);
         font-weight: bold;
-        cursor:pointer;
+        
       /* margin-bottom: 24px; */
     }
     .mobile-menu ul {
@@ -244,6 +245,12 @@ html{
       font-size: var(--sm);
       font-weight: 300;
       background-color: #DAC0A3;
+    }
+    .emailMobilSesionIniciada{
+      font-size: var(--sm);
+      font-weight: 300;
+      background-color: #DAC0A3;
+      cursor: initial;
     }
     .sign-outMenuMobil {
       font-size: var(--sm);
@@ -805,6 +812,9 @@ html{
       font-size: var(--md);
       font-weight: bold;
       height: 50px;
+    }
+    .pInfoErrroneaIngreso {
+        color: red;
     }
     .secondary-buttonIngreso {
       background-color: var(--white);

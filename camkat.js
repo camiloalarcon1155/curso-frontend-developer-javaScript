@@ -3,6 +3,7 @@
 
 const menuEmailDesktop = document.querySelector('.navbar-email');
 const menuEmailMov = document.querySelector('.emailMobil');
+const emailmenuMovLogin = document.querySelector('.emailMobilSesionIniciada');
 
 const DesktopMenuEmail = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
@@ -83,7 +84,7 @@ const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
 
 const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
 
-
+const pInfoErrroneaLogin = document.querySelector('.pInfoErrroneaIngreso');
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
 menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
@@ -103,7 +104,7 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
-miCuentaMenuMov.addEventListener('click', miCuentaMenuIngresar);
+miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
 miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
 buttonRegistrarEmail.addEventListener('click', function(event) {
     event.preventDefault();
@@ -515,6 +516,10 @@ function miCuentaMenuIngresar() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    todasOrdenesMenuMobil.classList.remove('inactive');
+    todasOrdenesMenuMobil.classList.remove('inactive');
+    opcionSignOutMenuMob.classList.remove('inactive');
+    miCuentaMenuMov.classList.remove('inactive');
     divIngresoMobil.classList.toggle('inactive');
 }
 
@@ -677,16 +682,30 @@ function guardarInfoLoginIngresoYMostrarPagina() {
         }
             if (coincidenciaEncontrada) {
                 console.log('usuario Ingresado');
-            } else{
-            console.log('Llene los campos correctamente');
+                miCuentaMenuIngresar()
+
+                menuEmailMov.classList.add('inactive'); 
+                emailmenuMovLogin.innerText = direccionEmailIngresado;
+                emailmenuMovLogin.classList.remove('inactive');
+                const isPInfoErrroneaLogin = pInfoErrroneaLogin.classList.contains('inactive');
+                if (!isPInfoErrroneaLogin) {
+                pInfoErrroneaLogin.classList.add('inactive');
+                }
+                
+
+            } else {
+                pInfoErrroneaLogin.classList.remove('inactive');
+                emailmenuMovLogin.classList.add('inactive');
+                console.log('Llene los campos correctamente');
             } 
 
-    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
-    }
-
-    menuEmailMov.innerText = direccionEmailIngresado;
+    // const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    // if (!isdivIngresoMobilClosed) {
+    //     divIngresoMobil.classList.add('inactive');
+    // }
+    
+   /*  emailmenuMovLogin.innerText = direccionEmailIngresado;
+    emailmenuMovLogin.classList.remove('inactive'); */
     correoDesktopMenuCK.innerText = direccionEmailIngresado;
     
 
