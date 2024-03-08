@@ -202,7 +202,12 @@ html{
       display: inline-block;
       cursor: pointer;
     }
-
+    .emailDesktopSesionIniciada{
+      font-size: var(--sm);
+      font-weight: 300;
+      background-color: #DAC0A3;
+      cursor: initial;
+    }
     /* settings del modo mobile*/
 
     .mobile-menu {
@@ -233,6 +238,12 @@ html{
     .email {
       font-size: var(--sm);
       font-weight: 300 !important;
+    }
+    .emailMobilSesionIniciada{
+      font-size: var(--sm);
+      font-weight: 300;
+      background-color: #DAC0A3;
+      cursor: initial;
     }
     .sign-out {
       font-size: var(--sm);
@@ -786,6 +797,9 @@ html{
          font-size: 1.6rem;
       font-weight: bold;
       height: 50px;
+    }
+    .pInfoErrroneaIngreso {
+        color: red;
     }
     .secondary-buttonIngreso {
       background-color: var(--white);

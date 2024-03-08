@@ -115,6 +115,7 @@ html{
         .gmailUsuario{
             width: 100%;
             height: 100%;
+            object-fit: contain;
         }
 
         .navbar-left ul {
@@ -222,6 +223,12 @@ html{
       display: inline-block;
       cursor: pointer;
     }
+    .emailDesktopSesionIniciada{
+      font-size: var(--sm);
+      font-weight: 300;
+      background-color: #DAC0A3;
+      cursor: initial;
+    }
 
     /* settings del modo mobile*/
 
@@ -253,6 +260,12 @@ html{
     .email {
       font-size: var(--sm);
       font-weight: 300 !important;
+    }
+    .emailMobilSesionIniciada{
+      font-size: var(--sm);
+      font-weight: 300;
+      background-color: #DAC0A3;
+      cursor: initial;
     }
     .sign-out {
       font-size: var(--sm);
@@ -829,6 +842,9 @@ html{
       font-size: var(--md);
       font-weight: bold;
       height: 50px;
+    }
+    .pInfoErrroneaIngreso {
+        color: red;
     }
     .login-buttonIngreso {
       margin-top: 14px;

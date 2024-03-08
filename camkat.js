@@ -4,6 +4,8 @@
 const menuEmailDesktop = document.querySelector('.navbar-email');
 const menuEmailMov = document.querySelector('.emailMobil');
 const emailmenuMovLogin = document.querySelector('.emailMobilSesionIniciada');
+const emailmenuDesktopLogin = document.querySelector('.emailDesktopSesionIniciada');
+
 
 const DesktopMenuEmail = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
@@ -425,7 +427,7 @@ function ajustarCorreoSegunTamanioPantalla() {
     if (screenWidth <= 888) {
         /* menuEmailDesktop.innerText = ""; */
         /* logoEmailUsuario.innerHTML = ''; */
-        logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://c0.klipartz.com/pngpicture/246/763/gratis-png-marca-angulo-del-corazon-gmail-logo-de-gmail-thumbnail.png" alt="Email"> </div>'
+        logoEmailUsuario.innerHTML = '<div class = "divGmailUsuario"> <img class= "gmailUsuario" src="https://cdn.icon-icons.com/icons2/1863/PNG/512/account-circle_119476.png" alt="Email"> </div>'
     } else {
 
         /* logoEmailUsuario.innerText = direccionEmailIngresado; */
@@ -687,6 +689,13 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 menuEmailMov.classList.add('inactive'); 
                 emailmenuMovLogin.innerText = direccionEmailIngresado;
                 emailmenuMovLogin.classList.remove('inactive');
+
+                correoDesktopMenuCK.classList.add('inactive');
+                emailmenuDesktopLogin.innerText = direccionEmailIngresado;
+                emailmenuDesktopLogin.classList.remove('inactive');
+
+
+
                 const isPInfoErrroneaLogin = pInfoErrroneaLogin.classList.contains('inactive');
                 if (!isPInfoErrroneaLogin) {
                 pInfoErrroneaLogin.classList.add('inactive');
@@ -696,6 +705,8 @@ function guardarInfoLoginIngresoYMostrarPagina() {
             } else {
                 pInfoErrroneaLogin.classList.remove('inactive');
                 emailmenuMovLogin.classList.add('inactive');
+                emailmenuDesktopLogin.classList.add('inactive');
+
                 console.log('Llene los campos correctamente');
             } 
 
@@ -706,7 +717,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
     
    /*  emailmenuMovLogin.innerText = direccionEmailIngresado;
     emailmenuMovLogin.classList.remove('inactive'); */
-    correoDesktopMenuCK.innerText = direccionEmailIngresado;
+    //correoDesktopMenuCK.innerText = direccionEmailIngresado;
     
 
 
