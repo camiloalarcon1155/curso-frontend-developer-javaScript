@@ -525,10 +525,9 @@ function miCuentaMenuIngresar() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
-    todasOrdenesMenuMobil.classList.remove('inactive');
-    todasOrdenesMenuMobil.classList.remove('inactive');
+    /* todasOrdenesMenuMobil.classList.remove('inactive');
     opcionSignOutMenuMob.classList.remove('inactive');
-    miCuentaMenuMov.classList.remove('inactive');
+    miCuentaMenuMov.classList.remove('inactive'); */
     divIngresoMobil.classList.toggle('inactive');
 }
 
@@ -690,18 +689,22 @@ function guardarInfoLoginIngresoYMostrarPagina() {
             }
         }
             if (coincidenciaEncontrada) {
+
+                //si si halla similitud en los arreglos, imprime usuario Ingresado,  hace que aside de inicio de sesion se quite: 
                 console.log('usuario Ingresado');
                 miCuentaMenuIngresar()
 
+                //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
                 menuEmailMov.classList.add('inactive'); 
                 emailmenuMovLogin.innerText = direccionEmailIngresado;
                 emailmenuMovLogin.classList.remove('inactive');
 
+                //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu desktop, guarda el correo ingresado en el nuevo li y lo muestra en lugar del li a de iniciar sesion:
                 licorreoDesktopMenu.classList.add('inactive');
                 emailmenuDesktopLogin.innerText = direccionEmailIngresado;
                 emailmenuDesktopLogin.classList.remove('inactive');
 
-                //para tablet:
+                //para tablet: si halla similitud en los arreglos, entonces ya activa las li a que tienen el correo ingresado, el sign out, todas las ordenes y mi cuenta:  
                 liEmailDeskSesIniciada.classList.remove('inactive');
                 liTitleTotalCompras.classList.remove('inactive');
                 liDesktopMenuCuenta.classList.remove('inactive');
@@ -712,6 +715,11 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 pInfoErrroneaLogin.classList.add('inactive');
                 }
                 
+                //si si halla similitud en los arreglos, activa opciones de sign out, todas las ordenes y mi cuenta:
+                todasOrdenesMenuMobil.classList.remove('inactive');
+                opcionSignOutMenuMob.classList.remove('inactive');
+                miCuentaMenuMov.classList.remove('inactive');
+
 
             } else {
                 pInfoErrroneaLogin.classList.remove('inactive');
