@@ -47,6 +47,10 @@ html{
             display:none;
         } */
 
+        .invisibility {
+            visibility: hidden;
+        }
+
         .activeFlex {
         width: 100%;
         display: flex;
@@ -54,6 +58,15 @@ html{
         place-content: center;
         margin-top: 10px; 
         }
+
+        .activeInlineBlock{
+            display: inline-block;
+        }
+
+        .activeGrid {
+            display: grid;
+        }
+
 
         nav {
             display: flex;
@@ -222,6 +235,13 @@ html{
       margin-bottom: 20px;
       display: inline-block;
       cursor: pointer;
+    }
+
+    .correoDesktopMenu{
+      color: var(--back);
+      text-decoration: none;
+      margin-bottom: 20px;
+      /* display: inline-block; */
     }
     .emailDesktopSesionIniciada{
       font-size: var(--sm);

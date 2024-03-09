@@ -181,6 +181,10 @@ html{
     .desktop-menu ul li {
       text-align: end;
     }
+
+    /* .desktop-menu ul li:nth-child(2){
+         background-color: #DAC0A3;
+    } */
     .desktop-menu ul li:nth-child(1),
     .desktop-menu ul li:nth-child(2),
     .desktop-menu ul li:nth-child(3){

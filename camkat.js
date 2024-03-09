@@ -85,6 +85,13 @@ const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado'
 const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
 
 const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
+const licorreoDesktopMenu = document.querySelector('.liCorreoDesktopMenu');
+const liEmailDeskSesIniciada = document.querySelector('.liEmailDesktopSesionIniciada');
+const liTitleTotalCompras = document.querySelector('.liTitleTotalCompras');
+const liDesktopMenuCuenta = document.querySelector('.liDesktop-menu-cuenta');
+const liDignOutMenuDesktop = document.querySelector('.liDign-outMenuDesktop');
+ 
+
 
 const pInfoErrroneaLogin = document.querySelector('.pInfoErrroneaIngreso');
 
@@ -690,11 +697,15 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 emailmenuMovLogin.innerText = direccionEmailIngresado;
                 emailmenuMovLogin.classList.remove('inactive');
 
-                correoDesktopMenuCK.classList.add('inactive');
+                licorreoDesktopMenu.classList.add('inactive');
                 emailmenuDesktopLogin.innerText = direccionEmailIngresado;
                 emailmenuDesktopLogin.classList.remove('inactive');
 
-
+                //para tablet:
+                liEmailDeskSesIniciada.classList.remove('inactive');
+                liTitleTotalCompras.classList.remove('inactive');
+                liDesktopMenuCuenta.classList.remove('inactive');
+                liDignOutMenuDesktop.classList.remove('inactive');
 
                 const isPInfoErrroneaLogin = pInfoErrroneaLogin.classList.contains('inactive');
                 if (!isPInfoErrroneaLogin) {
