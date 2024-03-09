@@ -202,7 +202,7 @@ html{
       display: inline-block;
       cursor: pointer;
     }
-    .emailDesktopSesionIniciada{
+    .desktop-menu ul li .emailDesktopSesionIniciada{
       font-size: var(--sm);
       font-weight: 300;
       background-color: #DAC0A3;

@@ -182,9 +182,17 @@ html{
       text-align: end;
     }
 
-    /* .desktop-menu ul li:nth-child(2){
+    .desktop-menu ul li:nth-child(2){
          background-color: #DAC0A3;
-    } */
+         font-size: var(--sm);
+      font-weight: 300;
+         cursor: initial;
+    }
+    .desktop-menu ul li .emailDesktopSesionIniciada{
+        cursor: initial;
+    }
+
+
     .desktop-menu ul li:nth-child(1),
     .desktop-menu ul li:nth-child(2),
     .desktop-menu ul li:nth-child(3){
