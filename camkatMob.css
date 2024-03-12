@@ -247,6 +247,9 @@ html{
       margin: 1px 0 0;
       list-style: none;
     }
+    .mobile-menu ul h1 {
+        cursor: initial;
+    }
     .mobile-menu ul:nth-child(1) {
       border-bottom: 1px solid var(--very-light-pink);
     }
@@ -255,7 +258,7 @@ html{
     }
     .emailMobil {
       font-size: var(--sm);
-      font-weight: 300;
+      font-weight: bold;
       background-color: #DAC0A3;
     }
     .emailMobilSesionIniciada{
