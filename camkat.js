@@ -95,6 +95,8 @@ const liDignOutMenuDesktop = document.querySelector('.liDign-outMenuDesktop');
 
 const pInfoErrroneaLogin = document.querySelector('.pInfoErrroneaIngreso');
 
+divIngresadoConExito = document.querySelector('.ingresadoConExito');
+
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
 menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
@@ -692,7 +694,13 @@ function guardarInfoLoginIngresoYMostrarPagina() {
 
                 //si si halla similitud en los arreglos, imprime usuario Ingresado,  hace que aside de inicio de sesion se quite: 
                 console.log('usuario Ingresado');
-                miCuentaMenuIngresar()
+
+                //imprimimos en pantalla que ingreso con exito:
+                divIngresadoConExito.classList.remove('inactive');
+                
+                // Llama a setTimeout() y pasa la función y el tiempo en milisegundos (5 segundos = 5000 milisegundos)
+                setTimeout(miCuentaMenuIngresar, 2000);
+                //miCuentaMenuIngresar()
 
                 //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
                 menuEmailMov.classList.add('inactive'); 

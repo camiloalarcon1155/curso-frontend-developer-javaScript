@@ -866,6 +866,17 @@ html{
     .pInfoErrroneaIngreso {
         color: red;
     }
+    .ingresadoConExito {
+    color: #fb091a;
+    background-color: black;
+    height: 52px;
+    padding-top: 8px;
+    text-align: center;
+    }
+    /* .ingresadoConExito h1{
+        padding-right: 13%;
+        padding-left: 13%;
+    } */
     .login-buttonIngreso {
       margin-top: 14px;
       margin-bottom: 30px;
