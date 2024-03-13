@@ -82,7 +82,7 @@ const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado'
 
 
 
-const buttonRegistrarEmail = document.querySelector('.login-buttonIngreso');
+const buttonIngresoEmail = document.querySelector('.login-buttonIngreso');
 
 const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
 const licorreoDesktopMenu = document.querySelector('.liCorreoDesktopMenu');
@@ -95,7 +95,12 @@ const liDignOutMenuDesktop = document.querySelector('.liDign-outMenuDesktop');
 
 const pInfoErrroneaLogin = document.querySelector('.pInfoErrroneaIngreso');
 
-divIngresadoConExito = document.querySelector('.ingresadoConExito');
+const divIngresadoConExito = document.querySelector('.ingresadoConExito');
+
+const divMostrarCuentaIngresada = document.querySelector('.divMostrarCuenta');
+const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta');
+const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
+
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
 menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
@@ -116,8 +121,8 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
-miCuentaMenuDesktop.addEventListener('click', miCuentaMenuIngresar);
-buttonRegistrarEmail.addEventListener('click', function(event) {
+miCuentaMenuDesktop.addEventListener('click', MostarCuentaIngresada);
+buttonIngresoEmail.addEventListener('click', function(event) {
     event.preventDefault();
     guardarInfoLoginIngresoYMostrarPagina();
 });
@@ -573,6 +578,7 @@ function miCuentaMenuCrear() {
 
     divCrearCuenta.classList.toggle('inactive');
 }
+
 let arregloUsuariosRegistrados = [];
 function miCuentaCreadaConfirmacion() {
 
@@ -755,6 +761,54 @@ function guardarInfoLoginIngresoYMostrarPagina() {
   document.querySelector('.input-passwordIngreso').value = "";
 }
 
+
+function MostarCuentaIngresada() {
+
+ closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    
+    divMostrarCuentaIngresada.classList.toggle('inactive');
+
+    const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
+
+    const direccionEmailIngresado = document.querySelector('.input-emailIngreso').value;
+
+    const passwordEmailIngresado = document.querySelector('.input-passwordIngreso').value; //dejamos el ***** por defecto metido en html
+
+    pNameMostrarCuentaIngresada.innerText = nameEmailRegistrado;
+    pEmailMostrarCuentaIngresada.innerText = direccionEmailIngresado;
+}
 //la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
 /* function elegirRenderizacionObjeto(array1) {
