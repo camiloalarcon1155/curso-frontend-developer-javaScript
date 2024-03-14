@@ -1333,7 +1333,7 @@ function renderObjetosHTML(arrElements) {
     const productImgCart = document.createElement('img');
     
     //productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg');
-    productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg')
+    productImgCart.setAttribute('src', 'https://i.imgur.com/sbELWKC.jpg')
   
     
     productInfoIcono.appendChild(productImgCart);
