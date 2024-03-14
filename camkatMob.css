@@ -1080,7 +1080,7 @@ html{
       text-decoration: none;
     }
    
-    /* configs para mostrar detalles de cuenta ingresa */
+    /* configs para mostrar detalles de cuenta ingresada */
 
     .divMostrarCuenta{
     position: absolute;
@@ -1113,12 +1113,12 @@ html{
       margin-bottom: 12px;
       text-align: center;
     }
-   /*  .logoCrear {
+    .logoMostrarCuenta{
       width: 150px;
       margin-bottom: 10px;
       justify-self: center;
     
-    } */
+    }
     .formMostrarCuenta {
       display: flex;
       flex-direction: column;
@@ -1144,9 +1144,6 @@ html{
       padding: 6px;
       margin-bottom: 12px;
     }
-   /*  .input-nameCrear {
-      margin-bottom: 22px;
-    } */
     .labelEmailMostrarCuenta{
       /* font-size: var(--sm); */
       font-weight: bold;
@@ -1166,9 +1163,6 @@ html{
       padding: 6px;
       margin-bottom: 12px;
     }
-    /* .input-emailCrear {
-      margin-bottom: 22px;
-    } */
     .pPasswordMostrarCuenta {
         background-color: var(--text-input-field);
         border: none;
@@ -1178,9 +1172,6 @@ html{
         padding: 6px;
         margin-bottom: 12px;
         }
-    /* .input-passwordCrear {
-      margin-bottom: 22px;
-    }  */ 
     .secondary-buttonMostrarCuenta {
       background-color: var(--hospital-green);
       border-radius: 8px;

@@ -100,6 +100,7 @@ const divIngresadoConExito = document.querySelector('.ingresadoConExito');
 const divMostrarCuentaIngresada = document.querySelector('.divMostrarCuenta');
 const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta');
 const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
+const pPasswordMostrarCuentaIngresada = document.querySelector('.pPasswordMostrarCuenta');
 
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
@@ -177,6 +178,11 @@ function toggleDesktopMenuEmail() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 
@@ -215,6 +221,11 @@ function toggleMobilMenu() {
      const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
         divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
     }
 
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -257,6 +268,11 @@ function toggleCarritoCompras() {
     if (!divConfirmarCrearCuentaClosed) {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
     
     menuCarritoCompras.classList.toggle('inactive');
 
@@ -292,6 +308,7 @@ function renderTodoRopa() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -307,6 +324,7 @@ function renderCamisetasH() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -322,6 +340,7 @@ function renderJeansH() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -337,6 +356,7 @@ function renderJeansM() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -352,6 +372,7 @@ function renderchaquetasM() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -367,6 +388,7 @@ function renderOtrasPrendas() {
     asideTodasLasCompras.classList.add('inactive');
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -385,6 +407,7 @@ function mostrarMiInformacion() {
     divIngresoMobil.classList.add('inactive');
     divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
 
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
@@ -493,6 +516,11 @@ function toggleTotalOrdenens() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
 }
 
@@ -530,6 +558,11 @@ function miCuentaMenuIngresar() {
     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
         divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
     }
 
     /* todasOrdenesMenuMobil.classList.remove('inactive');
@@ -572,7 +605,10 @@ function miCuentaMenuCrear() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
-
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
     
 
 
@@ -618,6 +654,11 @@ function miCuentaCreadaConfirmacion() {
     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
         divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
     }
 
     const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
@@ -692,10 +733,13 @@ function guardarInfoLoginIngresoYMostrarPagina() {
     let coincidenciaEncontrada = false;
         for (let i = 0; i < arregloUsuariosRegistrados.length; i++) {
             if (passwordEmailIngresado === arregloUsuariosRegistrados[i].passworld && direccionEmailIngresado === arregloUsuariosRegistrados[i].correo) {
+                
+                pNameMostrarCuentaIngresada.innerText = arregloUsuariosRegistrados[i].name;//tocó hacer este ingreso del nombre aqui, porque el usario no ingresa su nombre cuando ya  tiene una cuenta registrada.
                         coincidenciaEncontrada = true;
                         break;
             }
-        }
+    }
+    
             if (coincidenciaEncontrada) {
 
                 //si si halla similitud en los arreglos, imprime usuario Ingresado,  hace que aside de inicio de sesion se quite: 
@@ -734,6 +778,10 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 opcionSignOutMenuMob.classList.remove('inactive');
                 miCuentaMenuMov.classList.remove('inactive');
 
+                //si si halla similitud, entonces llena los campos del div mostrar cuenta(cojntraseña se dejan los asteriscos por defecto):
+                /* pNameMostrarCuentaIngresada.innerText = nameDelUusuarioIngresado; */
+                pEmailMostrarCuentaIngresada.innerText = direccionEmailIngresado;
+                /* pPasswordMostrarCuentaIngresada.innerText = passwordEmailIngresado; */
 
             } else {
                 pInfoErrroneaLogin.classList.remove('inactive');
@@ -743,17 +791,10 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 console.log('Llene los campos correctamente');
             } 
 
-    // const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    // if (!isdivIngresoMobilClosed) {
-    //     divIngresoMobil.classList.add('inactive');
-    // }
-    
-   /*  emailmenuMovLogin.innerText = direccionEmailIngresado;
-    emailmenuMovLogin.classList.remove('inactive'); */
-    //correoDesktopMenuCK.innerText = direccionEmailIngresado;
+
     
 
-
+         
     //dejamos espacios de iniciar sesion vacios de nuevo:ç
 
    document.querySelector('.input-emailIngreso').value = "";
@@ -797,42 +838,10 @@ function MostarCuentaIngresada() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
-    
     divMostrarCuentaIngresada.classList.toggle('inactive');
 
-    const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
-
-    const direccionEmailIngresado = document.querySelector('.input-emailIngreso').value;
-
-    const passwordEmailIngresado = document.querySelector('.input-passwordIngreso').value; //dejamos el ***** por defecto metido en html
-
-    pNameMostrarCuentaIngresada.innerText = nameEmailRegistrado;
-    pEmailMostrarCuentaIngresada.innerText = direccionEmailIngresado;
 }
-//la siguiente funcion elegirRenderizacionObjeto, me permitira escoger cual arreglo de objetos enviare a la funcion de renderizado para que le muestre al usuario, de acuedo a tipo de ropa que el usuario busque
 
-/* function elegirRenderizacionObjeto(array1) {
-    switch (array1) {
-        case array1 === 'camisetasHombreList':
-            tituloTipRopa.innerText = 'camisetasHombreList';
-            renderObjetosHTML(camisetasHombreList)
-            break;
-        case array1 === 'jeansHombreList':
-            tituloTipRopa.innerText = 'jeansHombreList';
-            renderObjetosHTML(jeansHombreList)
-            break;
-        case array1 === 'jeansMujerList':
-            tituloTipRopa.innerText = 'jeansMujerList';
-            renderObjetosHTML(jeansMujerListt)
-            break;
-        case array1 === 'chaquetasDamaList':
-            tituloTipRopa.innerText = 'chaquetasDamaList';
-            renderObjetosHTML(blusasDamaList)
-            break;
-    }
-
-};
- */
 
 
 
@@ -1323,8 +1332,8 @@ function renderObjetosHTML(arrElements) {
     
     const productImgCart = document.createElement('img');
     
-    productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg');
-
+    //productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg');
+    productImgCart.setAttribute('src', 'https://i.imgur.com/nQy0QHq.jpg')
   
     
     productInfoIcono.appendChild(productImgCart);
