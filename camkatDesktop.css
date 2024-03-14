@@ -977,10 +977,10 @@ html{
 
     .divEmailCreado{
     position: absolute;
-    right: 25%;
-    left: 25%;
+    right: 30%;
+    left: 30%;
     top: 100.6%;
-    width: 50%;
+    width: 40%;
     height: 100%;
     font-size: 1.6rem;
     }
