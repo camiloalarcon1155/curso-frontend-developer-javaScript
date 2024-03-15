@@ -1277,10 +1277,43 @@ html{
       text-decoration: none;
       margin-bottom: 52px;
     }
-    .labelCambiarContrasenia {
+    .labelNameCambiarContrasenia {
       /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
+    }
+    .labelEmailCambiarContrasenia {
+      /* font-size: var(--sm); */
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .labelCambiarContraseniaActual {
+      /* font-size: var(--sm); */
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .labelCambiarContraseniaNueva {
+      /* font-size: var(--sm); */
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+     .inputNameCambiarContrasenia {
+      background-color: var(--text-input-field);
+      border: none;
+      border-radius: 8px;
+      height: 30px;
+      font-size: var(--md);
+      padding: 6px;
+      margin-bottom: 12px;
+    }
+     .inputEmailCambiarContrasenia {
+      background-color: var(--text-input-field);
+      border: none;
+      border-radius: 8px;
+      height: 30px;
+      font-size: var(--md);
+      padding: 6px;
+      margin-bottom: 12px;
     }
      .inputCambiarContrasenia {
       background-color: var(--text-input-field);
@@ -1303,6 +1336,94 @@ html{
       height: 50px;
     }
     .login-buttonCambiarContrasenia {
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+
+     /* configs para desplegable Recuperar cuenta */
+
+    .divRecoverAccount{
+        position: absolute;
+        right: 25%;
+        left: 25%;
+        top: 100.6%;
+        width: 50%;
+        height: 100%;
+        font-size: 1.6rem;
+    }
+    .loginRecover {
+      padding: 0 10%;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: var(--white);
+      border: 1px solid #000000;
+      border-radius: 6px;
+    }
+    .form-containerRecover {
+      position: relative;
+      top: -34px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 100%;
+    }
+    .titleRecover {
+      font-size: var(--lg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .subtitleRecover {
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .logoRecover {
+      width: 150px;
+      margin-bottom: 10px;
+      justify-self: center;
+      /* display: none; */
+    }
+    .formRecover {
+      display: flex;
+      flex-direction: column;
+    }
+    .formRecover a {
+      color: var(--hospital-green);
+      /* font-size: var(--sm); */
+      text-align: center;
+      text-decoration: none;
+      margin-bottom: 52px;
+    }
+    .labelCell-o-correoRecover  {
+      /* font-size: var(--sm); */
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .inputCell-o-correoRecover {
+      background-color: var(--text-input-field);
+      border: none;
+      border-radius: 8px;
+      height: 30px;
+      font-size: var(--md);
+      padding: 6px;
+      margin-bottom: 12px;
+    }
+    .primary-buttonRecover {
+      background-color: var(--hospital-green);
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+    .login-buttonCell-o-correoRecover {
       margin-top: 14px;
       margin-bottom: 30px;
     }

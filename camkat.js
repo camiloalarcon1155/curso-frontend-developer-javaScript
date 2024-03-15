@@ -103,6 +103,9 @@ const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuent
 const pPasswordMostrarCuentaIngresada = document.querySelector('.pPasswordMostrarCuenta');
 const aOlvidoContrasenia = document.querySelector('.olvidoContrasenia');
 const divDesplegableCambioKey = document.querySelector('.divCambiarContrasenia');
+const divDesplegableRecoverAccount = document.querySelector('.divRecoverAccount');
+const buttonEditarCuenta = document.querySelector('.login-buttonMostrarCuenta');
+
 
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
@@ -141,7 +144,12 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
 });
 buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
 correoDesktopMenuCK.addEventListener('click', miCuentaMenuIngresar);
-aOlvidoContrasenia.addEventListener('click', cambiarMiContraseña);
+buttonEditarCuenta.addEventListener('click', function (event) {
+
+    event.preventDefault();
+    cambiarMiContraseña();
+});
+aOlvidoContrasenia.addEventListener('click', ToggleRecuperarCuenta);
 
 
 
@@ -191,8 +199,12 @@ function toggleDesktopMenuEmail() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
-    DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }    
 
+    DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
 
@@ -239,6 +251,11 @@ function toggleMobilMenu() {
     const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
     if (!isDivDesplegableCambioKeyClosed) {
         divDesplegableCambioKey.classList.add('inactive');
+    }
+
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
     }
 
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -291,6 +308,11 @@ function toggleCarritoCompras() {
     if (!isDivDesplegableCambioKeyClosed) {
         divDesplegableCambioKey.classList.add('inactive');
     }
+
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
     
     menuCarritoCompras.classList.toggle('inactive');
 
@@ -328,6 +350,7 @@ function renderTodoRopa() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -345,6 +368,7 @@ function renderCamisetasH() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -362,6 +386,7 @@ function renderJeansH() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -379,6 +404,7 @@ function renderJeansM() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -396,6 +422,7 @@ function renderchaquetasM() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -413,6 +440,7 @@ function renderOtrasPrendas() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -433,6 +461,7 @@ function mostrarMiInformacion() {
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
 
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
@@ -551,6 +580,11 @@ function toggleTotalOrdenens() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
 }
 
@@ -598,6 +632,10 @@ function miCuentaMenuIngresar() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
     
     divIngresoMobil.classList.toggle('inactive');
 }
@@ -646,6 +684,10 @@ function miCuentaMenuCrear() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
 
     divCrearCuenta.classList.toggle('inactive');
 }
@@ -701,13 +743,18 @@ function miCuentaCreadaConfirmacion() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
+
     const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
 
     const direccionEmailRegistrado = document.querySelector('.inputCrearEmail').value;
 
     const passwordEmailRegistrado = document.querySelector('.inputCrearPassword').value;
 
-
+    
     
     //necesitamos que nameEmailRegistrado, direccionEmailReguistrado y passwordEmailRegistrado se gaurden en una arreglo como objetos
     
@@ -883,6 +930,11 @@ function MostarCuentaIngresada() {
         divDesplegableCambioKey.classList.add('inactive');
     }
 
+    const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
+
     divMostrarCuentaIngresada.classList.toggle('inactive');
 
 }
@@ -922,8 +974,55 @@ function cambiarMiContraseña() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
 
     divDesplegableCambioKey.classList.toggle('inactive');
+}
+
+function ToggleRecuperarCuenta() {
+    
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!isDivConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
+
+    divDesplegableRecoverAccount.classList.toggle('inactive');
 }
 
 
