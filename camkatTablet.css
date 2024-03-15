@@ -1264,6 +1264,8 @@ html{
       width: 150px;
       margin-bottom: 10px;
       justify-self: center;
+      object-fit: contain;
+      height: 62px;
       /* display: none; */
     }
     .formCambiarContrasenia {

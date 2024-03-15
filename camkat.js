@@ -836,7 +836,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 divIngresadoConExito.classList.remove('inactive');
                 
                 // Llama a setTimeout() y pasa la función y el tiempo en milisegundos (5 segundos = 5000 milisegundos)
-                setTimeout(miCuentaMenuIngresar, 2000);
+                setTimeout(miCuentaMenuIngresar, 1000);
                 //miCuentaMenuIngresar()
 
                 //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
