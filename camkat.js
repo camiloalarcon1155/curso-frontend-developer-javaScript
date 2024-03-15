@@ -102,9 +102,9 @@ const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta'
 const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
 const pPasswordMostrarCuentaIngresada = document.querySelector('.pPasswordMostrarCuenta');
 const aOlvidoContrasenia = document.querySelector('.olvidoContrasenia');
-const divDesplegableCambioKey = document.querySelector('.divCambiarContrasenia');
+const divDesplegableCambioAccount = document.querySelector('.divEditarAccount');
 const divDesplegableRecoverAccount = document.querySelector('.divRecoverAccount');
-const buttonEditarCuenta = document.querySelector('.login-buttonMostrarCuenta');
+const buttonMostrarCuentaEditarCuenta = document.querySelector('.login-buttonMostrarCuenta-EditarCuenta');
 
 
 
@@ -144,10 +144,10 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
 });
 buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
 correoDesktopMenuCK.addEventListener('click', miCuentaMenuIngresar);
-buttonEditarCuenta.addEventListener('click', function (event) {
+buttonMostrarCuentaEditarCuenta.addEventListener('click', function (event) {
 
     event.preventDefault();
-    cambiarMiContraseña();
+    ToggleeditarMiCuenta();
 });
 aOlvidoContrasenia.addEventListener('click', ToggleRecuperarCuenta);
 
@@ -194,9 +194,9 @@ function toggleDesktopMenuEmail() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -248,9 +248,9 @@ function toggleMobilMenu() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -304,9 +304,9 @@ function toggleCarritoCompras() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -349,7 +349,7 @@ function renderTodoRopa() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
@@ -367,7 +367,7 @@ function renderCamisetasH() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
@@ -385,7 +385,7 @@ function renderJeansH() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
@@ -403,7 +403,7 @@ function renderJeansM() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
@@ -421,7 +421,7 @@ function renderchaquetasM() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
@@ -439,7 +439,7 @@ function renderOtrasPrendas() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
@@ -460,7 +460,7 @@ function mostrarMiInformacion() {
     divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioKey.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
 
     cardsContainer.innerText = '';
@@ -575,9 +575,9 @@ function toggleTotalOrdenens() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -627,9 +627,9 @@ function miCuentaMenuIngresar() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -679,9 +679,9 @@ function miCuentaMenuCrear() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
     
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -738,9 +738,9 @@ function miCuentaCreadaConfirmacion() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -925,9 +925,9 @@ function MostarCuentaIngresada() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -939,7 +939,7 @@ function MostarCuentaIngresada() {
 
 }
 
-function cambiarMiContraseña() {
+function ToggleeditarMiCuenta() {
     
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
@@ -974,12 +974,17 @@ function cambiarMiContraseña() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
     if (!isDivDesplegableRecoverAccount) {
         divDesplegableRecoverAccount.classList.add('inactive');
     }
 
-    divDesplegableCambioKey.classList.toggle('inactive');
+    divDesplegableCambioAccount.classList.toggle('inactive');
 }
 
 function ToggleRecuperarCuenta() {
@@ -1017,9 +1022,14 @@ function ToggleRecuperarCuenta() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
-    if (!isDivDesplegableCambioKeyClosed) {
-        divDesplegableCambioKey.classList.add('inactive');
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
     }
 
     divDesplegableRecoverAccount.classList.toggle('inactive');
