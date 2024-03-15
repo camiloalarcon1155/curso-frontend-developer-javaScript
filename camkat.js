@@ -101,6 +101,8 @@ const divMostrarCuentaIngresada = document.querySelector('.divMostrarCuenta');
 const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta');
 const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
 const pPasswordMostrarCuentaIngresada = document.querySelector('.pPasswordMostrarCuenta');
+const aOlvidoContrasenia = document.querySelector('.olvidoContrasenia');
+const divDesplegableCambioKey = document.querySelector('.divCambiarContrasenia');
 
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
@@ -138,8 +140,9 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     miCuentaCreadaConfirmacion();
 });
 buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
-
 correoDesktopMenuCK.addEventListener('click', miCuentaMenuIngresar);
+aOlvidoContrasenia.addEventListener('click', cambiarMiContraseña);
+
 
 
 
@@ -181,6 +184,11 @@ function toggleDesktopMenuEmail() {
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
         divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
     }
 
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -228,6 +236,11 @@ function toggleMobilMenu() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
+
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -273,6 +286,11 @@ function toggleCarritoCompras() {
     if (!divMostrarCuentaIngresadaClosed) {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
+
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
     
     menuCarritoCompras.classList.toggle('inactive');
 
@@ -309,6 +327,7 @@ function renderTodoRopa() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -325,6 +344,7 @@ function renderCamisetasH() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -341,6 +361,7 @@ function renderJeansH() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -357,6 +378,7 @@ function renderJeansM() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -373,6 +395,7 @@ function renderchaquetasM() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -389,6 +412,7 @@ function renderOtrasPrendas() {
     divIngresoMobil.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -408,6 +432,7 @@ function mostrarMiInformacion() {
     divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioKey.classList.add('inactive');
 
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
@@ -521,10 +546,13 @@ function toggleTotalOrdenens() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
+
     asideTodasLasCompras.classList.toggle('inactive')
 }
-
-
 
 function miCuentaMenuIngresar() {
     closeDesplegableCompra()
@@ -565,9 +593,12 @@ function miCuentaMenuIngresar() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    /* todasOrdenesMenuMobil.classList.remove('inactive');
-    opcionSignOutMenuMob.classList.remove('inactive');
-    miCuentaMenuMov.classList.remove('inactive'); */
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
+
+    
     divIngresoMobil.classList.toggle('inactive');
 }
 
@@ -610,6 +641,10 @@ function miCuentaMenuCrear() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
     
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
 
 
     divCrearCuenta.classList.toggle('inactive');
@@ -659,6 +694,11 @@ function miCuentaCreadaConfirmacion() {
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
         divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
     }
 
     const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
@@ -838,10 +878,53 @@ function MostarCuentaIngresada() {
         divConfirmarCrearCuenta.classList.add('inactive');
     }
 
+    const isDivDesplegableCambioKeyClosed = divDesplegableCambioKey.classList.contains('inactive');
+    if (!isDivDesplegableCambioKeyClosed) {
+        divDesplegableCambioKey.classList.add('inactive');
+    }
+
     divMostrarCuentaIngresada.classList.toggle('inactive');
 
 }
 
+function cambiarMiContraseña() {
+    
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!isDivConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+
+    divDesplegableCambioKey.classList.toggle('inactive');
+}
 
 
 
