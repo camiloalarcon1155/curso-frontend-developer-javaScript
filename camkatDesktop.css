@@ -1015,7 +1015,7 @@ html{
       font-size: var(--md);
       font-weight: 300;
       margin-top: 0;
-      margin-bottom: 32px;
+      margin-bottom: 10px;
       text-align: center;
     }
     .email-imageEmailCreado {
@@ -1026,10 +1026,10 @@ html{
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 5px;
     }
     .email-imageEmailCreado img {
-      width: 80px;
+      width: 60%;
     }
     .primary-buttonEmailCreado {
       background-color: var(--hospital-green);
@@ -1399,5 +1399,93 @@ html{
     .login-buttonCell-o-correoRecover {
       margin-top: 14px;
       margin-bottom: 30px;
+    }
+
+    /* configs para email enviado */
+    .divEmailEnviado{
+    position: absolute;
+    right: 30%;
+    left: 30%;
+    top: 102.6%;
+    width: 40%;
+    height: 100%;
+    font-size: 1.6rem;
+    }
+    .loginEmailEnviado {
+      padding: 0 10%;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background-color: var(--white);
+      border: 1px solid black;
+      border-radius: 6px;
+    }
+    .form-containerEmailEnviado {
+      position: relative;
+      top: -34px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      width: 100%;
+    }
+    .logoEmailEnviado {
+      width: 150px;
+      margin-bottom: 10px;
+      justify-self: center;
+      /* display: none; */
+    }
+      .titleEmailEnviado {
+      font-size: var(--lg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .subtitleEmailEnviado {
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .email-imageEmailEnviado {
+      width: 100%;
+      height: 132px;
+      border-radius: 50%;
+      background-color: var(--text-input-field);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .email-imageEmailEnviado img {
+      width: 80px;
+    }
+    .primary-buttonEmailEnviado {
+      background-color: var(--hospital-green);
+      border-radius: 8px;
+      border: none;
+      color: var(--white);
+      width: 100%;
+      cursor: pointer;
+      font-size: var(--md);
+      font-weight: bold;
+      height: 50px;
+    }
+    .login-buttonEmailEnviado {
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+     .resendEmailEnviado {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.6rem;
+    }
+    .resendEmailEnviado span {
+      color: var(--very-light-pink);
+    }
+    .resendEmailEnviado a {
+      color: var(--hospital-green);
+      text-decoration: none;
     }
 }
