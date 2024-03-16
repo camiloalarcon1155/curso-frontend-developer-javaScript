@@ -109,6 +109,7 @@ const aOlvidoContrasenia = document.querySelector('.olvidoContrasenia');
 const divDesplegableCambioAccount = document.querySelector('.divEditarAccount');
 const divDesplegableRecoverAccount = document.querySelector('.divRecoverAccount');
 const buttonMostrarCuentaEditarCuenta = document.querySelector('.login-buttonMostrarCuenta-EditarCuenta');
+const buttonCambiarKeyDeEditarCuenta = document.querySelector('.buttonEditarCambiarContrasenia');
 
 
 
@@ -159,7 +160,7 @@ inputRecoverEnviarEmail.addEventListener('click', function (event) {
     event.preventDefault();
     ToggleEnviarCorreo();
 });
-
+buttonCambiarKeyDeEditarCuenta.addEventListener('click', ToggleCambiarKey);
 
 
 
@@ -1150,7 +1151,60 @@ function ToggleRecuperarCuenta() {
     divDesplegableRecoverAccount.classList.toggle('inactive');
 }
 
+function ToggleCambiarKey() {
 
+     
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!isDivConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
+    }
+
+    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
+    if (!isDivConfirmarEmailEnviadoClosed) {
+        divConfirmarEmailEnviado.classList.add('inactive');
+    }
+
+   
+
+}
 
 //👖👖👖Arreglo de objetos de toda la ropa:
 const catalogoCompletoList = [];
