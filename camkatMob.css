@@ -773,16 +773,32 @@ html{
     }
     .form-containerIngreso {
       position: relative;
-      top: -34px;
+      top: -18px;
       display: grid;
       grid-template-rows: auto 1fr auto;
       width: 100%;
     }
     .logoIngreso {
       width: 150px;
-      margin-bottom: 10px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 5px;
       justify-self: center;
+      margin-top: -28px;
       /* display: none; */
+    }
+     .titleIngreso {
+      font-size: var(--lg);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .subtitleIngreso {
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 5px;
+      text-align: center;
     }
     .formIngreso {
       display: flex;
@@ -793,13 +809,14 @@ html{
       /* font-size: var(--sm); */
       text-align: center;
       text-decoration: none;
-      margin-bottom: 52px;
+      margin-bottom: 10px;
       cursor: pointer;
     }
     .labelEmailIngreso {
       /* font-size: var(--sm); */
       font-weight: bold;
       margin-bottom: 4px;
+      margin-top: 24px;
     }
     .labelPasswordIngreso {
       /* font-size: var(--sm); */
@@ -855,8 +872,8 @@ html{
       height: 50px;
     }
     .login-buttonIngreso {
-      margin-top: 14px;
-      margin-bottom: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
    /*  @media (max-width: 640px) {
       .logoIngreso {

@@ -915,7 +915,7 @@ function ToggleEnviarCorreo() {
 
 }
 
-
+ let coincidenciaEncontrada = false;
 let arregloUsuariosIngresados = [];
 function guardarInfoLoginIngresoYMostrarPagina() {
 
@@ -938,7 +938,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
 
     //ahora necesitamos un loop para que nos compare este correo y contraseña con la informacion ya guardada en "la base de datos cuando se crea un usuario"
     
-    let coincidenciaEncontrada = false;
+   
         for (let i = 0; i < arregloUsuariosRegistrados.length; i++) {
             if (passwordEmailIngresado === arregloUsuariosRegistrados[i].passworld && direccionEmailIngresado === arregloUsuariosRegistrados[i].correo) {
                 
@@ -1816,88 +1816,61 @@ let preciosCompraAdicionada = [];
 const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
-    catalogoComprasAdicionadas.push(objetoProducto);
 
+//si encuentra coincidencia entre el correo ingresado y clave ingresado y la informacion guardadada en base de datos, entonces permite adicionar al carrito de compras, si no muestra el menu de ingresar cuenta:
+if (coincidenciaEncontrada){
+
+    catalogoComprasAdicionadas.push(objetoProducto);
     compraAdicionada = objetoProducto;
 
-   /*  catalogoComprasAdicionadas.forEach(function(compraAdicionada) { */
+    //config para crear una fecha:
+    let fecha = new Date();
+    let dia = fecha.getDate();
+    let mes = fecha.getMonth() + 1;
+    let anio = fecha.getFullYear();
 
-    //contenedores total articulos y precio
-        /* const divContenedorTotalCompraAcionada = document.createElement('div');
-        divContenedorTotalCompraAcionada.classList.add('divTotales');
-    
-        const pContenedorCompraAdicionada = document.createElement('p');
-    
-        const spanContenedorCompraAdicionadaFecha = document.createElement('span');
-         spanContenedorCompraAdicionadaFecha.innerText = '03.25.21';
-    
-        const spanTotalArticulos = document.createElement('span');
-        spanTotalArticulos.innerText = '6 articles';
+    let formatoFecha = `${dia}/${mes}/${anio}`;
 
-        const pTotalPrecio = document.createElement('p');
-        pTotalPrecio.innerText = '$560.000';
-    
-        pContenedorCompraAdicionada.appendChild(spanContenedorCompraAdicionadaFecha);
-        pContenedorCompraAdicionada.appendChild(spanTotalArticulos);
-        divContenedorTotalCompraAcionada.appendChild(pContenedorCompraAdicionada);
-        divContenedorTotalCompraAcionada.appendChild(pTotalPrecio);
-        menuCarritoCompras.appendChild(divContenedorTotalCompraAcionada); */
-        
-    
-    
-     //config para crear una fecha:
-        let fecha = new Date();
-        let dia = fecha.getDate();
-        let mes = fecha.getMonth() + 1;
-        let anio = fecha.getFullYear();
-
-        let formatoFecha = `${dia}/${mes}/${anio}`;
-
-        let spanFechaCompraAdicionada = document.querySelector('#spanFechaCompraAdicionada');
-         spanFechaCompraAdicionada.innerText = formatoFecha;
+    let spanFechaCompraAdicionada = document.querySelector('#spanFechaCompraAdicionada');
+    spanFechaCompraAdicionada.innerText = formatoFecha;
 
 
     //contenedores compras adicionadas
-        const divContenedorCompras = document.createElement('div');
-        divContenedorCompras.classList.add('my-order-content');
+    const divContenedorCompras = document.createElement('div');
+    divContenedorCompras.classList.add('my-order-content');
 
-        const divCompraAdicionada = document.createElement('div');
-        divCompraAdicionada.classList.add('shopping-cart');
+    const divCompraAdicionada = document.createElement('div');
+    divCompraAdicionada.classList.add('shopping-cart');
 
-        const figureCompraAdicionada = document.createElement('figure');
-        figureCompraAdicionada.classList.add('shopping-cart-figure');
+    const figureCompraAdicionada = document.createElement('figure');
+    figureCompraAdicionada.classList.add('shopping-cart-figure');
 
-        const imgCompraAdicionada = document.createElement('img');
+    const imgCompraAdicionada = document.createElement('img');
 
-        imgCompraAdicionada.setAttribute('src', compraAdicionada.image);
+    imgCompraAdicionada.setAttribute('src', compraAdicionada.image);
         
-        const pCompraAdicionadaNombre = document.createElement('p');
-        pCompraAdicionadaNombre.innerText = compraAdicionada.name;
+    const pCompraAdicionadaNombre = document.createElement('p');
+    pCompraAdicionadaNombre.innerText = compraAdicionada.name;
 
-        const pCompraAdicionadaPrecio = document.createElement('p');
-        pCompraAdicionadaPrecio.innerText = compraAdicionada.price;
+    const pCompraAdicionadaPrecio = document.createElement('p');
+    pCompraAdicionadaPrecio.innerText = compraAdicionada.price;
 
-        const imgCompraAdicionadaClose = document.createElement('img');
-        imgCompraAdicionadaClose.classList.add('logoDeCerrarCompraListada');
-        imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
-        imgCompraAdicionadaClose.addEventListener('click', ((obj) => {
-        return function() {
+    const imgCompraAdicionadaClose = document.createElement('img');
+    imgCompraAdicionadaClose.classList.add('logoDeCerrarCompraListada');
+    imgCompraAdicionadaClose.setAttribute('src', './icons/icon_close.png');
+    imgCompraAdicionadaClose.addEventListener('click', ((obj) => {
+        return function () {
             cerrarCompra(obj); //permite obtener la variable inmediatamente cuando se le da click
         };
-        })(objetoProducto));
+    })(objetoProducto));
 
-        figureCompraAdicionada.appendChild(imgCompraAdicionada);
-        divCompraAdicionada.appendChild(figureCompraAdicionada);
-        divCompraAdicionada.appendChild(pCompraAdicionadaNombre);
-        divCompraAdicionada.appendChild(pCompraAdicionadaPrecio);
-        divCompraAdicionada.appendChild(imgCompraAdicionadaClose);
-        divContenedorCompras.appendChild(divCompraAdicionada);
-        contenComprasAdicionadas.appendChild(divContenedorCompras);
-
-    
-    
-    
-    
+    figureCompraAdicionada.appendChild(imgCompraAdicionada);
+    divCompraAdicionada.appendChild(figureCompraAdicionada);
+    divCompraAdicionada.appendChild(pCompraAdicionadaNombre);
+    divCompraAdicionada.appendChild(pCompraAdicionadaPrecio);
+    divCompraAdicionada.appendChild(imgCompraAdicionadaClose);
+    divContenedorCompras.appendChild(divCompraAdicionada);
+    contenComprasAdicionadas.appendChild(divContenedorCompras);
     
     //configs para cerrar divs de compra:
     function cerrarCompra(compracerrada) {
@@ -1911,37 +1884,10 @@ function guardarProductosAdicionados(objetoProducto) {
             }
             /* break; */
         }
-         console.log(catalogoComprasAdicionadas);
+        console.log(catalogoComprasAdicionadas);
         TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
         
-        } 
- 
-    
-    
-    
-    
-    // function TotalArticulosyTotalPrecioCerrar(comprasDespuesDeCierre) {
-    //     //configs para total articulops adicionados en desplegable
-    //     let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
-    //     totalArticulosAdicionadosSpan.innerText = comprasDespuesDeCierre.length + ' Articulos';
-
-    //     //configs para total articulops adicionados en desplegable
-    //     divNumComprasCart.innerText = comprasDespuesDeCierre.length; 
-
-    //     //configs para sumar el precio Total:
-    //     let sumaTotalPreciosCerrar = 0;
-    //     /* precios.push(compraAdicionada.price); */
-
-    //     console.log(comprasDespuesDeCierre);
-
-    //     for (let i = 0; i < comprasDespuesDeCierre.length; i++) {
-    //     sumaTotalPreciosCerrar += comprasDespuesDeCierre[i].price;
-    //     }
-
-    //     let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
-    //     spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPreciosCerrar;
-    // }
-    
+    }
 
     function TotalArticulosyTotalPrecio(comprasHechas) {
         //configs para total articulops adicionados en desplegable
@@ -1949,22 +1895,25 @@ function guardarProductosAdicionados(objetoProducto) {
         totalArticulosAdicionadosSpan.innerText = comprasHechas.length + ' Articulos';
 
         //configs para total articulops adicionados en desplegable
-        divNumComprasCart.innerText = comprasHechas.length; 
+        divNumComprasCart.innerText = comprasHechas.length;
 
         //configs para sumar el precio Total:
         let sumaTotalPrecios = 0;
       
 
         for (let i = 0; i < comprasHechas.length; i++) {
-        sumaTotalPrecios += comprasHechas[i].price;
+            sumaTotalPrecios += comprasHechas[i].price;
         }
         let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
     }
     
     TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
-
-
+    
+//...si no, muestra el menu de ingresar cuenta:
+} else {
+    miCuentaMenuIngresar();
+}
 }
 
 
