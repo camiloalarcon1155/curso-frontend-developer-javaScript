@@ -110,7 +110,7 @@ const divDesplegableCambioAccount = document.querySelector('.divEditarAccount');
 const divDesplegableRecoverAccount = document.querySelector('.divRecoverAccount');
 const buttonMostrarCuentaEditarCuenta = document.querySelector('.login-buttonMostrarCuenta-EditarCuenta');
 const buttonCambiarKeyDeEditarCuenta = document.querySelector('.buttonEditarCambiarContrasenia');
-
+const divDesplegableChangeKey = document.querySelector('.divChangeKey');
 
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
@@ -218,6 +218,11 @@ function toggleDesktopMenuEmail() {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
 
+    const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
+    if (!isDivDesplegableChangeKeyClosed) {
+        divDesplegableChangeKey.classList.add('inactive');
+    }
+
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -279,6 +284,10 @@ function toggleMobilMenu() {
 
         mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
+    const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
+    if (!isDivDesplegableChangeKeyClosed) {
+        divDesplegableChangeKey.classList.add('inactive');
+    }
 }
 
 
@@ -336,6 +345,11 @@ function toggleCarritoCompras() {
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
+    }
+
+    const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
+    if (!isDivDesplegableChangeKeyClosed) {
+        divDesplegableChangeKey.classList.add('inactive');
     }
 
     menuCarritoCompras.classList.toggle('inactive');
@@ -479,7 +493,6 @@ function renderOtrasPrendas() {
 function mostrarMiInformacion() {
     window.scrollTo(0, 0);
     cardsContainer.setAttribute('class', 'activeFlex');
-    // cardsContainer.classList.add('activeFlex');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -493,7 +506,9 @@ function mostrarMiInformacion() {
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
 
+    //se genera el html desde javaScript:
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
@@ -1202,8 +1217,10 @@ function ToggleCambiarKey() {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
 
-   
+    divDesplegableChangeKey.classList.toggle('inactive');
 
+
+    
 }
 
 //👖👖👖Arreglo de objetos de toda la ropa:
