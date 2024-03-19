@@ -11,6 +11,10 @@ const mobileMenuIHam = document.querySelector('.mobile-menu');
 const menuCarritoIcon  = document.querySelector('.navbar-shopping-cart');
 const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); 
+const containerMostrarInformacion = document.querySelector('.containerMiInformacion'); 
+const sectionMostrarInformacion = document.querySelector('.mostrarInformacion'); 
+
+
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
 const tituloTipRopa = document.querySelector('.tipoDeRopa');
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
@@ -74,9 +78,9 @@ menuEmailMov.addEventListener('click', toggleMiCuentaMenuIngresar)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 menuHamIcon.addEventListener('click', toggleMobilMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
-logoCamkat.addEventListener('click',mostrarMiInformacion);
+logoCamkat.addEventListener('click',toggleMostrarMiInformacion);
 inicioFooter.addEventListener('click', recargarMiPagina);
-AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
+AcercaDeFooter.addEventListener('click', toggleMostrarMiInformacion);
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
@@ -431,9 +435,9 @@ function renderOtrasPrendas() {
     renderObjetosHTML(otrasPrendasList);
 }
 
-function mostrarMiInformacion() {
+function toggleMostrarMiInformacion() {
     window.scrollTo(0, 0);
-    cardsContainer.setAttribute('class', 'activeFlex');
+    /* cardsContainer.setAttribute('class', 'activeFlex');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -447,10 +451,72 @@ function mostrarMiInformacion() {
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
-    divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive'); */
+
+    //Generamos los condicionales para cerrar otros desplegables cuando se habra este desplegable de mostrar info:
+
+    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableCompra()
+     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+    if (!isdivIngresoMobilClosed) {
+        divIngresoMobil.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!divConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
+    }
+
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }    
+
+    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
+    if (!isDivConfirmarEmailEnviadoClosed) {
+        divConfirmarEmailEnviado.classList.add('inactive');
+    }
+
+    const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
+    if (!isDivDesplegableChangeKeyClosed) {
+        divDesplegableChangeKey.classList.add('inactive');
+    }
 
     //se genera el html desde javaScript:
     cardsContainer.innerText = '';
+    sectionMostrarInformacion.innerText = '';
+
+
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
 
     const divInfoEmpresa1 = document.createElement('div');
@@ -488,9 +554,11 @@ function mostrarMiInformacion() {
     divInfoEmpresa3.appendChild(h1Nosotros);
     divInfoEmpresa3.appendChild(pNosotros);
 
-    cardsContainer.appendChild(divInfoEmpresa1);
-    cardsContainer.appendChild(divInfoEmpresa2);
-    cardsContainer.appendChild(divInfoEmpresa3);
+    containerMostrarInformacion.appendChild(divInfoEmpresa1);
+    containerMostrarInformacion.appendChild(divInfoEmpresa2);
+    containerMostrarInformacion.appendChild(divInfoEmpresa3);
+
+    sectionMostrarInformacion.classList.toggle('inactive');
 }
 
 function recargarMiPagina(){
