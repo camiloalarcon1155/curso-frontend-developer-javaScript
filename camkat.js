@@ -13,8 +13,6 @@ const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); 
 const containerMostrarInformacion = document.querySelector('.containerMiInformacion'); 
 const sectionMostrarInformacion = document.querySelector('.mostrarInformacion'); 
-
-
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
 const tituloTipRopa = document.querySelector('.tipoDeRopa');
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
@@ -120,6 +118,7 @@ function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
+    
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -128,6 +127,11 @@ function toggleDesktopMenuEmail() {
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
     }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
@@ -180,20 +184,25 @@ function toggleDesktopMenuEmail() {
 }
 
 function toggleMobilMenu() {
-    closeDesplegableCompra()
-        menuDetalleCadaCompra.innerHTML = '';
-        //en una variable almacenamos 
-        const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-        if (!ismMenuCarritoComprasClosed) {
-        menuCarritoCompras.classList.add('inactive');
-        }
+closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+    
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
+    if (!ismMenuCarritoComprasClosed) {
+    menuCarritoCompras.classList.add('inactive');
+    }
 
-        const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
-        if (!isDesktopMenuEmailClosed) {
-        DesktopMenuEmail.classList.add('inactive');
-        } 
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
 
-        const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
     }
@@ -246,8 +255,12 @@ function toggleCarritoCompras() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
-    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
     }
@@ -306,162 +319,24 @@ function toggleCarritoCompras() {
 
 }
 
- function openDesplegableCompra() {
-    //menuDetalleCadaCompra.clear;
-    menuDetalleCadaCompra.classList.remove('inactive'); 
-    //menuCarritoCompras.classList.add('inactive');
-
-   //mostrarCadaProducto(camisetasHombreList) 
- 
-    
-}
-
-function closeDesplegableCompra() {
-    //menuDetalleCadaCompra.innerHTML = '';
-    menuDetalleCadaCompra.classList.add('inactive');
-}
-    
-function renderTodoRopa() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Catálogo Completo';
-    renderObjetosHTML(catalogoCompletoList);
-}
-
-function renderCamisetasH() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
-    renderObjetosHTML(camisetasHombreList);
-}
-
-function renderJeansH() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Jeans Hombre';
-    renderObjetosHTML(jeansHombreList);
-}
-
-function renderJeansM() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Jeans Dama';
-    renderObjetosHTML(jeansMujerList);
-}
-
-function renderchaquetasM() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'chaquetas Dama';
-    renderObjetosHTML(chaquetasDamaList);
-}
-
-function renderOtrasPrendas() {
-    cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    cardsContainer.innerText = '';
-    tituloTipRopa.innerText = 'Otras Prendas';
-    renderObjetosHTML(otrasPrendasList);
-}
-
 function toggleMostrarMiInformacion() {
     window.scrollTo(0, 0);
-    /* cardsContainer.setAttribute('class', 'activeFlex');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
-    DesktopMenuEmail.classList.add('inactive');
-    mobileMenuIHam.classList.add('inactive');
-    menuCarritoCompras.classList.add('inactive');
-    asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
-    divCrearCuenta.classList.add('inactive');
-    divConfirmarCrearCuenta.classList.add('inactive');
-    divMostrarCuentaIngresada.classList.add('inactive');
-    divDesplegableCambioAccount.classList.add('inactive');
-    divDesplegableRecoverAccount.classList.add('inactive');
-    divConfirmarEmailEnviado.classList.add('inactive');
-    divDesplegableChangeKey.classList.add('inactive'); */
-
+   
     //Generamos los condicionales para cerrar otros desplegables cuando se habra este desplegable de mostrar info:
 
     menuDetalleCadaCompra.innerHTML = '';
     closeDesplegableCompra()
+    
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
     }
 
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+        if (!isDesktopMenuEmailClosed) {
+        DesktopMenuEmail.classList.add('inactive');
+    } 
+    
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
@@ -513,8 +388,8 @@ function toggleMostrarMiInformacion() {
     }
 
     //se genera el html desde javaScript:
-    cardsContainer.innerText = '';
-    sectionMostrarInformacion.innerText = '';
+    //cardsContainer.innerText = '';
+    containerMostrarInformacion.innerText = '';
 
 
     tituloTipRopa.innerText = 'CAMKAT STORE S.A.S';
@@ -559,6 +434,143 @@ function toggleMostrarMiInformacion() {
     containerMostrarInformacion.appendChild(divInfoEmpresa3);
 
     sectionMostrarInformacion.classList.toggle('inactive');
+
+    
+}
+
+ function openDesplegableCompra() {
+    //menuDetalleCadaCompra.clear;
+    menuDetalleCadaCompra.classList.remove('inactive'); 
+    //menuCarritoCompras.classList.add('inactive');
+
+   //mostrarCadaProducto(camisetasHombreList) 
+ 
+    
+}
+
+function closeDesplegableCompra() {
+    //menuDetalleCadaCompra.innerHTML = '';
+    menuDetalleCadaCompra.classList.add('inactive');
+}
+    
+function renderTodoRopa() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Catálogo Completo';
+    renderObjetosHTML(catalogoCompletoList);
+}
+
+function renderCamisetasH() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
+    renderObjetosHTML(camisetasHombreList);
+}
+
+function renderJeansH() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Jeans Hombre';
+    renderObjetosHTML(jeansHombreList);
+}
+
+function renderJeansM() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Jeans Dama';
+    renderObjetosHTML(jeansMujerList);
+}
+
+function renderchaquetasM() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'chaquetas Dama';
+    renderObjetosHTML(chaquetasDamaList);
+}
+
+function renderOtrasPrendas() {
+    cardsContainer.setAttribute('class', 'cards-container');
+    menuDetalleCadaCompra.classList.add('inactive');
+    menuDetalleCadaCompra.innerHTML = '';
+    DesktopMenuEmail.classList.add('inactive');
+    mobileMenuIHam.classList.add('inactive');
+    menuCarritoCompras.classList.add('inactive');
+    asideTodasLasCompras.classList.add('inactive');
+    divIngresoMobil.classList.add('inactive');
+    divConfirmarCrearCuenta.classList.add('inactive');
+    divMostrarCuentaIngresada.classList.add('inactive');
+    divDesplegableCambioAccount.classList.add('inactive');
+    divDesplegableRecoverAccount.classList.add('inactive');
+    divConfirmarEmailEnviado.classList.add('inactive');
+    sectionMostrarInformacion.classList.add('inactive');
+    cardsContainer.innerText = '';
+    tituloTipRopa.innerText = 'Otras Prendas';
+    renderObjetosHTML(otrasPrendasList);
 }
 
 function recargarMiPagina(){
@@ -607,6 +619,11 @@ function toggleTotalOrdenens() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
     if (!isdivIngresoMobilClosed) {
@@ -665,6 +682,11 @@ function toggleMiCuentaMenuIngresar() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
+
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
@@ -721,6 +743,11 @@ function toggleMiCuentaMenuCrear() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
@@ -780,6 +807,11 @@ function toggleMiCuentaCreadaConfirmacion() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
@@ -885,6 +917,11 @@ function toggleEnviarCorreo() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
@@ -1036,6 +1073,11 @@ function toggleMostrarCuentaIngresada() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
+
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
@@ -1085,6 +1127,11 @@ function toggleEditarMiCuenta() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
+
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
@@ -1117,6 +1164,7 @@ function toggleEditarMiCuenta() {
 
     divDesplegableCambioAccount.classList.toggle('inactive');
 }
+
 function toggleRecuperarCuenta() {
     
     closeDesplegableCompra()
@@ -1136,6 +1184,11 @@ function toggleRecuperarCuenta() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {
@@ -1190,6 +1243,11 @@ function toggleCambiarKey() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
 
     const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
     if (!isAsideTotalOrdenensClosed) {

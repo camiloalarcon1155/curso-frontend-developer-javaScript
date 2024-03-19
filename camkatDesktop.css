@@ -516,24 +516,27 @@ html{
       background-color: #DAC0A3;
 
     }
-    /* configs de mision, vision y nosotros */
 
-    /* .contInfoEsmpresa{
+
+
+    /* configs de toggle mostrarMiInformación */
+    .containerMiInformacion{
         width: 100%;
-        background-color:#DAC0A3;   
-        padding: 20 20;     
-    } */
+        height: 100%;
+        background-color: #B99470;
+        position: absolute;
+        top: 7.6%;
+    }
 
-   .contInfoEmpresa1,
+    .contInfoEmpresa1,
     .contInfoEmpresa2,
-     .contInfoEmpresa3  {
+    .contInfoEmpresa3  {
         width: 100%;
         background-color:#DAC0A3;  
         padding: 5%;
     }
 
 /* configs para footer */
-
 .footerCamkat {
     display: flex;
     flex-direction: column;
@@ -729,8 +732,7 @@ html{
     width: 40%;
     height: 100%;
     font-size: 1.6rem;
-
-}
+    }
     .loginIngreso {
       padding: 0 10%;
       width: 100%;

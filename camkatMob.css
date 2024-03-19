@@ -528,14 +528,12 @@ html{
       margin-top: 0;
       margin-bottom: 0;
       color: var(--very-light-pink);
-    }
-   
+    }   
     .divImagenLogocamkat{
         width: 100%;
         height: 87%;
         padding: 3% 0 10% 0;
     }
-
     .imagenLogocamkat {
       width: 100%;
       height: 460px;/* estaba en 360, parecia  muy alto */
@@ -543,15 +541,21 @@ html{
       background-color: #DAC0A3;
 
     }
-    /* configs de mision, vision y nosotros */
 
-    /* .contInfoEsmpresa{
-        width: 100%;
-        background-color:#DAC0A3;   
-        padding: 20 20;     
+    /* configs de toggle mostrarMiInformacion */
+
+   /*  .mostrarInformacion{
+        
     } */
+    .containerMiInformacion{
+        width: 100%;
+        height: 100%;
+        background-color: #B99470;
+        position: absolute;
+        top: 7.6%;
+    }
 
-   .contInfoEmpresa1,
+    .contInfoEmpresa1,
     .contInfoEmpresa2,
      .contInfoEmpresa3  {
         width: 100%;

@@ -563,13 +563,16 @@ html{
       background-color: #DAC0A3;
 
     }
-    /* configs de mision, vision y nosotros */
 
-    /* .contInfoEsmpresa{
+
+/* configs de toggle mostrarMiInformación: */
+   .containerMiInformacion{
         width: 100%;
-        background-color:#DAC0A3;   
-        padding: 20 20;     
-    } */
+        height: 100%;
+        background-color: #B99470;
+        position: absolute;
+        top: 7.6%;
+    }
 
    .contInfoEmpresa1,
     .contInfoEmpresa2,
