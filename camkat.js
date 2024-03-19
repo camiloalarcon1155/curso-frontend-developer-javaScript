@@ -5,102 +5,58 @@ const menuEmailDesktop = document.querySelector('.navbar-email');
 const menuEmailMov = document.querySelector('.emailMobil');
 const emailmenuMovLogin = document.querySelector('.emailMobilSesionIniciada');
 const emailmenuDesktopLogin = document.querySelector('.emailDesktopSesionIniciada');
-
-
 const DesktopMenuEmail = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const mobileMenuIHam = document.querySelector('.mobile-menu');
 const menuCarritoIcon  = document.querySelector('.navbar-shopping-cart');
 const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
-const cardsContainer = document.querySelector('.cards-container'); // lo traemos para meter el div que contiene el template de nuestro objeto productos
+const cardsContainer = document.querySelector('.cards-container'); 
 const menuDetalleCadaCompra = document.querySelector('#productDetail');
-
-
-//const productDetailCloseIcono = document.querySelector('.product-detail-close')
-
-
-// lo creamos para cerrar el aside 2 que tiene la descripcion de cada compra
-const tituloTipRopa = document.querySelector('.tipoDeRopa');//titulo que va a llevar cada lista de productos
-
+const tituloTipRopa = document.querySelector('.tipoDeRopa');
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
 const opcionRopaTodoMov = document.querySelector('.opcionTodoMobil');
-
 const opcionRopaCamisetasHDesk = document.querySelector('.opcionCamisetasHDesktop');
 const opcionRopaCamisetasHMov = document.querySelector('.opcionCamisetasHMobil');
-
 const OpcionRopaJeansHDesk = document.querySelector('.OpcionJeansHDesktop');
 const OpcionRopaJeansHMov = document.querySelector('.OpcionJeansHMobil');
-
 const opcionRopachaquetasMDesk = document.querySelector('.opcionchaquetasMDesktop');
 const opcionRopachaquetasMMov = document.querySelector('.opcionchaquetasMMobil');
-
 const opcionRopaJeansMDesk = document.querySelector('.opcionJeansMDesktop');
 const opcionRopaJeansMMov = document.querySelector('.opcionJeansMMobil');
-
 const opcionRopaOtrasPrendasDesk = document.querySelector('.opcionOtrasPrendasDesktop');
 const opcionRopaOtrasPrendasMov = document.querySelector('.opcionOtrasPrendasMobil');
-
 const logoCamkat = document.querySelector('.logo');
-
 const logoInicioCamKat = document.querySelector('.divImagenLogocamkat');
-
 const inicioFooter = document.querySelector('.footerInicio');
 const AcercaDeFooter = document.querySelector('.footerAcercaDe'); 
 const contactoFooter = document.querySelector('.footerContacto');
-
 const logoEmailUsuario = document.getElementById('logoDelCorreo');
-
 const todasOrdenesMenuMobil = document.querySelector('.todasOrdersMenuMobil');
-
 const asideTodasLasCompras = document.querySelector('#asideTotalCompras');
-
 const emailOpcionTotalCompras = document.querySelector('.titleTotalCompras');
-
 const miCuentaMenuMov = document.querySelector('.miCuentaMenuMobil');
-
 const divIngresoMobil = document.querySelector('.divIngresoCuenta');
-
 const miCuentaMenuDesktop = document.querySelector('.desktop-menu-cuenta');
-
 const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
-
 const divCrearCuenta = document.querySelector('.divCrearCuenta');
-
 const opcionSignOutMenuMob = document.querySelector('.sign-outMenuMobil');
-
 const opcionSignOutMenuDesktop = document.querySelector('.sign-outMenuDesktop');
-
 const contenComprasAdicionadas = document.querySelector('.divOnlyCompras');
-
 const divNumComprasCart = document.querySelector('.numComprasCart');
-
-
 const buttonConfirmarCrearCuenta = document.querySelector('.primary-buttonCrear');
 const divConfirmarCrearCuenta = document.querySelector('.divEmailCreado');
-
 const divConfirmarEmailEnviado = document.querySelector('.divEmailEnviado');
 const inputRecoverEnviarEmail = document.querySelector('.primary-buttonRecover');
-
-
 const buttonLoginEmailCreado = document.querySelector('.login-buttonEmailCreado');
-
-
-
 const buttonIngresoEmail = document.querySelector('.login-buttonIngreso');
-
 const correoDesktopMenuCK = document.querySelector('.correoDesktopMenu');
 const licorreoDesktopMenu = document.querySelector('.liCorreoDesktopMenu');
 const liEmailDeskSesIniciada = document.querySelector('.liEmailDesktopSesionIniciada');
 const liTitleTotalCompras = document.querySelector('.liTitleTotalCompras');
 const liDesktopMenuCuenta = document.querySelector('.liDesktop-menu-cuenta');
 const liDignOutMenuDesktop = document.querySelector('.liDign-outMenuDesktop');
- 
-
-
 const pInfoErrroneaLogin = document.querySelector('.pInfoErrroneaIngreso');
-
 const divIngresadoConExito = document.querySelector('.ingresadoConExito');
-
 const divMostrarCuentaIngresada = document.querySelector('.divMostrarCuenta');
 const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta');
 const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
@@ -116,19 +72,11 @@ const divDesplegableChangeKey = document.querySelector('.divChangeKey');
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
 menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
-
-
 menuHamIcon.addEventListener('click', toggleMobilMenu);
-
 menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
-
-
 logoCamkat.addEventListener('click',mostrarMiInformacion);
 inicioFooter.addEventListener('click', recargarMiPagina);
 AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
-
-
-
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
@@ -227,7 +175,6 @@ function toggleDesktopMenuEmail() {
 
 }
 
-
 function toggleMobilMenu() {
     closeDesplegableCompra()
         menuDetalleCadaCompra.innerHTML = '';
@@ -289,7 +236,6 @@ function toggleMobilMenu() {
         divDesplegableChangeKey.classList.add('inactive');
     }
 }
-
 
 function toggleCarritoCompras() {
     window.scrollTo(0, 0);
@@ -356,7 +302,6 @@ function toggleCarritoCompras() {
 
 }
 
-
  function openDesplegableCompra() {
     //menuDetalleCadaCompra.clear;
     menuDetalleCadaCompra.classList.remove('inactive'); 
@@ -367,15 +312,11 @@ function toggleCarritoCompras() {
     
 }
 
-
-
 function closeDesplegableCompra() {
     //menuDetalleCadaCompra.innerHTML = '';
     menuDetalleCadaCompra.classList.add('inactive');
 }
     
-
-
 function renderTodoRopa() {
     cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
@@ -578,8 +519,6 @@ window.addEventListener('resize', ajustarCorreoSegunTamanioPantalla);
 window.addEventListener('load', ajustarCorreoSegunTamanioPantalla);
 
 ajustarCorreoSegunTamanioPantalla();
-
-
 
 function toggleTotalOrdenens() {
     window.scrollTo(0, 0);
@@ -858,7 +797,6 @@ function miCuentaCreadaConfirmacion() {
     divConfirmarCrearCuenta.classList.toggle('inactive');
 }
 
-
 function ToggleEnviarCorreo() {
 
     
@@ -915,7 +853,7 @@ function ToggleEnviarCorreo() {
 
 }
 
- let coincidenciaEncontrada = false;
+let coincidenciaEncontrada = false;
 let arregloUsuariosIngresados = [];
 function guardarInfoLoginIngresoYMostrarPagina() {
 
@@ -1009,7 +947,6 @@ function guardarInfoLoginIngresoYMostrarPagina() {
 
   document.querySelector('.input-passwordIngreso').value = "";
 }
-
 
 function MostarCuentaIngresada() {
 
@@ -1435,7 +1372,6 @@ catalogoCompletoList.push({
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
-
 //🥼🥼🥼Arreglo de objetos de camisetas economicas:
 const camisetasHombreList = [];// este vendria siendo la abase de datos que estaria en el backend, pero vbamos a hacer uno similar aqui, para organizar el forntend
 camisetasHombreList.push({
@@ -1479,7 +1415,6 @@ camisetasHombreList.push({
     image: "https://i.imgur.com/NOKEmj4.jpeg",
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
-
 
 //👖👖👖Arreglo de objetos de jeans hombre:
 const jeansHombreList = [];
@@ -1525,9 +1460,6 @@ jeansHombreList.push({
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
-
-
-
 //👖👖👖Arreglo de objetos de jeans mujer:
 const jeansMujerList = [];
 jeansMujerList.push({
@@ -1572,7 +1504,6 @@ jeansMujerList.push({
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
 
-
 //👚👚👚👚Arreglo de objetos de blusas dama:
 const chaquetasDamaList = [];
 chaquetasDamaList.push({
@@ -1616,7 +1547,6 @@ chaquetasDamaList.push({
     image: "https://i.imgur.com/1Zjfk6P.jpg",
     info: 'Esta prenda se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
-
 
 //otras prendas
 const otrasPrendasList = [];
@@ -1670,8 +1600,6 @@ listaFalsa.push({
     image: "https://img.freepik.com/vector-gratis/bote-basura-lleno-bolsas-basura-vasos-vino-botellas-plastico-cascaras-platano_1268-15181.jpg",
     info: 'Esta prenda ¡NO! se esta vendiendo en camkatStore, donde se venden excelentes prendas todos los dia y ademas puedes disfrutar de excelentes marcas'
 });
-
-
 
 function renderObjetosHTML(arrElements) {
     logoInicioCamKat.classList.add('inactive');
@@ -1752,7 +1680,40 @@ function renderObjetosHTML(arrElements) {
             const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
             if (!isAsideTotalOrdenensClosed) {
             asideTodasLasCompras.classList.add('inactive');
+        }
+        
+            const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
+            if (!isdivIngresoMobilClosed) {
+                divIngresoMobil.classList.add('inactive');
             }
+        
+            const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+            if (!isDivCrearCuentaClosed) {
+                divCrearCuenta.classList.add('inactive');
+            }
+
+            const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+            if (!isDivConfirmarCrearCuentaClosed) {
+                divConfirmarCrearCuenta.classList.add('inactive');
+            }
+
+            const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+            if (!divMostrarCuentaIngresadaClosed) {
+                divMostrarCuentaIngresada.classList.add('inactive');
+            }
+
+            const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+            if (!isDivDesplegableCambioAccountClosed) {
+                divDesplegableCambioAccount.classList.add('inactive');
+            }
+
+            const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
+            if (!isDivConfirmarEmailEnviadoClosed) {
+                divConfirmarEmailEnviado.classList.add('inactive');
+            }
+
+        
+        divMostrarCuentaIngresada.classList.add('inactive');
 
             const productDivClose = document.createElement('div');
             productDivClose.classList.add('product-detail-close');
@@ -1917,10 +1878,6 @@ if (coincidenciaEncontrada){
 }
 
 
-   
-
-
-
 //aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
 
 opcionRopaTodoDesk.addEventListener("click", renderTodoRopa);
@@ -1949,14 +1906,4 @@ opcionRopaJeansMMov.addEventListener("click", renderJeansM);
 opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
 
 opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas);
-
-// opcionRopaCamisetasH.addEventListener('click', renderObjetosHTML(camisetasHombreList));
-
-// OpcionRopaJeansH.addEventListener("click", renderObjetosHTML(jeansHombreList));
-
-// opcionRopachaquetasM.addEventListener("click", renderObjetosHTML(jeansMujerList));
-
-// opcionRopaJeansM.addEventListener("click", renderObjetosHTML(chaquetasDamaList));
-
-// opcionRopaOtrasPrendas.addEventListener("click", renderObjetosHTML(otrasPrendasList));
 
