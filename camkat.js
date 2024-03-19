@@ -70,7 +70,7 @@ const divDesplegableChangeKey = document.querySelector('.divChangeKey');
 
 
 /* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
-menuEmailMov.addEventListener('click', miCuentaMenuIngresar)
+menuEmailMov.addEventListener('click', toggleMiCuentaMenuIngresar)
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 menuHamIcon.addEventListener('click', toggleMobilMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
@@ -80,12 +80,12 @@ AcercaDeFooter.addEventListener('click', mostrarMiInformacion);
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
 miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
-miCuentaMenuDesktop.addEventListener('click', MostarCuentaIngresada);
+miCuentaMenuDesktop.addEventListener('click', toggleMostrarCuentaIngresada);
 buttonIngresoEmail.addEventListener('click', function(event) {
     event.preventDefault();
     guardarInfoLoginIngresoYMostrarPagina();
 });
-buttonCrearCuenta.addEventListener('click', miCuentaMenuCrear);
+buttonCrearCuenta.addEventListener('click', toggleMiCuentaMenuCrear);
 opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
 opcionSignOutMenuDesktop.addEventListener('click', recargarMiPagina);
 buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
@@ -93,22 +93,22 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     event.preventDefault();
     
     // Llama a la función que deseas ejecutar
-    miCuentaCreadaConfirmacion();
+    toggleMiCuentaCreadaConfirmacion();
 });
-buttonLoginEmailCreado.addEventListener('click', miCuentaMenuIngresar);
-correoDesktopMenuCK.addEventListener('click', miCuentaMenuIngresar);
+buttonLoginEmailCreado.addEventListener('click', toggleMiCuentaMenuIngresar);
+correoDesktopMenuCK.addEventListener('click', toggleMiCuentaMenuIngresar);
 buttonMostrarCuentaEditarCuenta.addEventListener('click', function (event) {
 
     event.preventDefault();
-    ToggleeditarMiCuenta();
+    toggleEditarMiCuenta();
 });
-aOlvidoContrasenia.addEventListener('click', ToggleRecuperarCuenta);
+aOlvidoContrasenia.addEventListener('click', toggleRecuperarCuenta);
 inputRecoverEnviarEmail.addEventListener('click', function (event) {
 
     event.preventDefault();
-    ToggleEnviarCorreo();
+    toggleEnviarCorreo();
 });
-buttonCambiarKeyDeEditarCuenta.addEventListener('click', ToggleCambiarKey);
+buttonCambiarKeyDeEditarCuenta.addEventListener('click', toggleCambiarKey);
 
 
 
@@ -578,7 +578,7 @@ function toggleTotalOrdenens() {
     asideTodasLasCompras.classList.toggle('inactive')
 }
 
-function miCuentaMenuIngresar() {
+function toggleMiCuentaMenuIngresar() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
@@ -635,7 +635,7 @@ function miCuentaMenuIngresar() {
     divIngresoMobil.classList.toggle('inactive');
 }
 
-function miCuentaMenuCrear() {
+function toggleMiCuentaMenuCrear() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
@@ -693,7 +693,7 @@ function miCuentaMenuCrear() {
 }
 
 let arregloUsuariosRegistrados = [];
-function miCuentaCreadaConfirmacion() {
+function toggleMiCuentaCreadaConfirmacion() {
 
      closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
@@ -769,7 +769,7 @@ function miCuentaCreadaConfirmacion() {
         this.passworld = passworld;
     }
     const cliente = new UsuarioRegistrado(nameEmailRegistrado,direccionEmailRegistrado, passwordEmailRegistrado);
-    arregloUsuariosRegistrados.push(cliente); // por ahora vamos a guardar en este areglo para que sea comparado con la cuenta ingresada en la funcion miCuentaMenuIngresar
+    arregloUsuariosRegistrados.push(cliente); // por ahora vamos a guardar en este areglo para que sea comparado con la cuenta ingresada en la funcion toggleMiCuentaMenuIngresar
 
     console.log(arregloUsuariosRegistrados)
 
@@ -797,7 +797,7 @@ function miCuentaCreadaConfirmacion() {
     divConfirmarCrearCuenta.classList.toggle('inactive');
 }
 
-function ToggleEnviarCorreo() {
+function toggleEnviarCorreo() {
 
     
     closeDesplegableCompra()
@@ -895,8 +895,8 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 divIngresadoConExito.classList.remove('inactive');
                 
                 // Llama a setTimeout() y pasa la función y el tiempo en milisegundos (5 segundos = 5000 milisegundos)
-                setTimeout(miCuentaMenuIngresar, 1000);
-                //miCuentaMenuIngresar()
+                setTimeout(toggleMiCuentaMenuIngresar, 1000);
+                //toggleMiCuentaMenuIngresar()
 
                 //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
                 menuEmailMov.classList.add('inactive'); 
@@ -948,7 +948,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
   document.querySelector('.input-passwordIngreso').value = "";
 }
 
-function MostarCuentaIngresada() {
+function toggleMostrarCuentaIngresada() {
 
  closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
@@ -997,7 +997,7 @@ function MostarCuentaIngresada() {
 
 }
 
-function ToggleeditarMiCuenta() {
+function toggleEditarMiCuenta() {
     
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
@@ -1049,8 +1049,7 @@ function ToggleeditarMiCuenta() {
 
     divDesplegableCambioAccount.classList.toggle('inactive');
 }
-
-function ToggleRecuperarCuenta() {
+function toggleRecuperarCuenta() {
     
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
@@ -1103,7 +1102,7 @@ function ToggleRecuperarCuenta() {
     divDesplegableRecoverAccount.classList.toggle('inactive');
 }
 
-function ToggleCambiarKey() {
+function toggleCambiarKey() {
 
      
     closeDesplegableCompra()
@@ -1873,7 +1872,7 @@ if (coincidenciaEncontrada){
     
 //...si no, muestra el menu de ingresar cuenta:
 } else {
-    miCuentaMenuIngresar();
+    toggleMiCuentaMenuIngresar();
 }
 }
 
