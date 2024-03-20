@@ -1,6 +1,6 @@
 /* Esto es un proyecto forkeado de platzi,m llamado curso de frontend developmen, fue forkeado como curso de java scrpt practico ya ahora lo estoy personalizando para mi tienda CamKatStore, haremos cambios de variables, aumento de variables y funciones y sus imagenes seran de ropa. Este proyecto sigue siendo meramente tecnico */
 
-
+//Declaracion y apuntar a objetos de HTML:
 const menuEmailDesktop = document.querySelector('.navbar-email');
 const menuEmailMov = document.querySelector('.emailMobil');
 const emailmenuMovLogin = document.querySelector('.emailMobilSesionIniciada');
@@ -14,7 +14,6 @@ const cardsContainer = document.querySelector('.cards-container');
 const containerMostrarInformacion = document.querySelector('.containerMiInformacion'); 
 const sectionMostrarInformacion = document.querySelector('.mostrarInformacion'); 
 const detalleDeCadaProducto = document.querySelector('#productDetail');
-
 const tituloTipRopa = document.querySelector('.tipoDeRopa');
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
 const opcionRopaTodoMov = document.querySelector('.opcionTodoMobil');
@@ -72,25 +71,40 @@ const buttonCambiarKeyDeEditarCuenta = document.querySelector('.buttonEditarCamb
 const divDesplegableChangeKey = document.querySelector('.divChangeKey');
 
 
-/* menuEmailMov.addEventListener('click', toggleDesktopMenuEmail) */
+//Escuchar los click de los botones de HTML:
 menuEmailMov.addEventListener('click', toggleMiCuentaMenuIngresar)
+
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
+
 menuHamIcon.addEventListener('click', toggleMobilMenu);
+
 menuCarritoIcon.addEventListener('click', toggleCarritoCompras);
-logoCamkat.addEventListener('click',toggleMostrarMiInformacion);
+
+logoCamkat.addEventListener('click', toggleMostrarMiInformacion);
+
 inicioFooter.addEventListener('click', recargarMiPagina);
+
 AcercaDeFooter.addEventListener('click', toggleMostrarMiInformacion);
+
 todasOrdenesMenuMobil.addEventListener('click', toggleTotalOrdenens);
+
 emailOpcionTotalCompras.addEventListener('click', toggleTotalOrdenens);
+
 miCuentaMenuMov.addEventListener('click', toggleDesktopMenuEmail);
+
 miCuentaMenuDesktop.addEventListener('click', toggleMostrarCuentaIngresada);
+
 buttonIngresoEmail.addEventListener('click', function(event) {
     event.preventDefault();
     guardarInfoLoginIngresoYMostrarPagina();
 });
+
 buttonCrearCuenta.addEventListener('click', toggleMiCuentaMenuCrear);
+
 opcionSignOutMenuMob.addEventListener('click', recargarMiPagina);
+
 opcionSignOutMenuDesktop.addEventListener('click', recargarMiPagina);
+
 buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     // Evita el comportamiento predeterminado del botón
     event.preventDefault();
@@ -98,21 +112,55 @@ buttonConfirmarCrearCuenta.addEventListener('click', function(event) {
     // Llama a la función que deseas ejecutar
     toggleMiCuentaCreadaConfirmacion();
 });
+
 buttonLoginEmailCreado.addEventListener('click', toggleMiCuentaMenuIngresar);
+
 correoDesktopMenuCK.addEventListener('click', toggleMiCuentaMenuIngresar);
+
 buttonMostrarCuentaEditarCuenta.addEventListener('click', function (event) {
 
     event.preventDefault();
     toggleEditarMiCuenta();
 });
+
 aOlvidoContrasenia.addEventListener('click', toggleRecuperarCuenta);
+
 inputRecoverEnviarEmail.addEventListener('click', function (event) {
 
     event.preventDefault();
     toggleEnviarCorreo();
 });
+
 buttonCambiarKeyDeEditarCuenta.addEventListener('click', toggleCambiarKey);
 
+//aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
+
+opcionRopaTodoDesk.addEventListener("click", renderTodoRopa);
+
+opcionRopaCamisetasHDesk.addEventListener("click", renderCamisetasH);
+
+OpcionRopaJeansHDesk.addEventListener("click", renderJeansH);
+
+opcionRopaJeansMDesk.addEventListener("click", renderJeansM);
+
+opcionRopachaquetasMDesk.addEventListener("click", renderchaquetasM);
+
+opcionRopaOtrasPrendasDesk.addEventListener("click", renderOtrasPrendas);
+
+
+//ahora vamos a hacer lo mismo para el menu movil:
+
+opcionRopaTodoMov.addEventListener("click", renderTodoRopa);
+
+opcionRopaCamisetasHMov.addEventListener("click", renderCamisetasH);
+
+OpcionRopaJeansHMov.addEventListener("click", renderJeansH);
+
+opcionRopaJeansMMov.addEventListener("click", renderJeansM);
+
+opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
+
+opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas);
 
 
 function toggleDesktopMenuEmail() {
@@ -248,10 +296,8 @@ closeDesplegableDetalleDeProducto()
         divDesplegableChangeKey.classList.add('inactive');
     }
 
+    mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
-        mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
-
-    
 }
 
 function toggleCarritoCompras() {
@@ -443,17 +489,10 @@ function toggleMostrarMiInformacion() {
 }
 
  function openDesplegableDetalleDeProducto() {
-    //detalleDeCadaProducto.clear;
     detalleDeCadaProducto.classList.remove('inactive'); 
-    //menuCarritoCompras.classList.add('inactive');
-
-   //mostrarCadaProducto(camisetasHombreList) 
- 
-    
 }
 
 function closeDesplegableDetalleDeProducto() {
-    //detalleDeCadaProducto.innerHTML = '';
     detalleDeCadaProducto.classList.add('inactive');
 }
     
@@ -608,7 +647,6 @@ function ajustarCorreoSegunTamanioPantalla() {
         logoEmailUsuario.innerText = 'Mi cuenta';
 
     }
-
 }
 
 window.addEventListener('resize', ajustarCorreoSegunTamanioPantalla);
@@ -632,29 +670,20 @@ function toggleTotalOrdenens() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
-
-
-
-
      /* const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
     }
 
-    
     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
     if (!isdivIngresoCuentaClosed) {
         divIngresoCuenta.classList.add('inactive');
     }
 
-    
-
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
         sectionMostrarInformacion.classList.add('inactive');
     }
-
-    
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
     if (!isDivCrearCuentaClosed) {
@@ -713,17 +742,11 @@ function toggleMiCuentaMenuIngresar() {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
 
-
 /* 
-
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
     }
-
-    
-
-    
 
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
@@ -739,8 +762,6 @@ function toggleMiCuentaMenuIngresar() {
     if (!isDivCrearCuentaClosed) {
         divCrearCuenta.classList.add('inactive');
     }
-
-    
 
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
@@ -774,9 +795,6 @@ function toggleMiCuentaMenuCrear() {
         divIngresoCuenta.classList.add('inactive');
     }
 
-
-
-
 /* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -802,8 +820,6 @@ function toggleMiCuentaMenuCrear() {
     if (!isAsideTotalOrdenensClosed) {
         asideTodasLasCompras.classList.add('inactive');
     }
-
-    
     
      const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
@@ -843,10 +859,6 @@ function toggleMiCuentaCreadaConfirmacion() {
     if (!isDivCrearCuentaClosed) {
         divCrearCuenta.classList.add('inactive');
     }
-
-
-
-
 
 /* 
 
@@ -961,9 +973,6 @@ function toggleRecuperarCuenta() {
         divIngresoCuenta.classList.add('inactive');
     }
 
-
-
-
 /* 
 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -1029,8 +1038,6 @@ function toggleEnviarCorreo() {
         divDesplegableRecoverAccount.classList.add('inactive');
     }
 
-
-
 /* 
 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -1084,7 +1091,6 @@ function toggleEnviarCorreo() {
     }
  */
     divConfirmarEmailEnviado.classList.toggle('inactive');
-
 
 }
 
@@ -1193,8 +1199,6 @@ function toggleMostrarCuentaIngresada() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
-
-
     /* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -1250,8 +1254,6 @@ function toggleEditarMiCuenta() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-
-
 /* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -1304,16 +1306,13 @@ function toggleEditarMiCuenta() {
 
 function toggleCambiarKey() {
 
-     
     closeDesplegableDetalleDeProducto()
     //detalleDeCadaProducto.innerHTML = '';
-
 
     const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
     if (!isDivDesplegableCambioAccountClosed) {
         divDesplegableCambioAccount.classList.add('inactive');
     }
-
 
 /* 
 
@@ -1365,8 +1364,6 @@ function toggleCambiarKey() {
  */
     divDesplegableChangeKey.classList.toggle('inactive');
 
-
-    
 }
 
 //👖👖👖Arreglo de objetos de toda la ropa:
@@ -1814,7 +1811,6 @@ function renderObjetosHTML(arrElements) {
     logoInicioCamKat.classList.add('inactive');
     for (product of arrElements) {
 
-
     const productCard = document.createElement('div'); 
     productCard.classList.add('product-card');
 
@@ -1861,7 +1857,6 @@ function renderObjetosHTML(arrElements) {
     productCard.appendChild(productImg);
     productCard.appendChild(productInfo);
 
-    
     cardsContainer.appendChild(productCard);
     }; 
 
@@ -1936,8 +1931,6 @@ function renderObjetosHTML(arrElements) {
                 divDesplegableChangeKey.classList.add('inactive');
             }
         
-
-        
         //divMostrarCuentaIngresada.classList.add('inactive');
 
             const productDivClose = document.createElement('div');
@@ -1979,7 +1972,6 @@ function renderObjetosHTML(arrElements) {
             const iconoCompraCarrito = document.createElement('img');
             iconoCompraCarrito.setAttribute('src','./icons/bt_add_to_cart.svg');
 
-
             productDivClose.appendChild(productIconoClose);
 
             productButton.appendChild(iconoCompraCarrito);
@@ -2002,8 +1994,8 @@ let preciosCompraAdicionada = [];
 const catalogoComprasAdicionadas = [];
 function guardarProductosAdicionados(objetoProducto) {
     
-
-//si encuentra coincidencia entre el correo ingresado y clave ingresado y la informacion guardadada en base de datos, entonces permite adicionar al carrito de compras, si no muestra el menu de ingresar cuenta:
+    //si encuentra coincidencia entre el correo ingresado y clave ingresado y la informacion guardadada en base de datos, entonces permite adicionar al carrito de compras, si no muestra el menu de ingresar cuenta:
+    
 if (coincidenciaEncontrada){
 
     catalogoComprasAdicionadas.push(objetoProducto);
@@ -2061,7 +2053,6 @@ if (coincidenciaEncontrada){
     //configs para cerrar divs de compra:
     function cerrarCompra(compracerrada) {
         
-        
         divContenedorCompras.classList.add('inactive');
         for (let i = 0; i < catalogoComprasAdicionadas.length; i++) {
             if (compracerrada.name === catalogoComprasAdicionadas[i].name) {
@@ -2103,32 +2094,5 @@ if (coincidenciaEncontrada){
 }
 
 
-//aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
 
-opcionRopaTodoDesk.addEventListener("click", renderTodoRopa);
-
-opcionRopaCamisetasHDesk.addEventListener("click", renderCamisetasH);
-
-OpcionRopaJeansHDesk.addEventListener("click", renderJeansH);
-
-opcionRopaJeansMDesk.addEventListener("click", renderJeansM);
-
-opcionRopachaquetasMDesk.addEventListener("click", renderchaquetasM);
-
-opcionRopaOtrasPrendasDesk.addEventListener("click", renderOtrasPrendas);
-
-
-//ahora vamos a hacer lo mismo para el menu movil:
-
-opcionRopaTodoMov.addEventListener("click", renderTodoRopa);
-
-opcionRopaCamisetasHMov.addEventListener("click", renderCamisetasH);
-
-OpcionRopaJeansHMov.addEventListener("click", renderJeansH);
-
-opcionRopaJeansMMov.addEventListener("click", renderJeansM);
-
-opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
-
-opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas);
 
