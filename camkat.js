@@ -118,7 +118,7 @@ buttonCambiarKeyDeEditarCuenta.addEventListener('click', toggleCambiarKey);
 function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
     
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -186,7 +186,7 @@ function toggleDesktopMenuEmail() {
 
 function toggleMobilMenu() {
 closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
     
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
     if (!ismMenuCarritoComprasClosed) {
@@ -257,7 +257,7 @@ closeDesplegableDetalleDeProducto()
 function toggleCarritoCompras() {
     window.scrollTo(0, 0);
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
@@ -328,7 +328,7 @@ function toggleMostrarMiInformacion() {
    
     //Generamos los condicionales para cerrar otros desplegables cuando se habra este desplegable de mostrar info:
 
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
     closeDesplegableDetalleDeProducto()
     
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
@@ -619,7 +619,7 @@ ajustarCorreoSegunTamanioPantalla();
 function toggleTotalOrdenens() {
     window.scrollTo(0, 0);
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
 
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
@@ -691,7 +691,7 @@ function toggleTotalOrdenens() {
 
 function toggleMiCuentaMenuIngresar() {
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
@@ -767,7 +767,7 @@ function toggleMiCuentaMenuIngresar() {
 
 function toggleMiCuentaMenuCrear() {
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
     if (!isdivIngresoCuentaClosed) {
@@ -837,7 +837,7 @@ let arregloUsuariosRegistrados = [];
 function toggleMiCuentaCreadaConfirmacion() {
 
      closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
     if (!isDivCrearCuentaClosed) {
@@ -954,7 +954,7 @@ function toggleMiCuentaCreadaConfirmacion() {
 function toggleRecuperarCuenta() {
     
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
      const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
     if (!isdivIngresoCuentaClosed) {
@@ -1022,7 +1022,7 @@ function toggleRecuperarCuenta() {
 
 function toggleEnviarCorreo() {
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
     if (!isDivDesplegableRecoverAccount) {
@@ -1186,7 +1186,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
 function toggleMostrarCuentaIngresada() {
 
  closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
     const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
     if (!isDesktopMenuEmailClosed) {
@@ -1243,7 +1243,7 @@ function toggleMostrarCuentaIngresada() {
 function toggleEditarMiCuenta() {
     
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
@@ -1306,7 +1306,7 @@ function toggleCambiarKey() {
 
      
     closeDesplegableDetalleDeProducto()
-    detalleDeCadaProducto.innerHTML = '';
+    //detalleDeCadaProducto.innerHTML = '';
 
 
     const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
