@@ -37,7 +37,7 @@ const todasOrdenesMenuMobil = document.querySelector('.todasOrdersMenuMobil');
 const asideTodasLasCompras = document.querySelector('#asideTotalCompras');
 const emailOpcionTotalCompras = document.querySelector('.titleTotalCompras');
 const miCuentaMenuMov = document.querySelector('.miCuentaMenuMobil');
-const divIngresoMobil = document.querySelector('.divIngresoCuenta');
+const divIngresoCuenta = document.querySelector('.divIngresoCuenta');
 const miCuentaMenuDesktop = document.querySelector('.desktop-menu-cuenta');
 const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
 const divCrearCuenta = document.querySelector('.divCrearCuenta');
@@ -139,9 +139,9 @@ function toggleDesktopMenuEmail() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
+     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
     }
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
@@ -207,9 +207,9 @@ closeDesplegableCompra()
         asideTodasLasCompras.classList.add('inactive');
     }
 
-     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
+     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
     }
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
@@ -242,12 +242,15 @@ closeDesplegableCompra()
         divConfirmarEmailEnviado.classList.add('inactive');
     }
 
-        mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
-
     const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
     if (!isDivDesplegableChangeKeyClosed) {
         divDesplegableChangeKey.classList.add('inactive');
     }
+
+
+        mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
+
+    
 }
 
 function toggleCarritoCompras() {
@@ -275,9 +278,9 @@ function toggleCarritoCompras() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
+     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
     }
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
@@ -347,9 +350,9 @@ function toggleMostrarMiInformacion() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-     const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
+     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
     }
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
@@ -461,13 +464,15 @@ function renderTodoRopa() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -481,13 +486,15 @@ function renderCamisetasH() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -501,13 +508,15 @@ function renderJeansH() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -521,13 +530,15 @@ function renderJeansM() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -541,13 +552,15 @@ function renderchaquetasM() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -561,13 +574,15 @@ function renderOtrasPrendas() {
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
     asideTodasLasCompras.classList.add('inactive');
-    divIngresoMobil.classList.add('inactive');
+    divIngresoCuenta.classList.add('inactive');
+    divCrearCuenta.classList.add('inactive');
     divConfirmarCrearCuenta.classList.add('inactive');
     divMostrarCuentaIngresada.classList.add('inactive');
     divDesplegableCambioAccount.classList.add('inactive');
     divDesplegableRecoverAccount.classList.add('inactive');
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
+    divDesplegableChangeKey.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -605,10 +620,6 @@ function toggleTotalOrdenens() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
-     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    if (!ismMenuCarritoComprasClosed) {
-        menuCarritoCompras.classList.add('inactive');
-    }
 
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
@@ -620,15 +631,29 @@ function toggleTotalOrdenens() {
     DesktopMenuEmail.classList.add('inactive');
     } 
 
+
+
+
+
+     /* const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    
+    const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
+    }
+
+    
+
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
         sectionMostrarInformacion.classList.add('inactive');
     }
 
-    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
-    }
+    
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
     if (!isDivCrearCuentaClosed) {
@@ -658,7 +683,7 @@ function toggleTotalOrdenens() {
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
-    }
+    } */
 
     asideTodasLasCompras.classList.toggle('inactive')
 }
@@ -667,12 +692,7 @@ function toggleMiCuentaMenuIngresar() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
-    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    if (!ismMenuCarritoComprasClosed) {
-        menuCarritoCompras.classList.add('inactive');
-    }
-
-    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+   const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
     }
@@ -681,6 +701,28 @@ function toggleMiCuentaMenuIngresar() {
     if (!isDesktopMenuEmailClosed) {
     DesktopMenuEmail.classList.add('inactive');
     } 
+
+    const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+        if (!divConfirmarCrearCuentaClosed) {
+            divConfirmarCrearCuenta.classList.add('inactive');
+        }
+
+    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
+    if (!isDivConfirmarEmailEnviadoClosed) {
+        divConfirmarEmailEnviado.classList.add('inactive');
+    }
+
+
+/* 
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    
+
+    
 
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
@@ -697,10 +739,7 @@ function toggleMiCuentaMenuIngresar() {
         divCrearCuenta.classList.add('inactive');
     }
 
-    const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
-    if (!divConfirmarCrearCuentaClosed) {
-        divConfirmarCrearCuenta.classList.add('inactive');
-    }
+    
 
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
@@ -720,15 +759,24 @@ function toggleMiCuentaMenuIngresar() {
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
-    }
+    } */
     
-    divIngresoMobil.classList.toggle('inactive');
+    divIngresoCuenta.classList.toggle('inactive');
 }
 
 function toggleMiCuentaMenuCrear() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
+    const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
+    }
+
+
+
+
+/* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -754,10 +802,7 @@ function toggleMiCuentaMenuCrear() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
-    }
+    
     
      const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
@@ -782,7 +827,7 @@ function toggleMiCuentaMenuCrear() {
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
-    }
+    } */
 
     divCrearCuenta.classList.toggle('inactive');
 }
@@ -793,6 +838,17 @@ function toggleMiCuentaCreadaConfirmacion() {
      closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+
+
+
+
+/* 
+
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -818,15 +874,12 @@ function toggleMiCuentaCreadaConfirmacion() {
         asideTodasLasCompras.classList.add('inactive');
     }
 
-    const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-    if (!isdivIngresoMobilClosed) {
-        divIngresoMobil.classList.add('inactive');
+    const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
     }
 
-    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
-    if (!isDivCrearCuentaClosed) {
-        divCrearCuenta.classList.add('inactive');
-    }
+   
 
     const divConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!divConfirmarCrearCuentaClosed) {
@@ -852,7 +905,7 @@ function toggleMiCuentaCreadaConfirmacion() {
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
-
+ */
     const nameEmailRegistrado = document.querySelector('.inputCrearName').value;
 
     const direccionEmailRegistrado = document.querySelector('.inputCrearEmail').value;
@@ -897,11 +950,20 @@ function toggleMiCuentaCreadaConfirmacion() {
     divConfirmarCrearCuenta.classList.toggle('inactive');
 }
 
-function toggleEnviarCorreo() {
-
+function toggleRecuperarCuenta() {
     
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
+
+     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+    if (!isdivIngresoCuentaClosed) {
+        divIngresoCuenta.classList.add('inactive');
+    }
+
+
+
+
+/* 
 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -952,7 +1014,74 @@ function toggleEnviarCorreo() {
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
+ */
+    divDesplegableRecoverAccount.classList.toggle('inactive');
+}
 
+
+function toggleEnviarCorreo() {
+    closeDesplegableCompra()
+    menuDetalleCadaCompra.innerHTML = '';
+
+     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+    if (!isDivDesplegableRecoverAccount) {
+        divDesplegableRecoverAccount.classList.add('inactive');
+    }
+
+
+
+/* 
+
+    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    if (!ismobileMenuIHamClosed) {
+        mobileMenuIHam.classList.add('inactive');
+    }
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+    if (!isSectionMostrarInformacionClosed) {
+        sectionMostrarInformacion.classList.add('inactive');
+    }
+
+    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
+    if (!isAsideTotalOrdenensClosed) {
+        asideTodasLasCompras.classList.add('inactive');
+    }
+
+    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
+    if (!isDivCrearCuentaClosed) {
+        divCrearCuenta.classList.add('inactive');
+    }
+
+    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
+    if (!isDivConfirmarCrearCuentaClosed) {
+        divConfirmarCrearCuenta.classList.add('inactive');
+    }
+
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
+    }
+
+    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
+    if (!isDivConfirmarEmailEnviadoClosed) {
+        divConfirmarEmailEnviado.classList.add('inactive');
+    }
+ */
     divConfirmarEmailEnviado.classList.toggle('inactive');
 
 
@@ -1058,6 +1187,14 @@ function toggleMostrarCuentaIngresada() {
  closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+
+
+
+    /* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -1067,11 +1204,6 @@ function toggleMostrarCuentaIngresada() {
     if (!ismobileMenuIHamClosed) {
         mobileMenuIHam.classList.add('inactive');
     }
-
-    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
-    if (!isDesktopMenuEmailClosed) {
-    DesktopMenuEmail.classList.add('inactive');
-    } 
 
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
@@ -1101,7 +1233,7 @@ function toggleMostrarCuentaIngresada() {
     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
     if (!isDivDesplegableRecoverAccount) {
         divDesplegableRecoverAccount.classList.add('inactive');
-    }
+    } */
 
     divMostrarCuentaIngresada.classList.toggle('inactive');
 
@@ -1112,6 +1244,14 @@ function toggleEditarMiCuenta() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
+    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
+    if (!divMostrarCuentaIngresadaClosed) {
+        divMostrarCuentaIngresada.classList.add('inactive');
+    }
+
+
+
+/* 
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -1145,11 +1285,6 @@ function toggleEditarMiCuenta() {
     const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
     if (!isDivConfirmarCrearCuentaClosed) {
         divConfirmarCrearCuenta.classList.add('inactive');
-    }
-
-    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
-    if (!divMostrarCuentaIngresadaClosed) {
-        divMostrarCuentaIngresada.classList.add('inactive');
     }
 
     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
@@ -1160,68 +1295,11 @@ function toggleEditarMiCuenta() {
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
-    }
+    } */
 
     divDesplegableCambioAccount.classList.toggle('inactive');
 }
 
-function toggleRecuperarCuenta() {
-    
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
-
-    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    if (!ismMenuCarritoComprasClosed) {
-        menuCarritoCompras.classList.add('inactive');
-    }
-
-    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
-    if (!ismobileMenuIHamClosed) {
-        mobileMenuIHam.classList.add('inactive');
-    }
-
-    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
-    if (!isDesktopMenuEmailClosed) {
-    DesktopMenuEmail.classList.add('inactive');
-    } 
-
-    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
-    if (!isSectionMostrarInformacionClosed) {
-        sectionMostrarInformacion.classList.add('inactive');
-    }
-
-    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
-    if (!isAsideTotalOrdenensClosed) {
-        asideTodasLasCompras.classList.add('inactive');
-    }
-
-    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
-    if (!isDivCrearCuentaClosed) {
-        divCrearCuenta.classList.add('inactive');
-    }
-
-    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
-    if (!isDivConfirmarCrearCuentaClosed) {
-        divConfirmarCrearCuenta.classList.add('inactive');
-    }
-
-    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
-    if (!divMostrarCuentaIngresadaClosed) {
-        divMostrarCuentaIngresada.classList.add('inactive');
-    }
-
-    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
-    if (!isDivDesplegableCambioAccountClosed) {
-        divDesplegableCambioAccount.classList.add('inactive');
-    }
-
-    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
-    if (!isDivConfirmarEmailEnviadoClosed) {
-        divConfirmarEmailEnviado.classList.add('inactive');
-    }
-
-    divDesplegableRecoverAccount.classList.toggle('inactive');
-}
 
 function toggleCambiarKey() {
 
@@ -1229,6 +1307,15 @@ function toggleCambiarKey() {
     closeDesplegableCompra()
     menuDetalleCadaCompra.innerHTML = '';
 
+
+    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
+    if (!isDivDesplegableCambioAccountClosed) {
+        divDesplegableCambioAccount.classList.add('inactive');
+    }
+
+
+/* 
+
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
         menuCarritoCompras.classList.add('inactive');
@@ -1269,16 +1356,12 @@ function toggleCambiarKey() {
         divMostrarCuentaIngresada.classList.add('inactive');
     }
 
-    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
-    if (!isDivDesplegableCambioAccountClosed) {
-        divDesplegableCambioAccount.classList.add('inactive');
-    }
 
     const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
     if (!isDivConfirmarEmailEnviadoClosed) {
         divConfirmarEmailEnviado.classList.add('inactive');
     }
-
+ */
     divDesplegableChangeKey.classList.toggle('inactive');
 
 
@@ -1738,15 +1821,14 @@ function renderObjetosHTML(arrElements) {
   
     productImg.setAttribute('src', product.image);
         
-   /*  productImg.addEventListener('click', () => DesplegableCompra(product)); */
+   /*  productImg.addEventListener('click', () => mostrarDetallesCadaProducto(product)); */
     
     productImg.addEventListener('click', ((obj) => {
     return function() {
-        DesplegableCompra(obj); //permite obtener la variable inmediatamente cuando se le da click
+        mostrarDetallesCadaProducto(obj); //permite obtener la variable inmediatamente cuando se le da click
     };
     })(product));
-
-    // productImg.addEventListener('click', ((obj) => {return function() {DesplegableCompra(obj);};})(product));
+    // productImg.addEventListener('click', ((obj) => {return function() {mostrarDetallesCadaProducto(obj);};})(product));
         
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
@@ -1784,9 +1866,10 @@ function renderObjetosHTML(arrElements) {
 
 
 
-    function DesplegableCompra(objAsignado) {
+    function mostrarDetallesCadaProducto(objAsignado) {
 
-            menuDetalleCadaCompra.innerHTML = '';
+        menuDetalleCadaCompra.innerHTML = '';
+        
             const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
             if (!ismMenuCarritoComprasClosed) {
             menuCarritoCompras.classList.add('inactive');
@@ -1796,6 +1879,11 @@ function renderObjetosHTML(arrElements) {
             if (!ismobileMenuIHamClosed) {
             mobileMenuIHam.classList.add('inactive');
             }  
+        
+            const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
+            if (!isSectionMostrarInformacionClosed) {
+                sectionMostrarInformacion.classList.add('inactive');
+            }
 
             const isDesktopMenuEmaiClosed = DesktopMenuEmail.classList.contains('inactive');
             if (!isDesktopMenuEmaiClosed) {
@@ -1807,9 +1895,9 @@ function renderObjetosHTML(arrElements) {
             asideTodasLasCompras.classList.add('inactive');
         }
         
-            const isdivIngresoMobilClosed = divIngresoMobil.classList.contains('inactive');
-            if (!isdivIngresoMobilClosed) {
-                divIngresoMobil.classList.add('inactive');
+            const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
+            if (!isdivIngresoCuentaClosed) {
+                divIngresoCuenta.classList.add('inactive');
             }
         
             const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
@@ -1831,14 +1919,25 @@ function renderObjetosHTML(arrElements) {
             if (!isDivDesplegableCambioAccountClosed) {
                 divDesplegableCambioAccount.classList.add('inactive');
             }
+                
+            const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
+            if (!isDivDesplegableRecoverAccount) {
+                divDesplegableRecoverAccount.classList.add('inactive');
+            }  
 
             const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
             if (!isDivConfirmarEmailEnviadoClosed) {
                 divConfirmarEmailEnviado.classList.add('inactive');
             }
+            
+            const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
+            if (!isDivDesplegableChangeKeyClosed) {
+                divDesplegableChangeKey.classList.add('inactive');
+            }
+        
 
         
-        divMostrarCuentaIngresada.classList.add('inactive');
+        //divMostrarCuentaIngresada.classList.add('inactive');
 
             const productDivClose = document.createElement('div');
             productDivClose.classList.add('product-detail-close');
