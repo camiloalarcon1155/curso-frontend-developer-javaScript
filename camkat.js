@@ -457,7 +457,7 @@ function closeDesplegableCompra() {
 }
     
 function renderTodoRopa() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -479,7 +479,7 @@ function renderTodoRopa() {
 }
 
 function renderCamisetasH() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -501,7 +501,7 @@ function renderCamisetasH() {
 }
 
 function renderJeansH() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -523,7 +523,7 @@ function renderJeansH() {
 }
 
 function renderJeansM() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -545,7 +545,7 @@ function renderJeansM() {
 }
 
 function renderchaquetasM() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
@@ -567,7 +567,7 @@ function renderchaquetasM() {
 }
 
 function renderOtrasPrendas() {
-    cardsContainer.setAttribute('class', 'cards-container');
+    //cardsContainer.setAttribute('class', 'cards-container');
     menuDetalleCadaCompra.classList.add('inactive');
     menuDetalleCadaCompra.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
