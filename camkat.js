@@ -13,7 +13,8 @@ const menuCarritoCompras = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container'); 
 const containerMostrarInformacion = document.querySelector('.containerMiInformacion'); 
 const sectionMostrarInformacion = document.querySelector('.mostrarInformacion'); 
-const menuDetalleCadaCompra = document.querySelector('#productDetail');
+const detalleDeCadaProducto = document.querySelector('#productDetail');
+
 const tituloTipRopa = document.querySelector('.tipoDeRopa');
 const opcionRopaTodoDesk = document.querySelector('.opcionTodoDesktop');
 const opcionRopaTodoMov = document.querySelector('.opcionTodoMobil');
@@ -116,8 +117,8 @@ buttonCambiarKeyDeEditarCuenta.addEventListener('click', toggleCambiarKey);
 
 function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
     
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -184,8 +185,8 @@ function toggleDesktopMenuEmail() {
 }
 
 function toggleMobilMenu() {
-closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
     
     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
     if (!ismMenuCarritoComprasClosed) {
@@ -255,8 +256,8 @@ closeDesplegableCompra()
 
 function toggleCarritoCompras() {
     window.scrollTo(0, 0);
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
     const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
     if (!isSectionMostrarInformacionClosed) {
@@ -327,8 +328,8 @@ function toggleMostrarMiInformacion() {
    
     //Generamos los condicionales para cerrar otros desplegables cuando se habra este desplegable de mostrar info:
 
-    menuDetalleCadaCompra.innerHTML = '';
-    closeDesplegableCompra()
+    detalleDeCadaProducto.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
     
      const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -441,9 +442,9 @@ function toggleMostrarMiInformacion() {
     
 }
 
- function openDesplegableCompra() {
-    //menuDetalleCadaCompra.clear;
-    menuDetalleCadaCompra.classList.remove('inactive'); 
+ function openDesplegableDetalleDeProducto() {
+    //detalleDeCadaProducto.clear;
+    detalleDeCadaProducto.classList.remove('inactive'); 
     //menuCarritoCompras.classList.add('inactive');
 
    //mostrarCadaProducto(camisetasHombreList) 
@@ -451,15 +452,15 @@ function toggleMostrarMiInformacion() {
     
 }
 
-function closeDesplegableCompra() {
-    //menuDetalleCadaCompra.innerHTML = '';
-    menuDetalleCadaCompra.classList.add('inactive');
+function closeDesplegableDetalleDeProducto() {
+    //detalleDeCadaProducto.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
 }
     
 function renderTodoRopa() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -480,8 +481,8 @@ function renderTodoRopa() {
 
 function renderCamisetasH() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -502,8 +503,8 @@ function renderCamisetasH() {
 
 function renderJeansH() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -524,8 +525,8 @@ function renderJeansH() {
 
 function renderJeansM() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -546,8 +547,8 @@ function renderJeansM() {
 
 function renderchaquetasM() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -568,8 +569,8 @@ function renderchaquetasM() {
 
 function renderOtrasPrendas() {
     //cardsContainer.setAttribute('class', 'cards-container');
-    menuDetalleCadaCompra.classList.add('inactive');
-    menuDetalleCadaCompra.innerHTML = '';
+    detalleDeCadaProducto.classList.add('inactive');
+    //detalleDeCadaProducto.innerHTML = '';
     DesktopMenuEmail.classList.add('inactive');
     mobileMenuIHam.classList.add('inactive');
     menuCarritoCompras.classList.add('inactive');
@@ -617,8 +618,8 @@ ajustarCorreoSegunTamanioPantalla();
 
 function toggleTotalOrdenens() {
     window.scrollTo(0, 0);
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
 
     const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
@@ -689,8 +690,8 @@ function toggleTotalOrdenens() {
 }
 
 function toggleMiCuentaMenuIngresar() {
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
     if (!ismobileMenuIHamClosed) {
@@ -765,8 +766,8 @@ function toggleMiCuentaMenuIngresar() {
 }
 
 function toggleMiCuentaMenuCrear() {
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
     const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
     if (!isdivIngresoCuentaClosed) {
@@ -835,8 +836,8 @@ function toggleMiCuentaMenuCrear() {
 let arregloUsuariosRegistrados = [];
 function toggleMiCuentaCreadaConfirmacion() {
 
-     closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+     closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
     const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
     if (!isDivCrearCuentaClosed) {
@@ -952,8 +953,8 @@ function toggleMiCuentaCreadaConfirmacion() {
 
 function toggleRecuperarCuenta() {
     
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
      const isdivIngresoCuentaClosed = divIngresoCuenta.classList.contains('inactive');
     if (!isdivIngresoCuentaClosed) {
@@ -1020,8 +1021,8 @@ function toggleRecuperarCuenta() {
 
 
 function toggleEnviarCorreo() {
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
      const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
     if (!isDivDesplegableRecoverAccount) {
@@ -1184,8 +1185,8 @@ function guardarInfoLoginIngresoYMostrarPagina() {
 
 function toggleMostrarCuentaIngresada() {
 
- closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+ closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
     const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
     if (!isDesktopMenuEmailClosed) {
@@ -1241,8 +1242,8 @@ function toggleMostrarCuentaIngresada() {
 
 function toggleEditarMiCuenta() {
     
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
     const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
     if (!divMostrarCuentaIngresadaClosed) {
@@ -1304,8 +1305,8 @@ function toggleEditarMiCuenta() {
 function toggleCambiarKey() {
 
      
-    closeDesplegableCompra()
-    menuDetalleCadaCompra.innerHTML = '';
+    closeDesplegableDetalleDeProducto()
+    detalleDeCadaProducto.innerHTML = '';
 
 
     const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
@@ -1868,7 +1869,7 @@ function renderObjetosHTML(arrElements) {
 
     function mostrarDetallesCadaProducto(objAsignado) {
 
-        menuDetalleCadaCompra.innerHTML = '';
+        detalleDeCadaProducto.innerHTML = '';
         
             const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
             if (!ismMenuCarritoComprasClosed) {
@@ -1944,12 +1945,12 @@ function renderObjetosHTML(arrElements) {
             const productIconoClose = document.createElement('img');
             productIconoClose.setAttribute('src', './icons/icon_close.png');
 
-            //productIconoClose.addEventListener('click', closeDesplegableCompra)
-            productDivClose.addEventListener('click', closeDesplegableCompra)
+            //productIconoClose.addEventListener('click', closeDesplegableDetalleDeProducto)
+            productDivClose.addEventListener('click', closeDesplegableDetalleDeProducto)
 
             //     productIconoClose.addEventListener('click',function() {
             //     //const contenedor = document.getElementById('miContenedor');
-            //     menuDetalleCadaCompra.innerHTML = '';
+            //     detalleDeCadaProducto.innerHTML = '';
             // });
 
             const productImgAside = document.createElement('img');
@@ -1988,11 +1989,11 @@ function renderObjetosHTML(arrElements) {
             productDivInfo.appendChild(pInfoProduct);
             productDivInfo.appendChild(productButton);
 
-            menuDetalleCadaCompra.appendChild(productDivClose);    
-            menuDetalleCadaCompra.appendChild(productImgAside);
-            menuDetalleCadaCompra.appendChild(productDivInfo);
+            detalleDeCadaProducto.appendChild(productDivClose);    
+            detalleDeCadaProducto.appendChild(productImgAside);
+            detalleDeCadaProducto.appendChild(productDivInfo);
         
-    openDesplegableCompra()
+    openDesplegableDetalleDeProducto()
     }
 
     }
