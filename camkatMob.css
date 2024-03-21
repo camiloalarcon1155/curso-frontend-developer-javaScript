@@ -930,6 +930,8 @@ html{
     }
     .logoCrear {
       width: 150px;
+      height: 100px;
+      object-fit: contain;
       margin-bottom: 10px;
       justify-self: center;
       /* display: none; */
@@ -1043,6 +1045,8 @@ html{
     }
     .logoEmailCreado {
       width: 150px;
+      height: 100px;
+      object-fit: contain;
       margin-bottom: 10px;
       justify-self: center;
       /* display: none; */
@@ -1137,6 +1141,8 @@ html{
     }
     .logoMostrarCuenta{
       width: 150px;
+      height: 100px;
+      object-fit: contain;
       margin-bottom: 10px;
       justify-self: center;
     
@@ -1392,6 +1398,8 @@ html{
     }
     .logoRecover{
       width: 150px;
+      height: 100px;
+      object-fit: contain;
       margin-bottom: 10px;
       justify-self: center;
     
@@ -1467,6 +1475,8 @@ html{
     }
     .logoEmailEnviado {
       width: 150px;
+      height: 100px;
+      object-fit: contain;
       margin-bottom: 10px;
       justify-self: center;
       /* display: none; */
@@ -1573,7 +1583,7 @@ html{
       margin-bottom: 10px;
       justify-self: center;
       object-fit: contain;
-      height: 62px;
+      height: 100px;
     }
     .formChangeKey {
       display: flex;
