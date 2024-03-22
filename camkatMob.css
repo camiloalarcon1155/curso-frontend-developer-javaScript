@@ -34,17 +34,11 @@ html{
             font-family: 'Quicksand', sans-serif;
         }
 
-
-    /* settings  del navegador */
-
          .inactive {
             display: none;
-        }/* es util para usarla en java script */
+        }
 
-    /*     .inactiveGrid {
-            display:none;
-        } */
-
+   
         .activeFlex {
         width: 100%;
         display: flex;

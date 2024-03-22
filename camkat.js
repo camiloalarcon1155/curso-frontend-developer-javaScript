@@ -64,11 +64,15 @@ const pNameMostrarCuentaIngresada = document.querySelector('.pNameMostrarCuenta'
 const pEmailMostrarCuentaIngresada = document.querySelector('.pEmailMostrarCuenta');
 const pPasswordMostrarCuentaIngresada = document.querySelector('.pPasswordMostrarCuenta');
 const aOlvidoContrasenia = document.querySelector('.olvidoContrasenia');
+const inhabilitarContraseniaOlvidada = document.querySelector('#contraseniaOlvidada');
 const divDesplegableCambioAccount = document.querySelector('.divEditarAccount');
 const divDesplegableRecoverAccount = document.querySelector('.divRecoverAccount');
 const buttonMostrarCuentaEditarCuenta = document.querySelector('.login-buttonMostrarCuenta-EditarCuenta');
 const buttonCambiarKeyDeEditarCuenta = document.querySelector('.buttonEditarCambiarContrasenia');
 const divDesplegableChangeKey = document.querySelector('.divChangeKey');
+const buttonIngresadoConfirmado = document.querySelector('#usuarioIngresado');
+const inputPlaceHolderNameEditarCuenta = document.querySelector('.inputNameEditarAccount');
+const inputPlaceHolderEmailEditarCuenta = document.querySelector('.inputEmailEditarAccount');
 
 
 //Escuchar los click de los botones de HTML:
@@ -1121,7 +1125,13 @@ function guardarInfoLoginIngresoYMostrarPagina() {
         for (let i = 0; i < arregloUsuariosRegistrados.length; i++) {
             if (passwordEmailIngresado === arregloUsuariosRegistrados[i].passworld && direccionEmailIngresado === arregloUsuariosRegistrados[i].correo) {
                 
-                pNameMostrarCuentaIngresada.innerText = arregloUsuariosRegistrados[i].name;//tocó hacer este ingreso del nombre aqui, porque el usario no ingresa su nombre cuando ya  tiene una cuenta registrada.
+                //llena el nombre de mostrarCuenta:
+                pNameMostrarCuentaIngresada.innerText = arregloUsuariosRegistrados[i].name;
+                
+                //llena el nombre de editarCuenta:
+                inputPlaceHolderNameEditarCuenta.placeholder = arregloUsuariosRegistrados[i].name;
+                
+                //tocó hacer este ingreso del nombre aqui, porque el usario no ingresa su nombre cuando ya  tiene una cuenta registrada.
                         coincidenciaEncontrada = true;
                         break;
             }
@@ -1129,14 +1139,24 @@ function guardarInfoLoginIngresoYMostrarPagina() {
     
             if (coincidenciaEncontrada) {
 
+                //si si halla similitud en los arreglos, deshabilita los 2 botones que aparecen en toglle de ingresar cuenta mientras pasa el segundo que te dice que ingreso exitosamente:
+                buttonIngresadoConfirmado.disabled = true;
+                buttonCrearCuenta.disabled = true;
+
+                // deshabilitamos olvidaste contraseña o lo quitamos, por que no me dejo dehabilitarlo:
+                /* inhabilitarContraseniaOlvidada.disabled = true; */
+                inhabilitarContraseniaOlvidada.innerText = "";
+
+
                 //si si halla similitud en los arreglos, imprime usuario Ingresado,  hace que aside de inicio de sesion se quite: 
                 console.log('usuario Ingresado');
+                
 
                 //imprimimos en pantalla que ingreso con exito:
                 divIngresadoConExito.classList.remove('inactive');
                 
                 // Llama a setTimeout() y pasa la función y el tiempo en milisegundos (5 segundos = 5000 milisegundos)
-                setTimeout(toggleMiCuentaMenuIngresar, 1000);
+                setTimeout(toggleMiCuentaMenuIngresar, 5000);
                 //toggleMiCuentaMenuIngresar()
 
                 //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
@@ -1165,9 +1185,12 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 opcionSignOutMenuMob.classList.remove('inactive');
                 miCuentaMenuMov.classList.remove('inactive');
 
-                //si si halla similitud, entonces llena los campos del div mostrar cuenta(cojntraseña se dejan los asteriscos por defecto):
+                //si si halla similitud, entonces llena los campos del div mostrar cuenta y editar cuenta(cojntraseña se dejan los asteriscos por defecto):
                 /* pNameMostrarCuentaIngresada.innerText = nameDelUusuarioIngresado; */
                 pEmailMostrarCuentaIngresada.innerText = direccionEmailIngresado;
+
+                inputPlaceHolderEmailEditarCuenta.placeholder = direccionEmailIngresado;
+
                 /* pPasswordMostrarCuentaIngresada.innerText = passwordEmailIngresado; */
 
             } else {
