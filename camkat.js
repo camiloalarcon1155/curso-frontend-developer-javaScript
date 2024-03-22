@@ -43,7 +43,7 @@ const buttonCrearCuenta = document.querySelector('.signup-buttonIngreso');
 const divCrearCuenta = document.querySelector('.divCrearCuenta');
 const opcionSignOutMenuMob = document.querySelector('.sign-outMenuMobil');
 const opcionSignOutMenuDesktop = document.querySelector('.sign-outMenuDesktop');
-const contenComprasAdicionadas = document.querySelector('.divOnlyCompras');
+const contenComprasAdicionadas = document.querySelector('.shoppingCartDivOnlyCompras');
 const divNumComprasCart = document.querySelector('.numComprasCart');
 const buttonConfirmarCrearCuenta = document.querySelector('.primary-buttonCrear');
 const divConfirmarCrearCuenta = document.querySelector('.divEmailCreado');
@@ -1986,8 +1986,8 @@ function renderObjetosHTML(arrElements) {
             pInfoProduct.innerText = objAsignado.info; //ir a crearle info al producto en el objeto********
 
             const productButton = document.createElement('button');
-            productButton.classList.add('primary-button');
-            productButton.classList.add('add-to-cart-button');
+            productButton.classList.add('primary-buttonProductDetail');
+            productButton.classList.add('add-to-cart-buttonProductDetail');
             productButton.innerText = 'Add to Cart';
         
             productButton.addEventListener('click', () => guardarProductosAdicionados(objAsignado)); 
@@ -2032,16 +2032,16 @@ if (coincidenciaEncontrada){
 
     let formatoFecha = `${dia}/${mes}/${anio}`;
 
-    let spanFechaCompraAdicionada = document.querySelector('#spanFechaCompraAdicionada');
+    let spanFechaCompraAdicionada = document.querySelector('#shopping-cartSpanFechaCompraAdicionada');
     spanFechaCompraAdicionada.innerText = formatoFecha;
 
 
     //contenedores compras adicionadas
     const divContenedorCompras = document.createElement('div');
-    divContenedorCompras.classList.add('my-order-content');
+    divContenedorCompras.classList.add('shoppingCartmy-order-content');
 
     const divCompraAdicionada = document.createElement('div');
-    divCompraAdicionada.classList.add('shopping-cart');
+    divCompraAdicionada.classList.add('shopping-cartCadaAdicion');
 
     const figureCompraAdicionada = document.createElement('figure');
     figureCompraAdicionada.classList.add('shopping-cart-figure');
@@ -2065,6 +2065,10 @@ if (coincidenciaEncontrada){
         };
     })(objetoProducto));
 
+    /* const buttonCompraAdicionada = document.createElement('button');
+    buttonCompraAdicionada.classList.add('shopping-cartPrimary-button'); */
+
+
     figureCompraAdicionada.appendChild(imgCompraAdicionada);
     divCompraAdicionada.appendChild(figureCompraAdicionada);
     divCompraAdicionada.appendChild(pCompraAdicionadaNombre);
@@ -2072,6 +2076,7 @@ if (coincidenciaEncontrada){
     divCompraAdicionada.appendChild(imgCompraAdicionadaClose);
     divContenedorCompras.appendChild(divCompraAdicionada);
     contenComprasAdicionadas.appendChild(divContenedorCompras);
+   /*  contenComprasAdicionadas.appendChild(buttonCompraAdicionada); */
     
     //configs para cerrar divs de compra:
     function cerrarCompra(compracerrada) {
@@ -2091,7 +2096,7 @@ if (coincidenciaEncontrada){
 
     function TotalArticulosyTotalPrecio(comprasHechas) {
         //configs para total articulops adicionados en desplegable
-        let totalArticulosAdicionadosSpan = document.querySelector('#spanTotalArticulosAdicionados');
+        let totalArticulosAdicionadosSpan = document.querySelector('#shopping-cartSpanTotalArticulosAdicionados');
         totalArticulosAdicionadosSpan.innerText = comprasHechas.length + ' Articulos';
 
         //configs para total articulops adicionados en desplegable
@@ -2104,7 +2109,7 @@ if (coincidenciaEncontrada){
         for (let i = 0; i < comprasHechas.length; i++) {
             sumaTotalPrecios += comprasHechas[i].price;
         }
-        let spanTotalPrecioAdicionados = document.querySelector('#spanTotalPrecioArticulos');
+        let spanTotalPrecioAdicionados = document.querySelector('#shopping-cartspanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
     }
     

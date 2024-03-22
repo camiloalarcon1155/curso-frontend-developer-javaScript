@@ -292,18 +292,9 @@ html{
       color: var(--hospital-green) !important;
     }
 
-/* configs generales para aside: */
+/* configs generales para aside de carrito de compras: */
 
-   /*  .product-detail {
-    background-color: var(--white);
-      width: 360px;
-      padding: 0 60px;
-      box-sizing: border-box;
-      position: absolute;
-      right: 0;
-    } lo cambiamos por aside*/ 
-
-    /* aside  */#shoppingCartContainer{
+    #shoppingCartContainer{
         background-color: var(--white);
         height: auto;
         width: 360px;
@@ -317,25 +308,24 @@ html{
         border-radius: 6px;
         font-size: 1.6rem;
         } 
+/* configs de mis ordenes adicionadas o pedidas: */
 
-/* configs de mis ordenes pedidadas: */
-
-    .title-container {
+    .shoppingCartTitle-container {
       display: flex;
        padding-bottom: 15%;
         padding-top: 5%;
       justify-content: center;
     }
-    .title-container img {
+    .shoppingCartTitle-container img {
       transform: rotate(180deg);
       margin-right: 14px;
     }
-    .title {
+    .shoppingCartTitle {
       font-size: var(--lg);
       font-weight: bold;
       background-color: #DAC0A3;
     }
-    .order {
+    .shoppingCartOrder{
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 16px;
@@ -345,42 +335,42 @@ html{
       border-radius: 8px;
       padding: 0 24px;
     }
-    .order p:nth-child(1) {
+    .shoppingCartOrder p:nth-child(1) {
       display: flex;
       flex-direction: column;
     }
-    .order p span:nth-child(1) {
+    .shoppingCartOrder p span:nth-child(1) {
       font-size: var(--md);
       font-weight: bold;
     }
-    .order p:nth-child(2) {
+    .shoppingCartOrder p:nth-child(2) {
       text-align: end;
       font-weight: bold;
     }
-    .shopping-cart {
+    .shopping-cartCadaAdicion {
       display: grid;
       grid-template-columns: auto 1fr auto auto;
       gap: 16px;
       margin-bottom: 24px;
       align-items: center;
     }
-    .shopping-cart figure {
+    .shopping-cartCadaAdicion figure {
       margin: 0;
     }
-    .shopping-cart figure img {
+    .shopping-cartCadaAdicion figure img {
       width: 70px;
       height: 70px;
       border-radius: 20px;
       object-fit: cover;
     }
-    .shopping-cart p:nth-child(2) {
+    .shopping-cartCadaAdicion p:nth-child(2) {
       color: var(--very-light-pink);
     }
-    .shopping-cart p:nth-child(3) {
+    .shopping-cartCadaAdicion p:nth-child(3) {
       font-size: var(--md);
       font-weight: bold;
     }
-    .primary-button {
+    .shopping-cartPrimary-button {
       background-color: var(--hospital-green);
       border-radius: 8px;
       border: none;
@@ -390,8 +380,8 @@ html{
       font-size: var(--md);
       font-weight: bold;
       height: 50px;
+      margin-bottom: 24px;
     }
-
     .logoDeCerrarCompraListada{
         cursor: pointer;
     }
@@ -466,7 +456,7 @@ html{
       margin-top: 0;
       margin-bottom: 36px;
     }
-    .primary-button {
+    .primary-buttonProductDetail {
       background-color: var(--hospital-green);
       border-radius: 8px;
       border: none;
@@ -477,7 +467,7 @@ html{
       font-weight: bold;
       height: 50px;
     }
-    .add-to-cart-button {
+    .add-to-cart-buttonProductDetail {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1269,7 +1259,7 @@ html{
     }
     .form-containerEditarAccount {
       position: relative;
-      top: -34px;
+      top: -16px;
       display: grid;
       grid-template-rows: auto 1fr auto;
       width: 100%;
