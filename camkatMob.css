@@ -226,7 +226,9 @@ html{
         font-size: 1.6rem;
         cursor:pointer;
     }
-
+    .mobile-menu li:hover{
+        border: 1px solid var(--black);
+    }
     .mobile-menu a:hover {
         border: 1px solid var(--hospital-green);
         color: var(--hospital-green);
@@ -241,8 +243,9 @@ html{
       margin: 1px 0 0;
       list-style: none;
     }
-    .mobile-menu ul h1 {
+    .mobile-menu ul li:nth-child(1)  {
         cursor: initial;
+        border: none;
     }
     .mobile-menu ul:nth-child(1) {
       border-bottom: 1px solid var(--very-light-pink);
@@ -1249,7 +1252,7 @@ html{
       font-size: var(--md);
       font-weight: 300;
       margin-top: 0;
-      margin-bottom: 32px;
+      margin-bottom: 15px;
       text-align: center;
     }
     .logoEditarAccount{
@@ -1297,6 +1300,14 @@ html{
       font-size: var(--md);
       padding: 6px;
       margin-bottom: 12px;
+    }
+    .digitaTuContraseniaEditarAccount{
+      color: var(--very-light-pink);
+      font-size: var(--md);
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
     }
     .labelEditarAccountActual {
       /* font-size: var(--sm); */
