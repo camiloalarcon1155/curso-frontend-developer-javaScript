@@ -1631,19 +1631,38 @@ html{
    
 /* configs de despelgable de metodos de pago: */
 
-       .divMetodoPago{
-            width: 100%;
+        .divTodosMetodoDePago{
+            
+            position: absolute;
+            right: 0px;
+            top: 10px;
+            width: 90%;
             height: 100%;
+            background-color: var(--white);
+        }
+
+       .divMetodoPago{
+            
+            height: 500px;
             display: grid;
             place-items: center;
+            /* height: 100vh; */
+            position: absolute;
+            right: 0px;
+            top: 10px;
+            width: 100%;
+            background-color: var(--white);
+            border: 1px solid black;
+            border-radius: 6px;
         }
 
         .divContenedorMetodoPago{
-            display: grid;
-            width: 300px;
+             display: grid;
+             width: 300px;
              place-items: center;
              position: absolute;
              top: 70px;
+             background-color: var(--white);
         }
 
         .checkboxMetodoPago{

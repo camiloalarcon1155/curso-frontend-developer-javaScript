@@ -73,6 +73,10 @@ const divDesplegableChangeKey = document.querySelector('.divChangeKey');
 const buttonIngresadoConfirmado = document.querySelector('#usuarioIngresado');
 const inputPlaceHolderNameEditarCuenta = document.querySelector('.inputNameEditarAccount');
 const inputPlaceHolderEmailEditarCuenta = document.querySelector('.inputEmailEditarAccount');
+const buttonCarritoComprasConfirmarCompra = document.querySelector('.shopping-cartPrimary-button');
+const divDesplegableMetodosPago = document.querySelector('.divTodosMetodoDePago');
+
+
 
 
 //Escuchar los click de los botones de HTML:
@@ -164,7 +168,9 @@ opcionRopaJeansMMov.addEventListener("click", renderJeansM);
 
 opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
 
-opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas);
+opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas); 
+
+buttonCarritoComprasConfirmarCompra.addEventListener("click", mostrarMetodosPago);
 
 
 function toggleDesktopMenuEmail() {
@@ -1156,7 +1162,7 @@ function guardarInfoLoginIngresoYMostrarPagina() {
                 divIngresadoConExito.classList.remove('inactive');
                 
                 // Llama a setTimeout() y pasa la función y el tiempo en milisegundos (5 segundos = 5000 milisegundos)
-                setTimeout(toggleMiCuentaMenuIngresar, 5000);
+                setTimeout(toggleMiCuentaMenuIngresar, 500);
                 //toggleMiCuentaMenuIngresar()
 
                 //si si halla similitud en los arreglos, quita el li a de inicio de sesion del menu movil, guarda el email ingresado por usuario en un nuevo li a y lo muestra en lugar del li a de iniciar sesion:
@@ -1388,6 +1394,11 @@ function toggleCambiarKey() {
     divDesplegableChangeKey.classList.toggle('inactive');
 
 }
+
+function mostrarMetodosPago(){
+    divDesplegableMetodosPago.classList.remove('inactive');
+}
+
 
 //👖👖👖Arreglo de objetos de toda la ropa:
 const catalogoCompletoList = [];
