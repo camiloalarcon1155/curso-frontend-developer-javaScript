@@ -238,6 +238,11 @@ function toggleDesktopMenuEmail() {
         divDesplegableChangeKey.classList.add('inactive');
     }
 
+    const isDivDesplegableMetodosPagoClosed = divDesplegableMetodosPago.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!isDivDesplegableMetodosPagoClosed) {
+        divDesplegableMetodosPago.classList.add('inactive');
+    }
+
     DesktopMenuEmail.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
 
 }
@@ -304,6 +309,11 @@ closeDesplegableDetalleDeProducto()
     const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
     if (!isDivDesplegableChangeKeyClosed) {
         divDesplegableChangeKey.classList.add('inactive');
+    }
+
+    const isDivDesplegableMetodosPagoClosed = divDesplegableMetodosPago.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!isDivDesplegableMetodosPagoClosed) {
+        divDesplegableMetodosPago.classList.add('inactive');
     }
 
     mobileMenuIHam.classList.toggle('inactive');//quiere decir que el toggle lo activa e inactiva
@@ -373,6 +383,11 @@ function toggleCarritoCompras() {
     const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
     if (!isDivDesplegableChangeKeyClosed) {
         divDesplegableChangeKey.classList.add('inactive');
+    }
+
+    const isDivDesplegableMetodosPagoClosed = divDesplegableMetodosPago.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!isDivDesplegableMetodosPagoClosed) {
+        divDesplegableMetodosPago.classList.add('inactive');
     }
 
     menuCarritoCompras.classList.toggle('inactive');
@@ -445,6 +460,11 @@ function toggleMostrarMiInformacion() {
     const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
     if (!isDivDesplegableChangeKeyClosed) {
         divDesplegableChangeKey.classList.add('inactive');
+    }
+
+    const isDivDesplegableMetodosPagoClosed = divDesplegableMetodosPago.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!isDivDesplegableMetodosPagoClosed) {
+        divDesplegableMetodosPago.classList.add('inactive');
     }
 
     //se genera el html desde javaScript:
@@ -523,6 +543,7 @@ function renderTodoRopa() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Catálogo Completo';
     renderObjetosHTML(catalogoCompletoList);
@@ -545,6 +566,7 @@ function renderCamisetasH() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Camisetas Economicas Hombre';
     renderObjetosHTML(camisetasHombreList);
@@ -567,6 +589,7 @@ function renderJeansH() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Hombre';
     renderObjetosHTML(jeansHombreList);
@@ -589,6 +612,7 @@ function renderJeansM() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Jeans Dama';
     renderObjetosHTML(jeansMujerList);
@@ -611,6 +635,7 @@ function renderchaquetasM() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'chaquetas Dama';
     renderObjetosHTML(chaquetasDamaList);
@@ -633,6 +658,7 @@ function renderOtrasPrendas() {
     divConfirmarEmailEnviado.classList.add('inactive');
     sectionMostrarInformacion.classList.add('inactive');
     divDesplegableChangeKey.classList.add('inactive');
+    divDesplegableMetodosPago.classList.add('inactive');
     cardsContainer.innerText = '';
     tituloTipRopa.innerText = 'Otras Prendas';
     renderObjetosHTML(otrasPrendasList);
@@ -1395,8 +1421,15 @@ function toggleCambiarKey() {
 
 }
 
-function mostrarMetodosPago(){
-    divDesplegableMetodosPago.classList.remove('inactive');
+function mostrarMetodosPago() {
+    
+   const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+
+    divDesplegableMetodosPago.classList.toggle('inactive');
+
 }
 
 
@@ -1963,6 +1996,11 @@ function renderObjetosHTML(arrElements) {
             const isDivDesplegableChangeKeyClosed = divDesplegableChangeKey.classList.contains('inactive');
             if (!isDivDesplegableChangeKeyClosed) {
                 divDesplegableChangeKey.classList.add('inactive');
+            }
+            
+            const isDivDesplegableMetodosPagoClosed = divDesplegableMetodosPago.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
+            if (!isDivDesplegableMetodosPagoClosed) {
+            divDesplegableMetodosPago.classList.add('inactive');
             }
         
         //divMostrarCuentaIngresada.classList.add('inactive');
