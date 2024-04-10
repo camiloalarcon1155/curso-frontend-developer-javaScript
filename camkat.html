@@ -379,8 +379,58 @@
             
             
                     <div class="checkboxMetodoPago">
-            
-                        <input type="radio" id="opcionPago1" name="opciones[]" value="valor1" class="inputOpcionPago1MetodoPago">
+                        
+                        <label class="labelOpcionesDePago" for="opcionesDePago">Opciones de pago</label>
+
+                        <select class="selectPagos" name="opcionesPago" id="opcionesDePago">
+                            <option value="opcion1">Seleccione una opción</option>
+                            <option value="opcion2">Nequi</option>
+                            <option value="opcion3">Bancolombia</option>
+                            <option value="opcion4">Daviplata</option>
+                            <option value="opcion5">MasterCard</option>
+                        </select>
+
+                        <div class="pagoNequi inactive">
+
+                            <form action="/" class="formPagoNequi">
+
+                                <label class="NequiTiposDePersona" for="opcionTiposDePersona">Tipo de beneficiario</label>
+                                <select name="opcionesPersona" id="opcionTiposDePersona">
+                                
+                                    <option value="opcion1">Seleccione una opcion</option>
+                                    <option value="opcion2">Persona natural</option>
+                                    <option value="opcion3">Persona Jurídica</option>
+                                </select>
+                                
+                                <label class="NequiTiposDeDocumento" for="opcionTiposDeDocumento">Tipo de Documento</label>
+                                <select name="opcionesDocumento" id="opcionTiposDeDocumento">
+                                
+                                    <option value="opcion1">Seleccione una opcion</option>
+                                    <option value="opcion2">Carnet diplomatico</option>
+                                    <option value="opcion3">Cedula de ciudadania</option>
+                                    <option value="opcion4">Cedula de extranjeria</option>
+                                    <option value="opcion5">Documento de identificacion extranjero</option>
+                                    <option value="opcion6">Fideicomiso</option>
+                                    <option value="opcion7">Identificacion unica de cliente</option>
+                                    <option value="opcion8">Nit extranjeria</option>
+                                    <option value="opcion9">Nit menores</option>
+                                    <option value="opcion10">Nit persona natural</option>
+                                    <option value="opcion11">Pasaporte</option>
+                                    <option value="opcion12">Rut</option>
+                                    <option value="opcion13">Registro civil de nacimiento</option>
+                                    <option value="opcion14">Tarjeta de identidad</option>
+                                </select>
+                                
+                                <label for="numDocumento" class="labelNumDocumento">Numero de documento</label>
+                                <input type="text" id="numDocumento" placeholder="1061789762" class="inputNumeroDocumento">
+
+                            </form>
+
+                            
+
+                        </div>
+
+                        <!-- <input type="radio" id="opcionPago1" name="opciones[]" value="valor1" class="inputOpcionPago1MetodoPago">
                         <label for="opcionPago1">nequi</label>
             
                         <input type="radio" id="opcionPago2" name="opciones[]" value="valor2" class="inputOpcionPago2MetodoPago">
@@ -390,7 +440,7 @@
                         <label for="opcionPago3">Daviplata</label>
             
                         <input type="radio" id="opcionPago4" name="opciones[]" value="valor4" class="inputOpcionPago1MetodoPago">
-                        <label for="opcionPago4">Mastercard</label>
+                        <label for="opcionPago4">Mastercard</label> -->
             
                     </div>
                     <button class="buttonPagoDefMetodoPago">Pagar</button>
