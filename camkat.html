@@ -375,7 +375,7 @@
                 <div class="divContenedorMetodoPago">
                     <img src="./camkatImages/cat.png" alt="logoMetodoPago" class="logoMetodoPago">
                     <h1 class="tittleMetodoPago">METODOS DE PAGO</h1>
-                    <p>A continuacion, escoge el metodo de pago y completa tus datos:</p>
+                    <p>A continuacion, escoge el metodo de pago y completa tus datos</p>
             
             
                     <div class="checkboxMetodoPago">
@@ -394,16 +394,16 @@
 
                             <form action="/" class="formPagoNequi">
 
-                                <label class="NequiTiposDePersona" for="opcionTiposDePersona">Tipo de beneficiario</label>
-                                <select name="opcionesPersona" id="opcionTiposDePersona">
+                                <label class="NequiTiposDePersona" for="TiposDePersonaNequi">Tipo de beneficiario</label>
+                                <select name="opcionesPersona" id="TiposDePersonaNequi">
                                 
                                     <option value="opcion1">Seleccione una opcion</option>
                                     <option value="opcion2">Persona natural</option>
                                     <option value="opcion3">Persona Jurídica</option>
                                 </select>
                                 
-                                <label class="NequiTiposDeDocumento" for="opcionTiposDeDocumento">Tipo de Documento</label>
-                                <select name="opcionesDocumento" id="opcionTiposDeDocumento">
+                                <label class="NequiTiposDeDocumento" for="TiposDeDocumentoNequi">Tipo de Documento</label>
+                                <select name="opcionesDocumento" id="TiposDeDocumentoNequi">
                                 
                                     <option value="opcion1">Seleccione una opcion</option>
                                     <option value="opcion2">Carnet diplomatico</option>
@@ -421,14 +421,103 @@
                                     <option value="opcion14">Tarjeta de identidad</option>
                                 </select>
                                 
-                                <label for="numDocumento" class="labelNumDocumento">Numero de documento</label>
-                                <input type="text" id="numDocumento" placeholder="1061789762" class="inputNumeroDocumento">
+                                <label for="numDocumentoNequi" class="labelNumDocumento">Numero de documento</label>
+                                <input type="text" id="numDocumentoNequi" placeholder="1061789762" class="inputNumeroDocumentoNequi">
 
                             </form>
-
-                            
-
                         </div>
+
+                        <div class="pagoDaviplata inactive">
+                        
+                            <form action="/" class="formPagoDaviplata">
+                        
+                                <label class="DaviplataTiposDeDocumento" for="TiposDeDocumentoDaviplata">Tipo de Documento</label>
+                                <select name="opcionesDocumento" id="TiposDeDocumentoDaviplata">
+                        
+                                    <option value="opcion1">Seleccione una opcion</option>
+                                    <option value="opcion2">Carnet diplomatico</option>
+                                    <option value="opcion3">Cedula de ciudadania</option>
+                                    <option value="opcion4">Cedula de extranjeria</option>
+                                    <option value="opcion5">Documento de identificacion extranjero</option>
+                                    <option value="opcion6">Fideicomiso</option>
+                                    <option value="opcion7">Identificacion unica de cliente</option>
+                                    <option value="opcion8">Nit extranjeria</option>
+                                    <option value="opcion9">Nit menores</option>
+                                    <option value="opcion10">Nit persona natural</option>
+                                    <option value="opcion11">Pasaporte</option>
+                                    <option value="opcion12">Rut</option>
+                                    <option value="opcion13">Registro civil de nacimiento</option>
+                                    <option value="opcion14">Tarjeta de identidad</option>
+                                </select>
+                        
+                                <label for="numDocumentoDaviplata" class="labelNumDocumento">Numero de documento</label>
+                                <input type="text" id="numDocumentoDaviplata" placeholder="1061789762" class="inputNumeroDocumentoDaviplata">
+                        
+                            </form>
+                        </div>
+
+                        <div class="pagoBancolombia inactive">
+                        
+                            <form action="/" class="formPagoBancolombia">
+
+                                <label for="nameDocumentoBancolombia" class="labelNameDocumento">nombre de cliente</label>
+                                <input type="text" id="nameDocumentoBancolombia" placeholder="Diego Vivas" class="inputNameDocumentoBancolombia">
+
+                                <label class="BancolombiaTiposDeDocumento" for="TiposDeDocumentoBancolombia">Tipo de Documento</label>
+                                <select name="opcionesDocumento" id="TiposDeDocumentoBancolombia">
+                                
+                                    <option value="opcion1">Seleccione una opcion</option>
+                                    <option value="opcion2">Carnet diplomatico</option>
+                                    <option value="opcion3">Cedula de ciudadania</option>
+                                    <option value="opcion4">Cedula de extranjeria</option>
+                                    <option value="opcion5">Documento de identificacion extranjero</option>
+                                    <option value="opcion6">Fideicomiso</option>
+                                    <option value="opcion7">Identificacion unica de cliente</option>
+                                    <option value="opcion8">Nit extranjeria</option>
+                                    <option value="opcion9">Nit menores</option>
+                                    <option value="opcion10">Nit persona natural</option>
+                                    <option value="opcion11">Pasaporte</option>
+                                    <option value="opcion12">Rut</option>
+                                    <option value="opcion13">Registro civil de nacimiento</option>
+                                    <option value="opcion14">Tarjeta de identidad</option>
+                                </select>
+
+                                <label for="numDocumentoBancolombia" class="labelNumDocumento">Numero de documento</label>
+                                <input type="text" id="numDocumentoBancolombia" placeholder="1061789762" class="inputNumeroDocumentoBancolombia">
+
+                                <label for="numTarjetaBancolombia" class="labelNumTarjeta">Numero de Tarjeta</label>
+                                <input type="text" id="numTarjetaBancolombia" placeholder="4735647890" class="inputNumeroTarjetaBancolombia">
+                        
+                                <label class="BancolombiaTiposDePersona" for="TiposDePersonaBancolombia">Tipo de cliente</label>
+                                <select name="opcionesPersona" id="TiposDePersonaBancolombia">
+                        
+                                    <option value="opcion1">Seleccione una opcion</option>
+                                    <option value="opcion2">Persona natural</option>
+                                    <option value="opcion3">Persona Jurídica</option>
+                                </select>
+                        
+                        
+                            </form>
+                        </div>
+
+                        <div class="pagoMastercard inactive">
+                        
+                            <form action="/" class="formPagoMastercard">
+                        
+                                <label for="numTarjetaMastercard" class="labelNumTarjeta">Numero de Tarjeta</label>
+                                <input type="text" id="numTarjetaMastercard" placeholder="7483904603" class="inputNumeroTarjetaMastercard">
+                        
+                                <label for="fechaVencimientoMastercard" class="labelFechaVencimientoMastercard">Fecha de vencimiento</label>
+                                <input type="text" id="fechaVencimientoMastercard" placeholder="MM / AA" class="inputFechaVencimientoMastercard">
+
+                                <label for="codigoSeguridadMastercard" class="labelCodigoSeguridad">Codigo de seguridad</label>
+                                <input type="text" id="codigoSeguridadMastercard" placeholder="4 digitos" class="inputCodigoSeguridadMastercard">
+                                
+                        
+                            </form>
+                        </div>
+
+                        
 
                         <!-- <input type="radio" id="opcionPago1" name="opciones[]" value="valor1" class="inputOpcionPago1MetodoPago">
                         <label for="opcionPago1">nequi</label>
@@ -443,6 +532,7 @@
                         <label for="opcionPago4">Mastercard</label> -->
             
                     </div>
+
                     <button class="buttonPagoDefMetodoPago">Pagar</button>
             
                 </div>
