@@ -1746,11 +1746,11 @@ html{
             height: 100px;
             object-fit: contain;
             /* border-bottom: 150px; */
-            margin-bottom: 6%;
+            /* margin-bottom: 6%; */
         }
 
         .buttonPagoDefMetodoPago{
-            margin-top: 24px;
+            margin-top: 5%;
             background-color: var(--hospital-green);
             border-radius: 8px;
             border: none;

@@ -1714,11 +1714,11 @@ html{
             height: 100px;
             object-fit: contain;
             /* border-bottom: 150px; */
-            margin-bottom: 6%;
+            /* margin-bottom: 6%; */
         }
 
         .buttonPagoDefMetodoPago{
-            margin-top: 24px;
+            margin-top: 5%;
             background-color: var(--hospital-green);
             border-radius: 8px;
             border: none;
@@ -1753,4 +1753,31 @@ html{
             text-align: center;
         }
 
-        
+        /* pago Bancolombia: */
+
+          .pagoBancolombia{
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .formPagoBancolombia{
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoBancolombia label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            /* margin-top: 5%; */
+        }
+
+        .labelNumTarjetaBancolombia{
+            text-align: center;
+        }
+
+        .formPagoBancolombia select {
+            place-content: center;
+            width: 100%;
+        }

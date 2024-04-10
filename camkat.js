@@ -80,7 +80,7 @@ const divDesplegableMetodosPago = document.querySelector('.divTodosMetodoDePago'
 
 
 //Escuchar los click de los botones de HTML:
-//menuEmailMov.addEventListener('click', toggleMiCuentaMenuIngresar)
+menuEmailMov.addEventListener('click', toggleMiCuentaMenuIngresar)
 
 menuEmailDesktop.addEventListener('click', toggleDesktopMenuEmail);
 
@@ -2068,7 +2068,7 @@ function guardarProductosAdicionados(objetoProducto) {
     
     //si encuentra coincidencia entre el correo ingresado y clave ingresado y la informacion guardadada en base de datos, entonces permite adicionar al carrito de compras, si no muestra el menu de ingresar cuenta:
     
-//if (coincidenciaEncontrada){
+if (coincidenciaEncontrada){
 
     catalogoComprasAdicionadas.push(objetoProducto);
     compraAdicionada = objetoProducto;
@@ -2165,9 +2165,9 @@ function guardarProductosAdicionados(objetoProducto) {
     TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
     
 //...si no, muestra el menu de ingresar cuenta:
-/* } else {
+} else {
     toggleMiCuentaMenuIngresar();
-} */
+}
 }
 
 
