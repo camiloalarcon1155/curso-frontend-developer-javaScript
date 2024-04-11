@@ -1808,4 +1808,30 @@ html{
             width: 100%;
         }
 
+         /* pago Nequi: */
+
+          .pagoNequi{
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .formPagoNequi{
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoNequi label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 5%;
+        }
+
+
+        .formPagoNequi select {
+            place-content: center;
+            width: 100%;
+        }
+
 
