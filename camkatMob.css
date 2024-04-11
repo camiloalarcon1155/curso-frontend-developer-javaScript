@@ -1674,6 +1674,7 @@ html{
             font-weight: initial;
             text-align: center;
             color: var(--very-light-pink);
+            background-color: black;
         }
 
         .tittleMetodoPago{
@@ -1711,7 +1712,7 @@ html{
 
         .logoMetodoPago{
             width: 150px;
-            height: 100px;
+            height: 66px;
             object-fit: contain;
             /* border-bottom: 150px; */
             /* margin-bottom: 6%; */
@@ -1727,6 +1728,20 @@ html{
             font-weight: bold;
             font-size: var(--lg);
             color: white;
+        }
+
+        .pTotalApagarMetdoPago{
+            background-color: var(--text-input-field);;
+        }
+
+        .spanValorCompraMetodoPago{
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--very-light-pink);
+        }
+
+        .labelTotalPago{
+            padding-top: 3%;
         }
 
         /* pago mastercard: */
@@ -1758,7 +1773,7 @@ html{
           .pagoBancolombia{
             width: 100%;
             height: 100%;
-            margin-top: 10%;
+            margin-top: 6%;
         }
 
         .formPagoBancolombia{

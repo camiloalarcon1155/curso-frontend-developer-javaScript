@@ -80,6 +80,10 @@ const divPagoNequi = document.querySelector('.pagoNequi');
 const divPagoBancolombia = document.querySelector('.pagoBancolombia');
 const divPagoDaviplata = document.querySelector('.pagoDaviplata');
 const divPagoMastercard = document.querySelector('.pagoMastercard');
+const spanPrecioTotalMetodoPago = document.querySelector('.spanValorCompraMetodoPago');
+
+
+
 
 
 
@@ -978,7 +982,13 @@ function toggleMiCuentaCreadaConfirmacion() {
         this.correo = correo;
         this.passworld = passworld;
     }
-    const cliente = new UsuarioRegistrado(nameEmailRegistrado,direccionEmailRegistrado, passwordEmailRegistrado);
+    const cliente = new UsuarioRegistrado(nameEmailRegistrado, direccionEmailRegistrado, passwordEmailRegistrado);
+
+    //hacemos esto cada vez que se registra un nuevo usuario, para que no reescriban o reemplacen los usuarios. entonces obtiene el anterior cadena de usuarios registrados y luego adiciona un nuevo cliente y por ultimo vuelve a convertir en una nueva cadena(todo esto con el nombre de clave claveUsuariosRegistrados):
+
+    let arregloUsuariosRegistrados = JSON.parse(localStorage.getItem('claveUsuariosRegistrados')) || [];
+
+    
     arregloUsuariosRegistrados.push(cliente); // por ahora vamos a guardar en este areglo para que sea comparado con la cuenta ingresada en la funcion toggleMiCuentaMenuIngresar
 
     console.log(arregloUsuariosRegistrados)
@@ -988,12 +998,17 @@ function toggleMiCuentaCreadaConfirmacion() {
     }
     //ahora guardamnos el arreglo de objetos en localStorage para que incluso cuando el usuario recargue la pagina, estos datos queden guardados en el navegador
 
+
 // Convertir el objeto a una cadena JSON
-/* const usuarioJSON = JSON.stringify(arregloUsuariosRegistrados); */
+    const usuarioJSON = JSON.stringify(arregloUsuariosRegistrados);
+    
+    console.log(usuarioJSON);
 
 // Guardar en localStorage bajo una clave específica
-/* localStorage.setItem('arregloUsuariosRegistrados', usuarioJSON); */
-
+    localStorage.setItem('claveUsuariosRegistrados', usuarioJSON);
+    
+    //localStorage.clear();
+    //localStorage.removeItem('claveUsuariosRegistradoss');
 
 //por ultimo, ponemos los espacios en 0 de nuevo 
 
@@ -1159,17 +1174,21 @@ function guardarInfoLoginIngresoYMostrarPagina() {
     arregloUsuariosIngresados.push(usuario);
     console.log(arregloUsuariosIngresados);
 
-    //ahora necesitamos un loop para que nos compare este correo y contraseña con la informacion ya guardada en "la base de datos cuando se crea un usuario"
-    
+    //ahora necesitamos un loop para que nos compare este correo y contraseña con la informacion ya guardada en "la base de datos cuando se crea un usuario", en este caso usamos el localstore del navegador
+
+    //esta linea de codigo me obtiene la informacion guardada como cadena en la funcion de registro de ususarios. recordar que para guardar en el localStorage se genera una sola cadena de texto con la informacion de todos los usuarios:
+    let UsuariosRegistradosLocalStore = JSON.parse(localStorage.getItem('claveUsuariosRegistrados')) || [];
+    console.log(UsuariosRegistradosLocalStore);
    
-        for (let i = 0; i < arregloUsuariosRegistrados.length; i++) {
-            if (passwordEmailIngresado === arregloUsuariosRegistrados[i].passworld && direccionEmailIngresado === arregloUsuariosRegistrados[i].correo) {
+    for (let i = 0; i < UsuariosRegistradosLocalStore.length; i++) {
+            
+            if (passwordEmailIngresado === UsuariosRegistradosLocalStore[i].passworld && direccionEmailIngresado === UsuariosRegistradosLocalStore[i].correo) {
                 
                 //llena el nombre de mostrarCuenta:
-                pNameMostrarCuentaIngresada.innerText = arregloUsuariosRegistrados[i].name;
+                pNameMostrarCuentaIngresada.innerText = UsuariosRegistradosLocalStore[i].name;
                 
                 //llena el nombre de editarCuenta:
-                inputPlaceHolderNameEditarCuenta.placeholder = arregloUsuariosRegistrados[i].name;
+                inputPlaceHolderNameEditarCuenta.placeholder = UsuariosRegistradosLocalStore[i].name;
                 
                 //tocó hacer este ingreso del nombre aqui, porque el usario no ingresa su nombre cuando ya  tiene una cuenta registrada.
                         coincidenciaEncontrada = true;
@@ -2277,6 +2296,7 @@ if (coincidenciaEncontrada){
         }
         let spanTotalPrecioAdicionados = document.querySelector('#shopping-cartspanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
+        spanPrecioTotalMetodoPago.innerText = sumaTotalPrecios;//este es el span de metodos de pago.
     }
     
     TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
