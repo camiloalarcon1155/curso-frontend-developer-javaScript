@@ -1656,6 +1656,7 @@ html{
             font-weight: initial;
             text-align: center;
             color: var(--very-light-pink);
+            background-color: black;
         }
 
         .tittleMetodoPago{
@@ -1694,7 +1695,7 @@ html{
 
         .logoMetodoPago{
             width: 150px;
-            height: 100px;
+            height: 66px;
             object-fit: contain;
             /* border-bottom: 150px; */
             /* margin-bottom: 6%; */
@@ -1712,5 +1713,123 @@ html{
             color: white;
         }
 
+        .pTotalApagarMetdoPago{
+            background-color: var(--text-input-field);;
+        }
+
+        .spanValorCompraMetodoPago{
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--very-light-pink);
+        }
+
+        .labelTotalPago{
+            padding-top: 3%;
+        }
+
+        /* pago mastercard: */
+
+        .pagoMastercard{
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .formPagoMastercard{
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoMastercard label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 5%;
+        }
+
+        .labelNumTarjetaMastercard{
+            text-align: center;
+        }
+
+        /* pago Bancolombia: */
+
+          .pagoBancolombia{
+            width: 100%;
+            height: 100%;
+            margin-top: 6%;
+        }
+
+        .formPagoBancolombia{
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoBancolombia label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            /* margin-top: 5%; */
+        }
+
+        .labelNumTarjetaBancolombia{
+            text-align: center;
+        }
+
+        .formPagoBancolombia select {
+            place-content: center;
+            width: 100%;
+        }
+
+        
+        /* pago Daviplata: */
+
+          .pagoDaviplata{
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .formPagoDaviplata{
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoDaviplata label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 5%;
+        }
+
+        .formPagoDaviplata select {
+            place-content: center;
+            width: 100%;
+        }
+
+         /* pago Nequi: */
+
+          .pagoNequi{
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+        }
+
+        .formPagoNequi{
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+            place-items: center;
+        }
+
+        .formPagoNequi label {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-top: 5%;
+        }
+
+
+        .formPagoNequi select {
+            place-content: center;
+            width: 100%;
+        }
 
 }

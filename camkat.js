@@ -80,6 +80,10 @@ const divPagoNequi = document.querySelector('.pagoNequi');
 const divPagoBancolombia = document.querySelector('.pagoBancolombia');
 const divPagoDaviplata = document.querySelector('.pagoDaviplata');
 const divPagoMastercard = document.querySelector('.pagoMastercard');
+const spanPrecioTotalMetodoPago = document.querySelector('.spanValorCompraMetodoPago');
+
+
+
 
 
 
@@ -2277,6 +2281,7 @@ if (coincidenciaEncontrada){
         }
         let spanTotalPrecioAdicionados = document.querySelector('#shopping-cartspanTotalPrecioArticulos');
         spanTotalPrecioAdicionados.innerText = 'Total: ' + sumaTotalPrecios;
+        spanPrecioTotalMetodoPago.innerText = sumaTotalPrecios;//este es el span de metodos de pago.
     }
     
     TotalArticulosyTotalPrecio(catalogoComprasAdicionadas)
