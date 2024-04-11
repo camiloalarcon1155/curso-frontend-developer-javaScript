@@ -75,6 +75,12 @@ const inputPlaceHolderNameEditarCuenta = document.querySelector('.inputNameEdita
 const inputPlaceHolderEmailEditarCuenta = document.querySelector('.inputEmailEditarAccount');
 const buttonCarritoComprasConfirmarCompra = document.querySelector('.shopping-cartPrimary-button');
 const divDesplegableMetodosPago = document.querySelector('.divTodosMetodoDePago');
+const selectorDeMetodosPago = document.querySelector('.selectPagos');
+const divPagoNequi = document.querySelector('.pagoNequi');
+const divPagoBancolombia = document.querySelector('.pagoBancolombia');
+const divPagoDaviplata = document.querySelector('.pagoDaviplata');
+const divPagoMastercard = document.querySelector('.pagoMastercard');
+
 
 
 
@@ -170,7 +176,9 @@ opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
 
 opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas); 
 
-buttonCarritoComprasConfirmarCompra.addEventListener("click", mostrarMetodosPago);
+buttonCarritoComprasConfirmarCompra.addEventListener("click", toggleMostrarMetodosPago);
+selectorDeMetodosPago.addEventListener("change", mostrarMetodoPago);
+
 
 
 function toggleDesktopMenuEmail() {
@@ -1421,7 +1429,7 @@ function toggleCambiarKey() {
 
 }
 
-function mostrarMetodosPago() {
+function toggleMostrarMetodosPago() {
     
    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
     if (!ismMenuCarritoComprasClosed) {
@@ -1430,6 +1438,115 @@ function mostrarMetodosPago() {
 
     divDesplegableMetodosPago.classList.toggle('inactive');
 
+}
+
+function mostrarMetodoPago() { 
+
+    const opcionDepagoElegida = selectorDeMetodosPago.value;
+    console.log(opcionDepagoElegida);
+
+    //aqui preguntamos si los desplegables de cada metodo de pago estan cerrados, para que en cada case si no estan cerrados, los cierre y abra el que se selecciona:
+
+    const isDivPagoNequiClosed = divPagoNequi.classList.contains('inactive');
+    const isDivPagoBancolombiaClosed = divPagoBancolombia.classList.contains('inactive');
+    const isDivPagoDaviplataClosed = divPagoDaviplata.classList.contains('inactive');
+    const isDivPagoMastercardClosed = divPagoMastercard.classList.contains('inactive');
+    
+        
+    switch (opcionDepagoElegida) {
+        case 'opcion1':
+                divPagoNequi.classList.add('inactive');
+                divPagoBancolombia.classList.add('inactive');
+                divPagoDaviplata.classList.add('inactive');
+                divPagoMastercard.classList.add('inactive');
+
+            
+            break;
+
+        
+        case 'opcion2':
+
+            //const isDivPagoBancolombiaClosed = divPagoBancolombia.classList.contains('inactive');
+            if (!isDivPagoBancolombiaClosed) {
+                divPagoBancolombia.classList.add('inactive');
+            }
+            
+            //const isDivPagoDaviplataClosed = divPagoDaviplata.classList.contains('inactive');
+            if (!isDivPagoDaviplataClosed) {
+                divPagoDaviplata.classList.add('inactive');
+            }
+           
+            //const isDivPagoMastercardClosed = divPagoMastercard.classList.contains('inactive');
+            if (!isDivPagoMastercardClosed) {
+                divPagoMastercard.classList.add('inactive');
+            }
+
+            divPagoNequi.classList.remove('inactive');
+
+            break; 
+        
+        case 'opcion3':
+
+            //const isDivPagoNequiClosed = divPagoNequi.classList.contains('inactive');
+            if (!isDivPagoNequiClosed) {
+                divPagoNequi.classList.add('inactive');
+            }
+            
+            //const isDivPagoDaviplataClosed = divPagoDaviplata.classList.contains('inactive');
+            if (!isDivPagoDaviplataClosed) {
+                divPagoDaviplata.classList.add('inactive');
+            }
+           
+            //const isDivPagoMastercardClosed = divPagoMastercard.classList.contains('inactive');
+            if (!isDivPagoMastercardClosed) {
+                divPagoMastercard.classList.add('inactive');
+            }
+
+        divPagoBancolombia.classList.remove('inactive');
+            break;
+        
+        case 'opcion4':
+
+            //const isDivPagoBancolombiaClosed = divPagoBancolombia.classList.contains('inactive');
+            if (!isDivPagoBancolombiaClosed) {
+                divPagoBancolombia.classList.add('inactive');
+            }
+            
+            //const isDivPagoNequiClosed = divPagoNequi.classList.contains('inactive');
+            if (!isDivPagoNequiClosed) {
+                divPagoNequi.classList.add('inactive');
+            }
+           
+            //const isDivPagoMastercardClosed = divPagoMastercard.classList.contains('inactive');
+            if (!isDivPagoMastercardClosed) {
+                divPagoMastercard.classList.add('inactive');
+            }
+
+        divPagoDaviplata.classList.remove('inactive');
+            break;
+        case 'opcion5':
+
+             //const isDivPagoBancolombiaClosed = divPagoBancolombia.classList.contains('inactive');
+            if (!isDivPagoBancolombiaClosed) {
+                divPagoBancolombia.classList.add('inactive');
+            }
+            
+            //const isDivPagoNequiClosed = divPagoNequi.classList.contains('inactive');
+            if (!isDivPagoNequiClosed) {
+                divPagoNequi.classList.add('inactive');
+            }
+           
+           //const isDivPagoDaviplataClosed = divPagoDaviplata.classList.contains('inactive');
+            if (!isDivPagoDaviplataClosed) {
+                divPagoDaviplata.classList.add('inactive');
+            }
+
+        divPagoMastercard.classList.remove('inactive');
+            break;
+    
+    }
+   
+   /*  divPagoBancolombia.classList.remove('inactive'); */
 }
 
 
