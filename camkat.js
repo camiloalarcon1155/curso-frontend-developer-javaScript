@@ -81,6 +81,10 @@ const divPagoBancolombia = document.querySelector('.pagoBancolombia');
 const divPagoDaviplata = document.querySelector('.pagoDaviplata');
 const divPagoMastercard = document.querySelector('.pagoMastercard');
 const spanPrecioTotalMetodoPago = document.querySelector('.spanValorCompraMetodoPago');
+const buttonConfirmarcambioDeInformacion = document.querySelector('.primary-buttonEditarAccount-Confirmar');
+const avisokeysDiferentes = document.querySelector('.pContraseniasDiferentes');
+const avisoCambioInfoExitoso = document.querySelector('.pCambioExitoso');
+
 
 
 
@@ -181,7 +185,16 @@ opcionRopachaquetasMMov.addEventListener("click", renderchaquetasM);
 opcionRopaOtrasPrendasMov.addEventListener("click", renderOtrasPrendas); 
 
 buttonCarritoComprasConfirmarCompra.addEventListener("click", toggleMostrarMetodosPago);
+
 selectorDeMetodosPago.addEventListener("change", mostrarMetodoPago);
+
+buttonConfirmarcambioDeInformacion.addEventListener('click', function (event) {
+
+    event.preventDefault();
+    verificarContrasenia();
+});
+
+
 
 
 
@@ -897,6 +910,15 @@ function toggleMiCuentaMenuCrear() {
     divCrearCuenta.classList.toggle('inactive');
 }
 
+
+function UsuarioRegistrado(name, correo, passworld){
+        this.name = name;
+        this.correo = correo;
+        this.passworld = passworld;
+    }
+
+    
+
 let arregloUsuariosRegistrados = [];
 function toggleMiCuentaCreadaConfirmacion() {
 
@@ -977,11 +999,7 @@ function toggleMiCuentaCreadaConfirmacion() {
     
     //necesitamos que nameEmailRegistrado, direccionEmailReguistrado y passwordEmailRegistrado se gaurden en una arreglo como objetos
     
-    function UsuarioRegistrado(name, correo, passworld){
-        this.name = name;
-        this.correo = correo;
-        this.passworld = passworld;
-    }
+     
     const cliente = new UsuarioRegistrado(nameEmailRegistrado, direccionEmailRegistrado, passwordEmailRegistrado);
 
     //hacemos esto cada vez que se registra un nuevo usuario, para que no reescriban o reemplacen los usuarios. entonces obtiene el anterior cadena de usuarios registrados y luego adiciona un nuevo cliente y por ultimo vuelve a convertir en una nueva cadena(todo esto con el nombre de clave claveUsuariosRegistrados):
@@ -1327,6 +1345,9 @@ function toggleMostrarCuentaIngresada() {
 }
 
 function toggleEditarMiCuenta() {
+    //se pone inactive por si s ha cambiado antes y ya tiene mensaje de cambio exitoso
+    avisoCambioInfoExitoso.classList.add('inactive');
+
     
     closeDesplegableDetalleDeProducto()
     //detalleDeCadaProducto.innerHTML = '';
@@ -1383,6 +1404,99 @@ function toggleEditarMiCuenta() {
     } */
 
     divDesplegableCambioAccount.classList.toggle('inactive');
+
+}
+
+
+let usuariosFiltrados;
+function verificarContrasenia() {
+
+    /* const editInfoName = document.querySelector('.inputNameEditarAccount').value; */
+
+    /* const editInfoEmail = document.querySelector('.inputEmailEditarAccount').value; */
+
+    let nombreNuevo = inputPlaceHolderNameEditarCuenta.value;
+    let correoNuevo = inputPlaceHolderEmailEditarCuenta.value;
+
+    const editInfoPassword1 = document.querySelector('.input-passwordEditarAccount1').value;
+
+    const editInfoPassword2 = document.querySelector('.input-passwordEditarAccount2').value;
+
+    //comprobamos si las 2 contraseñas son iguales e imprimimos mensaje en caso de que no:
+
+    if (editInfoPassword1 === editInfoPassword2) {
+        avisokeysDiferentes.classList.add('inactive');
+        
+        //traemos los usuarios ya registrados y guardados como cadena de texto:
+        let UsuariosLocalStore = JSON.parse(localStorage.getItem('claveUsuariosRegistrados')) || [];
+        console.log(UsuariosLocalStore)
+
+        //filtramos el usuario al cual se le van a cambiar los ddatos:
+        let usuarioCambioInformacion = UsuariosLocalStore.filter(function (usuario) {
+            return usuario.passworld === editInfoPassword1;
+        });
+
+        console.log(usuarioCambioInformacion);
+
+        //volvemos  averficar su contraseña y traemos los usuarios que no tengan nada que ver con ese usuario, para volver a reescribirlos y ademas volver a guardar el usuario al que se le cambiaron los datos:
+
+        if (usuarioCambioInformacion.length > 0) {
+        
+             if (usuarioCambioInformacion[0].passworld == editInfoPassword2) {
+
+            let usuariosFiltrados = UsuariosLocalStore.filter(function (usuario) {
+                return usuario.passworld !== editInfoPassword1;
+            });
+            
+        //volvemos a crear el usuario que le cambiaron los datos, ahora con la nueva informacion y lo agregamos al nuevo arreglo
+        const beneficiario = new UsuarioRegistrado(nombreNuevo, correoNuevo, editInfoPassword1);
+
+            usuariosFiltrados.push(beneficiario);
+
+            console.log(usuariosFiltrados);
+
+
+            const usuarioJSON = JSON.stringify(usuariosFiltrados);
+            localStorage.setItem('claveUsuariosRegistrados', usuarioJSON);
+
+            avisoCambioInfoExitoso.classList.remove('inactive');
+
+                 //si logra hacer el cambio y guardar la info, dejamos limpias los espacios:
+            
+                 /* nombreNuevo.value = "";
+                 correoNuevo.value = "";
+                 editInfoPassword1= "";
+                 editInfoPassword2= "";  */
+
+
+                 document.querySelector('.inputNameEditarAccount').value = "";
+                 document.querySelector('.inputEmailEditarAccount').value = "";
+                 document.querySelector('.inputNameEditarAccount').placeholder = "";
+                 document.querySelector('.inputEmailEditarAccount').placeholder = "";
+                 document.querySelector('.input-passwordEditarAccount1').value = "";
+                 document.querySelector('.input-passwordEditarAccount2').value = "";
+            
+
+        } else {
+                 console.log('usuario no encontrado');
+        }
+        
+        } else {
+            avisokeysDiferentes.classList.remove('inactive');
+            avisoCambioInfoExitoso.classList.add('inactive');
+        }
+            
+       
+
+
+    } else {
+        avisokeysDiferentes.classList.remove('inactive');
+        avisoCambioInfoExitoso.classList.add('inactive');
+
+    }
+    
+
+
 }
 
 
