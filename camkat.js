@@ -84,6 +84,12 @@ const spanPrecioTotalMetodoPago = document.querySelector('.spanValorCompraMetodo
 const buttonConfirmarcambioDeInformacion = document.querySelector('.primary-buttonEditarAccount-Confirmar');
 const avisokeysDiferentes = document.querySelector('.pContraseniasDiferentes');
 const avisoCambioInfoExitoso = document.querySelector('.pCambioExitoso');
+const buttonCambioContraseniaConfirmacion = document.querySelector('.primary-buttonChangeKey-Change');
+const pContraseniaIncorrecta = document.querySelector('.pContraseniaIncorrecta');
+
+
+
+
 
 
 
@@ -192,6 +198,12 @@ buttonConfirmarcambioDeInformacion.addEventListener('click', function (event) {
 
     event.preventDefault();
     verificarContrasenia();
+});
+
+buttonCambioContraseniaConfirmacion.addEventListener('click', function (event) {
+
+    event.preventDefault();
+    confirmarCambioContrasenia();
 });
 
 
@@ -1499,6 +1511,83 @@ function verificarContrasenia() {
 
 }
 
+
+function confirmarCambioContrasenia() {
+
+    /* const editInfoName = document.querySelector('.inputNameEditarAccount').value; */
+
+    /* const editInfoEmail = document.querySelector('.inputEmailEditarAccount').value; */
+
+   let inputContraseniaActual = document.querySelector('.inputChangeKeyActual').value;
+   let inputContraseniaNueva = document.querySelector('.inputChangeKeyNueva').value;
+
+    //comprobamos si las 2 contraseñas son iguales e imprimimos mensaje en caso de que no:
+        avisokeysDiferentes.classList.add('inactive');
+        avisoCambioInfoExitoso.classList.add('inactive');
+        
+        //traemos los usuarios ya registrados y guardados como cadena de texto:
+        let todosUsuariosLocalStore = JSON.parse(localStorage.getItem('claveUsuariosRegistrados')) || [];
+        console.log(todosUsuariosLocalStore)
+
+        //filtramos el usuario al cual se le van a cambiar los ddatos:
+        let usuarioCambioContrasenia = todosUsuariosLocalStore.filter(function (usuario) {
+            return usuario.passworld === inputContraseniaActual;
+        });
+
+    console.log(usuarioCambioContrasenia);
+    nameNuevo = usuarioCambioContrasenia[0].name;
+    emailNuevo = usuarioCambioContrasenia[0].correo;
+   
+        //volvemos  averficar su contraseña y traemos los usuarios que no tengan nada que ver con ese usuario, para volver a reescribirlos y ademas volver a guardar el usuario al que se le cambiaron los datos:
+
+        if (usuarioCambioContrasenia.length > 0) {
+        
+             if (usuarioCambioContrasenia[0].passworld == inputContraseniaActual) {
+
+            let usuariosParaReescribir = todosUsuariosLocalStore.filter(function (usuario) {
+                return usuario.passworld !== inputContraseniaActual;
+                
+            });
+            
+        //volvemos a crear el usuario que le cambiaron los datos, ahora con la nueva informacion y lo agregamos al nuevo arreglo
+                 /* const beneficiario = new UsuarioRegistrado(nombreNuevo, correoNuevo, editInfoPassword1); */
+
+                 const cliente = new UsuarioRegistrado(nameNuevo, emailNuevo, inputContraseniaNueva);
+
+
+            console.log(usuariosParaReescribir);
+
+
+            usuariosParaReescribir.push(cliente);
+
+            console.log(usuariosParaReescribir);
+
+
+            const usuarioJSON = JSON.stringify(usuariosParaReescribir);
+            localStorage.setItem('claveUsuariosRegistrados', usuarioJSON);
+
+                 document.querySelector('.inputChangeKeyActual').value = "";
+                 document.querySelector('.inputChangeKeyNueva').value = "";
+                 avisoCambioInfoExitoso.classList.remove('inactive');
+                 avisokeysDiferentes.classList.add('inactive');
+
+               
+                 
+            
+
+        } else {
+                 console.log('usuario no encontrado');
+        }
+        
+        } else {
+            pContraseniaIncorrecta.classList.remove('inactive');
+            avisoCambioInfoExitoso.classList.add('inactive');
+        }
+        
+    
+
+
+}
 
 function toggleCambiarKey() {
 
