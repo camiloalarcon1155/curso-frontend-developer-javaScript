@@ -1534,9 +1534,7 @@ function confirmarCambioContrasenia() {
             return usuario.passworld === inputContraseniaActual;
         });
 
-    console.log(usuarioCambioContrasenia);
-    nameNuevo = usuarioCambioContrasenia[0].name;
-    emailNuevo = usuarioCambioContrasenia[0].correo;
+    
    
         //volvemos  averficar su contraseña y traemos los usuarios que no tengan nada que ver con ese usuario, para volver a reescribirlos y ademas volver a guardar el usuario al que se le cambiaron los datos:
 
@@ -1548,6 +1546,10 @@ function confirmarCambioContrasenia() {
                 return usuario.passworld !== inputContraseniaActual;
                 
             });
+
+            console.log(usuarioCambioContrasenia);
+            nameNuevo = usuarioCambioContrasenia[0].name;
+            emailNuevo = usuarioCambioContrasenia[0].correo;
             
         //volvemos a crear el usuario que le cambiaron los datos, ahora con la nueva informacion y lo agregamos al nuevo arreglo
                  /* const beneficiario = new UsuarioRegistrado(nombreNuevo, correoNuevo, editInfoPassword1); */
@@ -1571,7 +1573,9 @@ function confirmarCambioContrasenia() {
                  avisoCambioInfoExitoso.classList.remove('inactive');
                  avisokeysDiferentes.classList.add('inactive');
 
-               
+                 pContraseniaIncorrecta.classList.add('inactive');
+                 avisoCambioInfoExitoso.classList.remove('inactive');
+
                  
             
 
