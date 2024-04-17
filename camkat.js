@@ -86,6 +86,8 @@ const avisokeysDiferentes = document.querySelector('.pContraseniasDiferentes');
 const avisoCambioInfoExitoso = document.querySelector('.pCambioExitoso');
 const buttonCambioContraseniaConfirmacion = document.querySelector('.primary-buttonChangeKey-Change');
 const pContraseniaIncorrecta = document.querySelector('.pContraseniaIncorrecta');
+const pCorreoIncorrecto = document.querySelector('.correoIncorrectoRecover');
+const buttonLoginEmailEnviado = document.querySelector('.primary-buttonEmailEnviado');
 
 
 
@@ -206,7 +208,7 @@ buttonCambioContraseniaConfirmacion.addEventListener('click', function (event) {
     confirmarCambioContrasenia();
 });
 
-
+buttonLoginEmailEnviado.addEventListener('click',toggleMiCuentaMenuIngresar)
 
 
 
@@ -1119,67 +1121,40 @@ function toggleRecuperarCuenta() {
 
 
 function toggleEnviarCorreo() {
+
+    const inputCorreoParaRecuperar = document.querySelector('.inputCell-o-correoRecover').value;
+
     closeDesplegableDetalleDeProducto()
-    //detalleDeCadaProducto.innerHTML = '';
+   
 
-     const isDivDesplegableRecoverAccount = divDesplegableRecoverAccount.classList.contains('inactive');
-    if (!isDivDesplegableRecoverAccount) {
+     /*  */
+
+
+ //traemos los usuarios ya registrados y guardados como cadena de texto:
+        let todosUsuariosLocalStore = JSON.parse(localStorage.getItem('claveUsuariosRegistrados')) || [];
+        console.log(todosUsuariosLocalStore)
+
+        //filtramos el usuario al cual desea recuperar su cuenta:
+        let usuarioCambioContrasenia = todosUsuariosLocalStore.filter(function (usuario) {
+            return usuario.correo === inputCorreoParaRecuperar;
+        });
+
+
+    if (usuarioCambioContrasenia.length > 0) {
+
+        const isDivDesplegableRecoverAccountClosed = divDesplegableRecoverAccount.classList.contains('inactive');
+        if (!isDivDesplegableRecoverAccountClosed) {
         divDesplegableRecoverAccount.classList.add('inactive');
+        }
+    
+        divConfirmarEmailEnviado.classList.toggle('inactive');
+
+    } else{
+        pCorreoIncorrecto.classList.remove('inactive');
     }
+        
 
-/* 
-
-    const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');//Si contiene esa clase, entonces esta el menu cerrado
-    if (!ismMenuCarritoComprasClosed) {
-        menuCarritoCompras.classList.add('inactive');
-    }
-
-    const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
-    if (!ismobileMenuIHamClosed) {
-        mobileMenuIHam.classList.add('inactive');
-    }
-
-    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
-    if (!isDesktopMenuEmailClosed) {
-    DesktopMenuEmail.classList.add('inactive');
-    } 
-
-    const isSectionMostrarInformacionClosed = sectionMostrarInformacion.classList.contains('inactive');
-    if (!isSectionMostrarInformacionClosed) {
-        sectionMostrarInformacion.classList.add('inactive');
-    }
-
-    const isAsideTotalOrdenensClosed = asideTodasLasCompras.classList.contains('inactive');
-    if (!isAsideTotalOrdenensClosed) {
-        asideTodasLasCompras.classList.add('inactive');
-    }
-
-    const isDivCrearCuentaClosed = divCrearCuenta.classList.contains('inactive');
-    if (!isDivCrearCuentaClosed) {
-        divCrearCuenta.classList.add('inactive');
-    }
-
-    const isDivConfirmarCrearCuentaClosed = divConfirmarCrearCuenta.classList.contains('inactive');
-    if (!isDivConfirmarCrearCuentaClosed) {
-        divConfirmarCrearCuenta.classList.add('inactive');
-    }
-
-    const divMostrarCuentaIngresadaClosed = divMostrarCuentaIngresada.classList.contains('inactive');
-    if (!divMostrarCuentaIngresadaClosed) {
-        divMostrarCuentaIngresada.classList.add('inactive');
-    }
-
-    const isDivDesplegableCambioAccountClosed = divDesplegableCambioAccount.classList.contains('inactive');
-    if (!isDivDesplegableCambioAccountClosed) {
-        divDesplegableCambioAccount.classList.add('inactive');
-    }
-
-    const isDivConfirmarEmailEnviadoClosed = divConfirmarEmailEnviado.classList.contains('inactive');
-    if (!isDivConfirmarEmailEnviadoClosed) {
-        divConfirmarEmailEnviado.classList.add('inactive');
-    }
- */
-    divConfirmarEmailEnviado.classList.toggle('inactive');
+    
 
 }
 
