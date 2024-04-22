@@ -2510,4 +2510,20 @@ if (coincidenciaEncontrada){
 
 
 
+/* Bueno, hasta aqui se trabajo de lleno en este proyecto. la aplicacion tiene muchas similitudes con una app normal, sirve para celular, table y computador. en este momento hay algunas cosas por modificarle. nuevos trabajos:
+
+1.hacer que usuarios no puedan tener la misma contraseña
+2.hacer que espacios vacios no se puedan registrar
+3. hacer condicionales para que se puedan ingresar cierta cantidad de caracteres y de que tipoDeSuscripcion
+4. hacer que se pueda enviar correo de verificacion para recuperar contraseña
+5.que cada desplegable tenga un boton de X(cerrar) o una fclecha para volver atras
+6.hacerle el backend a la applicacion para conectarse a servidores
+7. implementar las funciones asincronas para un buen funcionamiento de la apllicacion
+8.
+9.
+
+y demas cosas que se van a ir agregando a medida que aprendamos mas sobre javascript y node.js
+
+Hasta este momento se siguio trabjando en rama CamKatStore y no en rama main.
+*/
 
