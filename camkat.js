@@ -88,6 +88,7 @@ const buttonCambioContraseniaConfirmacion = document.querySelector('.primary-but
 const pContraseniaIncorrecta = document.querySelector('.pContraseniaIncorrecta');
 const pCorreoIncorrecto = document.querySelector('.correoIncorrectoRecover');
 const buttonLoginEmailEnviado = document.querySelector('.primary-buttonEmailEnviado');
+//esta es una linea de comprobacion(ignorarla)
 
 
 
