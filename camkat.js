@@ -1125,9 +1125,7 @@ function toggleEnviarCorreo() {
     const inputCorreoParaRecuperar = document.querySelector('.inputCell-o-correoRecover').value;
 
     closeDesplegableDetalleDeProducto()
-   
 
-     /*  */
 
 
  //traemos los usuarios ya registrados y guardados como cadena de texto:
@@ -1146,12 +1144,28 @@ function toggleEnviarCorreo() {
         if (!isDivDesplegableRecoverAccountClosed) {
         divDesplegableRecoverAccount.classList.add('inactive');
         }
-    
-        divConfirmarEmailEnviado.classList.toggle('inactive');
 
-    } else{
-        pCorreoIncorrecto.classList.remove('inactive');
-    }
+        const array = new Uint32Array(1);
+        console.log(array);
+
+        self.crypto.getRandomValues(array);
+
+        
+        const code = array[0] % 10000; // 
+        let codigoAenviarse = code.toString().padStart(4, '0');//se usa esta funcion por que a veces al dividir array[0]%10000, su resto no siempre son 4 digitos, entonces con toString se convierte a cadena de texto y  padStart es la longitud final deseada y le estoy diciendo que debe ser de 4 digitos y que lo que falte lo rellene con ceros, tambien se puede rellenar con unos o lo que uno quiera
+        
+        console.log('el codigo enviado a tu correo es: '+codigoAenviarse);
+
+
+        //https://formspree.io/f/xvoedwrl
+
+
+            
+                divConfirmarEmailEnviado.classList.toggle('inactive');
+
+            } else{
+                pCorreoIncorrecto.classList.remove('inactive');
+            }
         
 
     
@@ -1748,6 +1762,11 @@ function mostrarMetodoPago() {
     }
    
    /*  divPagoBancolombia.classList.remove('inactive'); */
+}
+
+function crearCodigoAleatorio() {
+    
+
 }
 
 
