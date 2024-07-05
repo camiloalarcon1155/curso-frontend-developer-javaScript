@@ -1850,3 +1850,13 @@ html{
         }
 
 
+/* de awui en adelante es cuando reinicie a programar */
+
+.divCerrarIngreso{
+        position: absolute;
+        top: -46px;
+        left: -34px;
+        width: 24px;
+        height: 21px;
+    background-color: black;
+}
