@@ -1852,11 +1852,19 @@ html{
 
 /* de awui en adelante es cuando reinicie a programar */
 
-.divCerrarIngreso{
+       .divCerrarIngreso {
         position: absolute;
-        top: -46px;
-        left: -34px;
+        top: 8px;
+        right: 7px;
         width: 24px;
         height: 21px;
-    background-color: black;
-}
+        background-color: black;
+    }
+
+
+    .divCerrarIngreso img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
