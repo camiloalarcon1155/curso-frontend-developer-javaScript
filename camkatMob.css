@@ -1870,22 +1870,24 @@ html{
         height: 21px;
         z-index: 2;
         cursor: pointer;
-        background-color: black;
+        background-color: #00000059;
         border-radius: 5px;
+        text-align: center;
     }
 
-        .divCerrarIngreso img,
-       .divCerrarCrearCuenta img,
-       .divCerrarEmailCreado img,
-       .divCerrarMostrarCuenta img,
-       .divCerrarEditarAccount img,
-       .divCerrarChangeKey img,
-       .divCerrarRecoverAccount img,
-       .divCerrarEmailEnviado img,
-       .divCerrarMetodoDePago img {
+        .divCerrarIngreso p,
+       .divCerrarCrearCuenta p,
+       .divCerrarEmailCreado p,
+       .divCerrarMostrarCuenta p,
+       .divCerrarEditarAccount p,
+       .divCerrarChangeKey p,
+       .divCerrarRecoverAccount p,
+       .divCerrarEmailEnviado p,
+       .divCerrarMetodoDePago p {
         object-fit: contain;
         height: 100%;
         width: 100%;
+        color: #fb091a;
     } 
 
 

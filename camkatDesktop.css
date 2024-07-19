@@ -1836,7 +1836,7 @@ html{
 
 
 /* de aqui se ponen los iconos de cerrar cada div */
-       .divCerrarIngreso,
+            .divCerrarIngreso,
        .divCerrarCrearCuenta,
        .divCerrarEmailCreado,
        .divCerrarMostrarCuenta,
@@ -1851,30 +1851,26 @@ html{
         width: 24px;
         height: 21px;
         z-index: 2;
-        background-color: black;
         cursor: pointer;
+        background-color: #00000059;
         border-radius: 5px;
-        
+        text-align: center;
     }
 
-            
-
-        .divCerrarIngreso img,
-       .divCerrarCrearCuenta img,
-       .divCerrarEmailCreado img,
-       .divCerrarMostrarCuenta img,
-       .divCerrarEditarAccount img,
-       .divCerrarChangeKey img,
-       .divCerrarRecoverAccount img,
-       .divCerrarEmailEnviado img,
-       .divCerrarMetodoDePago img {
+        .divCerrarIngreso p,
+       .divCerrarCrearCuenta p,
+       .divCerrarEmailCreado p,
+       .divCerrarMostrarCuenta p,
+       .divCerrarEditarAccount p,
+       .divCerrarChangeKey p,
+       .divCerrarRecoverAccount p,
+       .divCerrarEmailEnviado p,
+       .divCerrarMetodoDePago p {
         object-fit: contain;
         height: 100%;
         width: 100%;
-        cursor: pointer;
+        color: #fb091a;
     } 
-
-
 
 /* de aqui se ponen los iconos de cerrar cada aside: */
     
