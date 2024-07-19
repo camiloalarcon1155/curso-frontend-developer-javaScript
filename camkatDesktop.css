@@ -1832,6 +1832,7 @@ html{
             width: 100%;
         }
 
+/* /* de aqui se ponen los iconos de cerrar cada aside */
 
         .divCerrarIngreso {
         position: absolute;
@@ -1849,4 +1850,162 @@ html{
         width: 100%;
         /* color: beige; */
     } 
+
+    
+    .divCerrarCrearCuenta {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarCrearCuenta img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    }
+    
+    .divCerrarEmailCreado {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarEmailCreado img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    }
+
+
+    .divCerrarMostrarCuenta {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarMostrarCuenta img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+    
+     .divCerrarEditarAccount {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarEditarAccount img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
+     .divCerrarChangeKey {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarChangeKey img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
+
+
+      .divCerrarRecoverAccount {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+
+    .divCerrarRecoverAccount img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
+    .divCerrarEmailEnviado {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+    .divCerrarEmailEnviado img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
+     .divCerrarMetodoDePago {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+    }
+
+    .divCerrarMetodoDePago img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
+    
+
+    .divCerrarMetodoDePago {
+        position: absolute;
+        top: 8px;
+        right: 7px;
+        width: 24px;
+        height: 21px;
+        background-color: black;
+        z-index: 2;
+    }
+
+    .divCerrarMetodoDePago img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+        /* color: beige; */
+    } 
+
 }
