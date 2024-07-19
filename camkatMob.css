@@ -1853,169 +1853,64 @@ html{
 /* de awui en adelante es cuando reinicie a programar */
 
 
-/* de aqui se ponen los iconos de cerrar cada aside */
-       .divCerrarIngreso {
+/* de aqui se ponen los iconos de cerrar cada div */
+       .divCerrarIngreso,
+       .divCerrarCrearCuenta,
+       .divCerrarEmailCreado,
+       .divCerrarMostrarCuenta,
+       .divCerrarEditarAccount,
+       .divCerrarChangeKey,
+       .divCerrarRecoverAccount,
+       .divCerrarEmailEnviado,
+       .divCerrarMetodoDePago{
         position: absolute;
-        top: 8px;
-        right: 7px;
+        top: 0px;
+        right: 0px;
         width: 24px;
         height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarIngreso img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-
-
-    .divCerrarCrearCuenta {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarCrearCuenta img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-
-    .divCerrarEmailCreado {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarEmailCreado img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-
-
-
-  .divCerrarMostrarCuenta {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarMostrarCuenta img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-
-    .divCerrarEditarAccount {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarEditarAccount img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-
-
-    .divCerrarChangeKey {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarChangeKey img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-     .divCerrarRecoverAccount {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-
-    .divCerrarRecoverAccount img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-    
-
- .divCerrarEmailEnviado {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
-    }
-
-    .divCerrarEmailEnviado img {
-        object-fit: contain;
-        height: 100%;
-        width: 100%;
-        /* color: beige; */
-    } 
-
-    .divCerrarMetodoDePago {
-        position: absolute;
-        top: 8px;
-        right: 7px;
-        width: 24px;
-        height: 21px;
-        background-color: black;
         z-index: 2;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 5px;
     }
 
-    .divCerrarMetodoDePago img {
+        .divCerrarIngreso img,
+       .divCerrarCrearCuenta img,
+       .divCerrarEmailCreado img,
+       .divCerrarMostrarCuenta img,
+       .divCerrarEditarAccount img,
+       .divCerrarChangeKey img,
+       .divCerrarRecoverAccount img,
+       .divCerrarEmailEnviado img,
+       .divCerrarMetodoDePago img {
         object-fit: contain;
         height: 100%;
         width: 100%;
-        /* color: beige; */
     } 
 
 
+
+/* de aqui se ponen los iconos de cerrar cada aside: */
     
+.divCerrarDesktop-menu, 
+.divCerrarMobile-menu, 
+.divCerrarCartContainer, 
+.divCerrarTotalCompras  {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 10px;
+            height: 13px;
+            background-color: #00000021;
+            z-index: 2;
+            cursor: pointer;
+            text-align: center;
+    }
+
+  .divCerrarDesktop-menu p, 
+  .divCerrarMobile-menu p, 
+  .divCerrarCartContainer p, 
+  .divCerrarTotalCompras p {
+        font-size: 10px;
+        color: #fb091a;
+    } 

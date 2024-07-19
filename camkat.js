@@ -1040,8 +1040,8 @@ function toggleMiCuentaCreadaConfirmacion() {
 // Guardar en localStorage bajo una clave específica
     localStorage.setItem('claveUsuariosRegistrados', usuarioJSON);
     
-    //localStorage.clear();
-    //localStorage.removeItem('claveUsuariosRegistradoss');
+    //localStorage.clear();//me elimina todos los items del localStore
+    //localStorage.removeItem('claveUsuariosRegistrados');//me elimina todos los items del localSrore con esa clave
 
 //por ultimo, ponemos los espacios en 0 de nuevo 
 
