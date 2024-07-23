@@ -91,6 +91,20 @@ const buttonLoginEmailEnviado = document.querySelector('.primary-buttonEmailEnvi
 const buttonCerrarMenuEscritorio = document.querySelector('.logoCerrarDesktop-menu');
 const buttonCerrarMenuMobile = document.querySelector('.logoCerrarMobile-menu');
 const buttonCerrarIngresoCuenta = document.querySelector('.logoCerrarIngreso');
+const buttonCerrarCrearCuenta = document.querySelector('.logoCerrarCrearCuenta');
+const buttonCerrarEmailCreado = document.querySelector('.logoCerrarEmailCreado');
+const buttonCerrarMostrarCuenta = document.querySelector('.logoCerrarMostrarCuenta');
+const buttonCerrarEditarAccount = document.querySelector('.logoCerrarEditarAccount');
+const buttonCerrarChangeKey = document.querySelector('.logoCerrarChangeKey');
+const buttonCerrarRecoverAccount = document.querySelector('.logoCerrarRecoverAccount');
+const buttonCerrarEmailEnviado = document.querySelector('.logoCerrarEmailEnviado');
+const buttonCerrarMetodoDePago = document.querySelector('.logoCerrarMetodoDePago');
+const buttonCerrarCartContainer = document.querySelector('.logoCerrarCartContainer');
+const buttonCerrarTotalCompras = document.querySelector('.logoCerrarTotalCompras');
+
+
+
+
 
 
 
@@ -229,6 +243,26 @@ buttonCerrarMenuEscritorio.addEventListener('click', () => cerrarVentanaDesplega
 buttonCerrarMenuMobile.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMenuMobile.className)); 
 
 buttonCerrarIngresoCuenta.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarIngresoCuenta.className)); 
+
+buttonCerrarCrearCuenta.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarCrearCuenta.className)); 
+
+buttonCerrarEmailCreado.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarEmailCreado.className));
+
+buttonCerrarMostrarCuenta.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMostrarCuenta.className));
+
+buttonCerrarEditarAccount.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarEditarAccount.className));
+
+buttonCerrarChangeKey.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarChangeKey.className));
+
+buttonCerrarRecoverAccount.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarRecoverAccount.className));
+
+buttonCerrarEmailEnviado.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarEmailEnviado.className));
+
+buttonCerrarMetodoDePago.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMetodoDePago.className));
+
+buttonCerrarCartContainer.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarCartContainer.className));
+
+buttonCerrarTotalCompras.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarTotalCompras.className));
 
 
 ////De aqui en adelante son todas las funciones:
@@ -1839,7 +1873,10 @@ function cerrarVentanaDesplegableGenerica(claseDelBotonCerrar) {
         if (!isElementoPadreDePadreClosed) {
             elementoPadreDePadre.classList.add('inactive');
         }
-                if (padrepadreElementoBotonCerrar.parentElement) {
+
+        if (!padrepadreElementoBotonCerrar.parentElement) {
+            return;
+        }
                     const padrePadrePadreElementoBotonCerrar = padrepadreElementoBotonCerrar.parentElement;
                     const nameClasePadrePadrepadreElementoBotonCerrar = padrePadrePadreElementoBotonCerrar.className;
                     console.log(nameClasePadrePadrepadreElementoBotonCerrar);
@@ -1848,7 +1885,6 @@ function cerrarVentanaDesplegableGenerica(claseDelBotonCerrar) {
                     if (!isElementoPadreDePadreDePadreClosed) {
                         elementoPadreDePadreDePadre.classList.add('inactive');
                     }
-                }
     }
 }
 
