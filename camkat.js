@@ -89,8 +89,8 @@ const pContraseniaIncorrecta = document.querySelector('.pContraseniaIncorrecta')
 const pCorreoIncorrecto = document.querySelector('.correoIncorrectoRecover');
 const buttonLoginEmailEnviado = document.querySelector('.primary-buttonEmailEnviado');
 const buttonCerrarMenuEscritorio = document.querySelector('.logoCerrarDesktop-menu');
-const buttonCerrarCarritoCompras = document.querySelector('.divCerrarCartContainer');
 const buttonCerrarMenuMobile = document.querySelector('.logoCerrarMobile-menu');
+const buttonCerrarIngresoCuenta = document.querySelector('.logoCerrarIngreso');
 
 
 
@@ -224,10 +224,14 @@ buttonLoginEmailEnviado.addEventListener('click',toggleMiCuentaMenuIngresar)
 //buttonCerrarMenuEscritorio.addEventListener('click', cerrarVentanaDesplegable);
 
 //buttonCerrarCarritoCompras.addEventListener('click', cerrarVentanaDesplegable2);
+buttonCerrarMenuEscritorio.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMenuEscritorio.className)); 
+
 buttonCerrarMenuMobile.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMenuMobile.className)); 
 
+buttonCerrarIngresoCuenta.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarIngresoCuenta.className)); 
 
 
+////De aqui en adelante son todas las funciones:
 
 function toggleDesktopMenuEmail() {
     window.scrollTo(0, 0);
@@ -1801,7 +1805,7 @@ function cerrarVentanaDesplegable2() {
         menuCarritoCompras.classList.add('inactive');
     }
 }
- o
+ 
 
 
 function asignarTextoElemento(elemento, texto) {
@@ -1820,44 +1824,32 @@ function asignarTextoElemento(elemento, texto) {
 
 function cerrarVentanaDesplegableGenerica(claseDelBotonCerrar) { 
 
-    console.log(`esta es la clase: ${claseDelBotonCerrar}`)
+    console.log(claseDelBotonCerrar);
+    const elementoBotonCerrar = document.querySelector(`.${claseDelBotonCerrar}`);
+    console.log(elementoBotonCerrar);
+    const padreElementoBotonCerrar = elementoBotonCerrar.parentElement;
+    console.log(padreElementoBotonCerrar.className)
 
-    const elemento = document.querySelector(`.${claseDelBotonCerrar}`);
-
-    console.log(elemento);
-
-   
-
-        const padreElemento = elemento.parentElement;
-        console.log(padreElemento.className)
-
-   if (padreElemento.parentElement) {
-       const padrepadreElement = padreElemento.parentElement;
-      const elementoPadrastro = padrepadreElement.className;
-       console.log(elementoPadrastro);
-
-
-const elementoPadre = document.querySelector(`.${elementoPadrastro}`);
-
-
-    const isElementoPadreClosed = elementoPadre.classList.contains('inactive');
-    if (!isElementoPadreClosed) {
-        elementoPadre.classList.add('inactive');
+    if (padreElementoBotonCerrar.parentElement) {
+        const padrepadreElementoBotonCerrar = padreElementoBotonCerrar.parentElement;
+        const nameClasePadrepadreElementoBotonCerrar = padrepadreElementoBotonCerrar.className;
+        console.log(nameClasePadrepadreElementoBotonCerrar);
+        const elementoPadreDePadre = document.querySelector(`.${nameClasePadrepadreElementoBotonCerrar}`);
+        const isElementoPadreDePadreClosed = elementoPadreDePadre.classList.contains('inactive');
+        if (!isElementoPadreDePadreClosed) {
+            elementoPadreDePadre.classList.add('inactive');
+        }
+                if (padrepadreElementoBotonCerrar.parentElement) {
+                    const padrePadrePadreElementoBotonCerrar = padrepadreElementoBotonCerrar.parentElement;
+                    const nameClasePadrePadrepadreElementoBotonCerrar = padrePadrePadreElementoBotonCerrar.className;
+                    console.log(nameClasePadrePadrepadreElementoBotonCerrar);
+                    const elementoPadreDePadreDePadre = document.querySelector(`.${nameClasePadrePadrepadreElementoBotonCerrar}`);
+                    const isElementoPadreDePadreDePadreClosed = elementoPadreDePadreDePadre.classList.contains('inactive');
+                    if (!isElementoPadreDePadreDePadreClosed) {
+                        elementoPadreDePadreDePadre.classList.add('inactive');
+                    }
+                }
     }
-
-   }
-    
-
-
-
-
-   
-
-    // const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
-    // if (!ismobileMenuIHamClosed) {
-    //     mobileMenuIHam.classList.add('inactive');
-    // }
-    
 }
 
 
