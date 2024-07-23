@@ -1887,7 +1887,7 @@ html{
         object-fit: contain;
         height: 100%;
         width: 100%;
-        color: #fb091a;
+        color: #ff7070;
     } 
 
 
@@ -1914,5 +1914,5 @@ html{
   .divCerrarCartContainer p, 
   .divCerrarTotalCompras p {
         font-size: 10px;
-        color: #fb091a;
+        color: #ff7070;
     } 

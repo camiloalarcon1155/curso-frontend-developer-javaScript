@@ -88,6 +88,12 @@ const buttonCambioContraseniaConfirmacion = document.querySelector('.primary-but
 const pContraseniaIncorrecta = document.querySelector('.pContraseniaIncorrecta');
 const pCorreoIncorrecto = document.querySelector('.correoIncorrectoRecover');
 const buttonLoginEmailEnviado = document.querySelector('.primary-buttonEmailEnviado');
+const buttonCerrarMenuEscritorio = document.querySelector('.logoCerrarDesktop-menu');
+const buttonCerrarCarritoCompras = document.querySelector('.divCerrarCartContainer');
+const buttonCerrarMenuMobile = document.querySelector('.logoCerrarMobile-menu');
+
+
+
 //esta es una linea de comprobacion(ignorarla)
 
 
@@ -164,6 +170,7 @@ inputRecoverEnviarEmail.addEventListener('click', function (event) {
 
 buttonCambiarKeyDeEditarCuenta.addEventListener('click', toggleCambiarKey);
 
+
 //aqui hacemos los addevenlistenner y llamamos a las funciones de renderizacion para menu navegador izquierdo o escritorio:
 
 opcionRopaTodoDesk.addEventListener("click", renderTodoRopa);
@@ -210,6 +217,15 @@ buttonCambioContraseniaConfirmacion.addEventListener('click', function (event) {
 });
 
 buttonLoginEmailEnviado.addEventListener('click',toggleMiCuentaMenuIngresar)
+
+
+//vamos a usar boton de cerrar cada ventan:
+
+//buttonCerrarMenuEscritorio.addEventListener('click', cerrarVentanaDesplegable);
+
+//buttonCerrarCarritoCompras.addEventListener('click', cerrarVentanaDesplegable2);
+buttonCerrarMenuMobile.addEventListener('click', () => cerrarVentanaDesplegableGenerica(buttonCerrarMenuMobile.className)); 
+
 
 
 
@@ -1769,6 +1785,82 @@ function crearCodigoAleatorio() {
     
 
 }
+
+/* function cerrarVentanaDesplegable() {
+
+    const isDesktopMenuEmailClosed = DesktopMenuEmail.classList.contains('inactive');
+    if (!isDesktopMenuEmailClosed) {
+    DesktopMenuEmail.classList.add('inactive');
+    } 
+}
+
+function cerrarVentanaDesplegable2() {
+
+     const ismMenuCarritoComprasClosed = menuCarritoCompras.classList.contains('inactive');
+    if (!ismMenuCarritoComprasClosed) {
+        menuCarritoCompras.classList.add('inactive');
+    }
+}
+ o
+
+
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+}
+
+
+ productImg.addEventListener('click', ((obj) => {
+    return function() {
+        mostrarDetallesCadaProducto(obj); //permite obtener la variable inmediatamente cuando se le da click
+    };
+ })(product)); */
+    
+
+function cerrarVentanaDesplegableGenerica(claseDelBotonCerrar) { 
+
+    console.log(`esta es la clase: ${claseDelBotonCerrar}`)
+
+    const elemento = document.querySelector(`.${claseDelBotonCerrar}`);
+
+    console.log(elemento);
+
+   
+
+        const padreElemento = elemento.parentElement;
+        console.log(padreElemento.className)
+
+   if (padreElemento.parentElement) {
+       const padrepadreElement = padreElemento.parentElement;
+      const elementoPadrastro = padrepadreElement.className;
+       console.log(elementoPadrastro);
+
+
+const elementoPadre = document.querySelector(`.${elementoPadrastro}`);
+
+
+    const isElementoPadreClosed = elementoPadre.classList.contains('inactive');
+    if (!isElementoPadreClosed) {
+        elementoPadre.classList.add('inactive');
+    }
+
+   }
+    
+
+
+
+
+   
+
+    // const ismobileMenuIHamClosed = mobileMenuIHam.classList.contains('inactive');
+    // if (!ismobileMenuIHamClosed) {
+    //     mobileMenuIHam.classList.add('inactive');
+    // }
+    
+}
+
+
 
 
 //👖👖👖Arreglo de objetos de toda la ropa:
